@@ -218,6 +218,12 @@ This compiles all HTML files, minifies stylesheets and assets, and packages all 
 - **Apache / Nginx**: Copy the contents of `dist/` to your web root (`/var/www/html/`).
 - **Static Hosting**: Upload `dist/` directly to AWS S3, Google Cloud Storage, or GitHub Pages.
 
+### cPanel Git™ Version Control Deployment:
+This repository includes a pre-configured [`.cpanel.yml`](.cpanel.yml) and [`.htaccess`](.htaccess) for automated deployment on cPanel:
+1. In cPanel, navigate to **Git™ Version Control** and clone/link your repository.
+2. In [`.cpanel.yml`](.cpanel.yml), ensure `DEPLOYPATH` matches your cPanel home directory (e.g., `/home/username/public_html`).
+3. Click **"Deploy HEAD Commit"** under the **Manage** tab to automatically publish all web pages, assets, components, and media.
+
 ---
 
 ## 🧪 Testing & Quality Assurance
