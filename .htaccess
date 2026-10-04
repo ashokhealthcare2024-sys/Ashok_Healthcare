@@ -1,0 +1,107 @@
+# ==============================================================================
+# ASHOK HOME HEALTHCARE SERVICES - APACHE / CPANEL PRODUCTION CONFIGURATION
+# ==============================================================================
+
+# 1. CHARACTER ENCODING
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .json .svg .xml
+
+# 2. DEFAULT DOCUMENT & CUSTOM ERROR PAGES
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# 3. PREVENT DIRECTORY BROWSING
+Options -Indexes
+
+# 4. HTTPS ENFORCEMENT & CLEAN URL HANDLING
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect HTTP to HTTPS (standard for SSL)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 5. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES
+<FilesMatch "^(\.git|\.env|\.cpanel\.yml|package.*\.json|vite\.config\.js|server\.js|README\.md|vercel\.json)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# 6. VIDEO STREAMING & HTTP RANGE REQUESTS
+# Essential for clinical MP4/WebM video playback & seeking across Safari & Chrome
+<IfModule mod_headers.c>
+  <FilesMatch "\.(mp4|webm|mov|ogg)$">
+    Header set Accept-Ranges bytes
+  </FilesMatch>
+</IfModule>
+
+# 7. MIME TYPES FOR MODERN WEB FORMATS
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType application/json .json
+  AddType application/xml .xml
+</IfModule>
+
+# 8. GZIP / DEFLATE COMPRESSION
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# 9. BROWSER CACHING (mod_expires / mod_headers)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML documents - Revalidate for instant updates
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Stylesheets & Scripts
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Media & Images
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Videos
+  ExpiresByType video/mp4 "access plus 1 month"
+  ExpiresByType video/webm "access plus 1 month"
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# 10. SECURITY HEADERS
+<IfModule mod_headers.c>
+  # Protect against MIME type sniffing
+  Header set X-Content-Type-Options "nosniff"
+  # Clickjacking defense
+  Header set X-Frame-Options "SAMEORIGIN"
+  # Referrer policy for privacy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
