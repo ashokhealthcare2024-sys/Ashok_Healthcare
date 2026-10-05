@@ -4,7 +4,26 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/google365c6c761a442363.html",
+      "destination": "/google365c6c761a442363.html"
+    }
+  ],
   "headers": [
+    {
+      "source": "/google365c6c761a442363.html",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/html; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    },
     {
       "source": "/assets/(js|css)/(.*)",
       "headers": [

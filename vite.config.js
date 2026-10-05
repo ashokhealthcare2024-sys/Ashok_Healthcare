@@ -14,11 +14,15 @@ function getHtmlEntries(dir = __dirname, entries = {}) {
   const files = fs.readdirSync(dir, { withFileTypes: true });
   for (const file of files) {
     if (file.isDirectory()) {
-      if (['node_modules', '.git', 'dist', 'scratch', 'components', '.agents', '.gemini', 'test'].includes(file.name)) {
+      if (['node_modules', '.git', 'dist', 'scratch', 'components', '.agents', '.gemini', 'test', 'public'].includes(file.name)) {
         continue;
       }
       getHtmlEntries(resolve(dir, file.name), entries);
     } else if (file.isFile() && file.name.endsWith('.html')) {
+      // Exclude verification files from Rollup HTML transformation so they remain untouched
+      if (file.name.startsWith('google') && file.name.endsWith('.html')) {
+        continue;
+      }
       const fullPath = resolve(dir, file.name);
       const relative = fullPath.replace(__dirname, '').replace(/^[\\/]/, '').replace(/\\/g, '/');
       const name = relative.replace(/\.html$/, '').replace(/\//g, '_');
@@ -45,11 +49,19 @@ function copyStaticAssetsPlugin() {
         }
       }
       // Copy single root assets if present
-      for (const singleFile of ['robots.txt', 'sitemap.xml', 'favicon.svg', 'icons.svg']) {
+      for (const singleFile of ['robots.txt', 'sitemap.xml', 'favicon.svg', 'icons.svg', 'google365c6c761a442363.html']) {
         const src = resolve(__dirname, singleFile);
         const dest = resolve(__dirname, 'dist', singleFile);
         if (fs.existsSync(src)) {
           fs.copyFileSync(src, dest);
+        }
+      }
+      // Copy any files in public/ to dist/ root (standard Vite behavior)
+      const publicDir = resolve(__dirname, 'public');
+      if (fs.existsSync(publicDir)) {
+        const publicFiles = fs.readdirSync(publicDir);
+        for (const file of publicFiles) {
+          fs.copyFileSync(resolve(publicDir, file), resolve(__dirname, 'dist', file));
         }
       }
     }

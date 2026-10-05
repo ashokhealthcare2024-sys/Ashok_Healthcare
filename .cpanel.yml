@@ -31,6 +31,7 @@ deployment:
     - /bin/cp -f icons.svg $DEPLOYPATH/
     - /bin/cp -f sitemap.xml $DEPLOYPATH/
     - /bin/cp -f robots.txt $DEPLOYPATH/
+    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH/
     - /bin/cp -f .htaccess $DEPLOYPATH/ 2>/dev/null || true
 
     # 3. Deploy Media, Components & Asset Directories Recursively
