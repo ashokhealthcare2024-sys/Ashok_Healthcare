@@ -9,32 +9,33 @@ deployment:
     # - Primary domain: /home/username/public_html
     # - Subdomain / Addon domain: /home/username/yourdomain.com
     # --------------------------------------------------------------------------
+    - export DEPLOYPATH=/home1/ashokhea/public_html/
     # 1. Deploy Root HTML Pages
-    - /bin/cp -f index.html $HOME/public_html/
-    - /bin/cp -f about.html $HOME/public_html/
-    - /bin/cp -f services.html $HOME/public_html/
-    - /bin/cp -f products.html $HOME/public_html/
-    - /bin/cp -f gallery.html $HOME/public_html/
-    - /bin/cp -f careers.html $HOME/public_html/
-    - /bin/cp -f blog.html $HOME/public_html/
-    - /bin/cp -f contact.html $HOME/public_html/
-    - /bin/cp -f privacy.html $HOME/public_html/
-    - /bin/cp -f terms.html $HOME/public_html/
-    - /bin/cp -f 404.html $HOME/public_html/
+    - /bin/cp -f index.html $DEPLOYPATH
+    - /bin/cp -f about.html $DEPLOYPATH
+    - /bin/cp -f services.html $DEPLOYPATH
+    - /bin/cp -f products.html $DEPLOYPATH
+    - /bin/cp -f gallery.html $DEPLOYPATH
+    - /bin/cp -f careers.html $DEPLOYPATH
+    - /bin/cp -f blog.html $DEPLOYPATH
+    - /bin/cp -f contact.html $DEPLOYPATH
+    - /bin/cp -f privacy.html $DEPLOYPATH
+    - /bin/cp -f terms.html $DEPLOYPATH
+    - /bin/cp -f 404.html $DEPLOYPATH
 
     # 2. Deploy Root Assets, Icons, Verification & SEO Metadata
-    - /bin/cp -f favicon.svg $HOME/public_html/
-    - /bin/cp -f icons.svg $HOME/public_html/
-    - /bin/cp -f sitemap.xml $HOME/public_html/
-    - /bin/cp -f robots.txt $HOME/public_html/
-    - /bin/cp -f google365c6c761a442363.html $HOME/public_html/
-    - /bin/cp -f .htaccess $HOME/public_html/ 2>/dev/null || true
+    - /bin/cp -f favicon.svg $DEPLOYPATH
+    - /bin/cp -f icons.svg $DEPLOYPATH
+    - /bin/cp -f sitemap.xml $DEPLOYPATH
+    - /bin/cp -f robots.txt $DEPLOYPATH
+    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH
+    - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
 
     # 3. Deploy Media, Components & Asset Directories Recursively
-    - /bin/cp -R -f assets $HOME/public_html/
-    - /bin/cp -R -f components $HOME/public_html/
-    - /bin/cp -R -f Gallery $HOME/public_html/
-    - /bin/cp -R -f images $HOME/public_html/
-    - /bin/cp -R -f Bg_Banner $HOME/public_html/
-    - /bin/cp -R -f services $HOME/public_html/
-    - /bin/cp -R -f blog $HOME/public_html/
+    - /bin/cp -R -f assets $DEPLOYPATH
+    - /bin/cp -R -f components $DEPLOYPATH
+    - /bin/cp -R -f Gallery $DEPLOYPATH
+    - /bin/cp -R -f images $DEPLOYPATH
+    - /bin/cp -R -f Bg_Banner $DEPLOYPATH
+    - /bin/cp -R -f services $DEPLOYPATH
+    - /bin/cp -R -f blog $DEPLOYPATH
