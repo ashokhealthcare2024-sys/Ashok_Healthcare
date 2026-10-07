@@ -1,4 +1,16 @@
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /images/
+Allow: /icons.svg
+Disallow: /i*
+Disallow: /ja/
+Disallow: /jp/
+Disallow: /m*
+Disallow: /x*
+Disallow: /j*
+Disallow: /o*
+Disallow: /q*
+Disallow: /z*
 
-Sitemap: https://ashokhealthcare.com/sitemap.xml
+Sitemap: https://ashokhealthcare.in/sitemap.xml

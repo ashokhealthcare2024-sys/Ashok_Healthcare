@@ -49,7 +49,7 @@ function copyStaticAssetsPlugin() {
         }
       }
       // Copy single root assets if present
-      for (const singleFile of ['robots.txt', 'sitemap.xml', 'favicon.svg', 'icons.svg', 'google365c6c761a442363.html']) {
+      for (const singleFile of ['.htaccess', 'robots.txt', 'sitemap.xml', 'favicon.svg', 'icons.svg', 'google365c6c761a442363.html']) {
         const src = resolve(__dirname, singleFile);
         const dest = resolve(__dirname, 'dist', singleFile);
         if (fs.existsSync(src)) {

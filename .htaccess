@@ -13,7 +13,15 @@ ErrorDocument 404 /404.html
 # 3. PREVENT DIRECTORY BROWSING
 Options -Indexes
 
-# 4. HTTPS ENFORCEMENT & CLEAN URL HANDLING
+# 4. JAPANESE SPAM HACK BLOCK (410 GONE SIGNAL)
+# Japanese Spam Hack Pages ko Fast Delete Karne Ke Liye (410 Gone Signal)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/(ja|jp|m|x|j|o|q|z|[0-9]+) [NC]
+  RewriteRule ^ - [R=410,L]
+</IfModule>
+
+# 5. HTTPS ENFORCEMENT & CLEAN URL HANDLING
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
