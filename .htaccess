@@ -29,10 +29,19 @@ Options -Indexes
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Clean URL Handling (serve .html files without requiring extension in URL)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
-# 5. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES
-<FilesMatch "^(\.git|\.env|\.cpanel\.yml|package.*\.json|vite\.config\.js|server\.js|README\.md|vercel\.json)">
+# 5. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES AND DIRECTORIES
+<IfModule mod_rewrite.c>
+  RewriteRule ^(node_modules|src|test|\.git)(/|$) - [R=404,L,NC]
+</IfModule>
+
+<FilesMatch "^(\.git|\.env.*|\.cpanel\.yml|\.gitignore|package.*\.json|vite\.config\.js|server\.js|README\.md|vercel\.json)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>

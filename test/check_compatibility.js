@@ -15,6 +15,7 @@ const rootDir = path.resolve(__dirname, '..');
 const REQUIRED_HTML = [
   'index.html',
   'about.html',
+  'about-ashok-healthcare-bangalore.html',
   'services.html',
   'products.html',
   'gallery.html',
@@ -31,6 +32,15 @@ const REQUIRED_HTML = [
   'services/elder-care.html',
   'services/diagnostic-services.html',
   'services/ambulance.html',
+  'services/index.html',
+  'services/home-healthcare-services-bangalore.html',
+  'services/home-healthcare-nursing-services-bangalore.html',
+  'rehabilitation-neuro-and-ortho/index.html',
+  'medical-equipment-rent-and-sales/index.html',
+  'physiotherapy/index.html',
+  'diagnostics/index.html',
+  'ambulance-services/index.html',
+  'palliative-care-bangalore.html',
   'blog/best-home-healthcare-services-in-bangalore.html',
   'blog/home-nursing-services-in-bangalore-complete-guide.html',
   'blog/bipap-machine-in-yeshwanthpur-expert-home-healthcare-for-sleep-apnea-copd-patients.html',
@@ -64,7 +74,8 @@ const REQUIRED_STYLES = [
   'assets/css/style.css',
   'assets/css/components/gallery.css',
   'assets/css/components/header.css',
-  'assets/css/components/footer.css'
+  'assets/css/components/footer.css',
+  'assets/css/home-healthcare-services.css'
 ];
 
 const REQUIRED_MEDIA_DIRS = [

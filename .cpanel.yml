@@ -13,12 +13,14 @@ deployment:
     # 1. Deploy Root HTML Pages
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f about.html $DEPLOYPATH
+    - /bin/cp -f about-ashok-healthcare-bangalore.html $DEPLOYPATH
     - /bin/cp -f services.html $DEPLOYPATH
     - /bin/cp -f products.html $DEPLOYPATH
     - /bin/cp -f gallery.html $DEPLOYPATH
     - /bin/cp -f careers.html $DEPLOYPATH
     - /bin/cp -f blog.html $DEPLOYPATH
     - /bin/cp -f contact.html $DEPLOYPATH
+    - /bin/cp -f palliative-care-bangalore.html $DEPLOYPATH
     - /bin/cp -f privacy.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
@@ -39,3 +41,8 @@ deployment:
     - /bin/cp -R -f Bg_Banner $DEPLOYPATH
     - /bin/cp -R -f services $DEPLOYPATH
     - /bin/cp -R -f blog $DEPLOYPATH
+    - /bin/cp -R -f ambulance-services $DEPLOYPATH
+    - /bin/cp -R -f diagnostics $DEPLOYPATH
+    - /bin/cp -R -f medical-equipment-rent-and-sales $DEPLOYPATH
+    - /bin/cp -R -f physiotherapy $DEPLOYPATH
+    - /bin/cp -R -f rehabilitation-neuro-and-ortho $DEPLOYPATH

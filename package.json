@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "serve": "node server.js",
     "start": "node server.js",
-    "validate": "python scratch/validate_links.py",
+    "validate": "node test/check_compatibility.js",
     "test": "node test/check_compatibility.js"
   },
   "keywords": [
