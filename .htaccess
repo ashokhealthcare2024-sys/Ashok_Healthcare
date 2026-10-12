@@ -17,7 +17,13 @@ Options -Indexes
 # Japanese Spam Hack Pages ko Fast Delete Karne Ke Liye (410 Gone Signal)
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{REQUEST_URI} ^/(ja|jp|m|x|j|o|q|z|[0-9]+) [NC]
+  # Ensure valid site pages and assets are NEVER blocked
+  RewriteCond %{REQUEST_URI} !^/medical-equipment [NC]
+  RewriteCond %{REQUEST_URI} !^/(assets|components|images|services|blog) [NC]
+  # Target only actual spam hack URL structures
+  RewriteCond %{REQUEST_URI} ^/(ja|jp)(/|$) [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/(m|x|j|o|q|z)(/|[0-9]|\.php|\.html?|$) [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/[0-9]+(\.html?|\.php|/|$) [NC]
   RewriteRule ^ - [R=410,L]
 </IfModule>
 
