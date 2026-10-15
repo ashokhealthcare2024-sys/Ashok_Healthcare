@@ -43,7 +43,27 @@ Options -Indexes -MultiViews
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
-# 5. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES AND DIRECTORIES
+# 6. SEO 301 CANONICAL REDIRECTS FOR DUPLICATE & DIRECTORY URLS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Redirect duplicate/competing URLs to their authoritative .html pages
+  RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L]
+  RewriteRule ^services/home-healthcare-services-bangalore\.html$ /services.html [R=301,L]
+  RewriteRule ^services/home-healthcare-nursing-services-bangalore\.html$ /services.html [R=301,L]
+  RewriteRule ^services/index\.html$ /services.html [R=301,L]
+  RewriteRule ^services/ambulance\.html$ /ambulance-services.html [R=301,L]
+  RewriteRule ^ambulance-services/?$ /ambulance-services.html [R=301,L]
+  RewriteRule ^services/diagnostic-services\.html$ /diagnostics.html [R=301,L]
+  RewriteRule ^diagnostics/?$ /diagnostics.html [R=301,L]
+  RewriteRule ^services/physiotherapy\.html$ /physiotherapy.html [R=301,L]
+  RewriteRule ^physiotherapy/?$ /physiotherapy.html [R=301,L]
+  RewriteRule ^services/rehabilitation\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
+  RewriteRule ^rehabilitation-neuro-and-ortho/?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
+  RewriteRule ^medical-equipment-rent-and-sales/?$ /medical-equipment-rent-and-sales.html [R=301,L]
+</IfModule>
+
+# 7. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES AND DIRECTORIES
 <IfModule mod_rewrite.c>
   RewriteRule ^(node_modules|src|test|\.git)(/|$) - [R=404,L,NC]
 </IfModule>

@@ -1,9 +1,7 @@
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /images/
-Allow: /icons.svg
-Allow: /medical-equipment-rent-and-sales/
+
+# Block spam hack patterns
 Disallow: /ja/
 Disallow: /jp/
 Disallow: /m/
