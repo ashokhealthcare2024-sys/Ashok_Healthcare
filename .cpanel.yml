@@ -21,6 +21,17 @@ deployment:
     - /bin/cp -f blog.html $DEPLOYPATH
     - /bin/cp -f contact.html $DEPLOYPATH
     - /bin/cp -f palliative-care-bangalore.html $DEPLOYPATH
+    - /bin/cp -f ambulance-services.html $DEPLOYPATH
+    - /bin/cp -f diagnostics.html $DEPLOYPATH
+    - /bin/cp -f medical-equipment-rent-and-sales.html $DEPLOYPATH
+    - /bin/cp -f physiotherapy.html $DEPLOYPATH
+    - /bin/cp -f rehabilitation-neuro-and-ortho.html $DEPLOYPATH
+    - /bin/cp -f oxygen-concentrator-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f hospital-bed-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f bipap-cpap-machine-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f patient-monitor-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f wheelchair-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f suction-machine-rental-bangalore.html $DEPLOYPATH
     - /bin/cp -f privacy.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
