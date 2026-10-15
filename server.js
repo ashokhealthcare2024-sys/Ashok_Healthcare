@@ -48,15 +48,7 @@ const MIME_TYPES = {
 function serveFile(req, res, filePath) {
   fs.stat(filePath, (err, stats) => {
     if (err) {
-      // Clean URL support: check if appending .html matches an existing file
-      if (!path.extname(filePath)) {
-        const htmlPath = filePath + '.html';
-        if (fs.existsSync(htmlPath)) {
-          return serveFile(req, res, htmlPath);
-        }
-      }
-
-      // 404 Not Found
+      // 404 Not Found (strict .html extension enforcement)
       const notFoundPage = path.join(__dirname, '404.html');
       fs.readFile(notFoundPage, (nfErr, nfData) => {
         if (!nfErr) {

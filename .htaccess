@@ -10,8 +10,14 @@ AddCharset UTF-8 .html .css .js .json .svg .xml
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
-# 3. PREVENT DIRECTORY BROWSING
-Options -Indexes
+# 3. PREVENT DIRECTORY BROWSING & DISABLE MULTIVIEWS
+# Disable MultiViews so Apache strictly requires file extensions and never serves .html for extensionless URLs
+Options -Indexes -MultiViews
+
+# Disable spelling auto-correction so approximate URLs never resolve
+<IfModule mod_speling.c>
+  CheckSpelling Off
+</IfModule>
 
 # 4. JAPANESE SPAM HACK BLOCK (410 GONE SIGNAL)
 # Japanese Spam Hack Pages ko Fast Delete Karne Ke Liye (410 Gone Signal)
@@ -27,7 +33,7 @@ Options -Indexes
   RewriteRule ^ - [R=410,L]
 </IfModule>
 
-# 5. HTTPS ENFORCEMENT & CLEAN URL HANDLING
+# 5. HTTPS ENFORCEMENT (ALL PAGES REQUIRE EXACT .HTML EXTENSION)
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -35,11 +41,6 @@ Options -Indexes
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-  # Clean URL Handling (serve .html files without requiring extension in URL)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}\.html -f
-  RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
 
 # 5. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES AND DIRECTORIES
