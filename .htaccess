@@ -33,34 +33,43 @@ Options -Indexes -MultiViews
   RewriteRule ^ - [R=410,L]
 </IfModule>
 
-# 5. HTTPS ENFORCEMENT (ALL PAGES REQUIRE EXACT .HTML EXTENSION)
+# 5. HTTPS ENFORCEMENT & CANONICAL DOMAIN (NON-WWW)
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Redirect HTTP to HTTPS (standard for SSL)
+  # 5A. Redirect www to non-www (https://ashokhealthcare.in)
+  RewriteCond %{HTTP_HOST} ^www\.ashokhealthcare\.in$ [NC]
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
+
+  # 5B. Redirect HTTP to HTTPS
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 </IfModule>
 
 # 6. SEO 301 CANONICAL REDIRECTS FOR DUPLICATE & DIRECTORY URLS
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Redirect duplicate/competing URLs to their authoritative .html pages
+  # Legacy About page
   RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L]
+
+  # Legacy Services root & legacy service pages
+  RewriteRule ^services/?$ /services.html [R=301,L]
+  RewriteRule ^services/index\.html$ /services.html [R=301,L]
   RewriteRule ^services/home-healthcare-services-bangalore\.html$ /services.html [R=301,L]
   RewriteRule ^services/home-healthcare-nursing-services-bangalore\.html$ /services.html [R=301,L]
-  RewriteRule ^services/index\.html$ /services.html [R=301,L]
   RewriteRule ^services/ambulance\.html$ /ambulance-services.html [R=301,L]
-  RewriteRule ^ambulance-services/?$ /ambulance-services.html [R=301,L]
   RewriteRule ^services/diagnostic-services\.html$ /diagnostics.html [R=301,L]
-  RewriteRule ^diagnostics/?$ /diagnostics.html [R=301,L]
   RewriteRule ^services/physiotherapy\.html$ /physiotherapy.html [R=301,L]
-  RewriteRule ^physiotherapy/?$ /physiotherapy.html [R=301,L]
   RewriteRule ^services/rehabilitation\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^rehabilitation-neuro-and-ortho/?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^medical-equipment-rent-and-sales/?$ /medical-equipment-rent-and-sales.html [R=301,L]
+
+  # Duplicate subfolders: redirect folder, trailing slash, and index.html to root canonical .html
+  RewriteRule ^ambulance-services(/.*)?$ /ambulance-services.html [R=301,L]
+  RewriteRule ^diagnostics(/.*)?$ /diagnostics.html [R=301,L]
+  RewriteRule ^physiotherapy(/.*)?$ /physiotherapy.html [R=301,L]
+  RewriteRule ^rehabilitation-neuro-and-ortho(/.*)?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
+  RewriteRule ^medical-equipment-rent-and-sales(/.*)?$ /medical-equipment-rent-and-sales.html [R=301,L]
 </IfModule>
 
 # 7. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES AND DIRECTORIES

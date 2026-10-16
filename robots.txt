@@ -1,14 +1,5 @@
 User-agent: *
 Allow: /
 
-# Block spam hack patterns
-Disallow: /ja/
-Disallow: /jp/
-Disallow: /m/
-Disallow: /x/
-Disallow: /j/
-Disallow: /o/
-Disallow: /q/
-Disallow: /z/
-
+# Sitemap Indexation
 Sitemap: https://ashokhealthcare.in/sitemap.xml
