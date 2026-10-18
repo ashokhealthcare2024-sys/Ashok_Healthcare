@@ -35,6 +35,13 @@ const REQUIRED_HTML = [
   'services/index.html',
   'services/home-healthcare-services-bangalore.html',
   'services/home-healthcare-nursing-services-bangalore.html',
+  'home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html',
+  'home-nursing-charges-bangalore.html',
+  'Hospital-discharge-checklist-bangalore.html',
+  'home-nurse-vs-caregiver-bangalore.html',
+  'nri-parents-care-monitoring-bangalore.html',
+  'rehabilitation-centre-in-bangalore.html',
+  'home-nursing-&-healthcare-services-in-bangalore.htm',
   'rehabilitation-neuro-and-ortho/index.html',
   'medical-equipment-rent-and-sales/index.html',
   'physiotherapy/index.html',
@@ -148,6 +155,36 @@ for (const html of REQUIRED_HTML) {
     if (!fs.existsSync(p)) throw new Error(`Missing ${html}`);
     const stat = fs.statSync(p);
     if (stat.size < 100) throw new Error(`${html} appears empty or corrupted`);
+    return true;
+  });
+}
+
+for (const page of [
+  'home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html',
+  'home-nursing-charges-bangalore.html',
+  'Hospital-discharge-checklist-bangalore.html',
+  'home-nurse-vs-caregiver-bangalore.html',
+  'nri-parents-care-monitoring-bangalore.html',
+  'rehabilitation-centre-in-bangalore.html',
+  'home-nursing-&-healthcare-services-in-bangalore.htm'
+]) {
+  check(`${page} has nine contextual internal links and is not in navigation`, () => {
+    const html = fs.readFileSync(path.join(rootDir, page), 'utf8');
+    const article = html.match(/<article\b[\s\S]*?<\/article>/i)?.[0];
+    const navigation = html.match(/<nav\b[^>]*aria-label="Main navigation"[^>]*>[\s\S]*?<\/nav>/i)?.[0];
+    if (!article || !navigation) throw new Error('Expected article and primary navigation markup');
+    const internalLinks = [...article.matchAll(/<a\b[^>]*href="([^"]+)"/gi)]
+      .filter(([, href]) => !/^(?:https?:|tel:|mailto:|#)/i.test(href));
+    if (internalLinks.length !== 9) throw new Error(`Expected 9 contextual internal links, found ${internalLinks.length}`);
+    if (navigation.includes(page)) throw new Error('The page must not be listed in the primary navigation');
+    return true;
+  });
+
+  check(`${page} loads Bootstrap and modal scripts`, () => {
+    const html = fs.readFileSync(path.join(rootDir, page), 'utf8');
+    if (!html.includes('assets/js/bootstrap.bundle.min.js') || !html.includes('assets/js/modals.js')) {
+      throw new Error('The page must load Bootstrap and the modal popup script');
+    }
     return true;
   });
 }

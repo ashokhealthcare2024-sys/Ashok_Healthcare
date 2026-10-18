@@ -780,7 +780,7 @@ function initRevisitModalEvents() {
           submitBtn.innerHTML = origText;
         }
 
-        sessionStorage.setItem('ashok_popup_dismissed_session', 'true');
+        sessionStorage.setItem(getRevisitPopupStorageKey('dismissed'), 'true');
         localStorage.setItem('ashok_popup_last_submitted', Date.now().toString());
       }, 400);
     });
@@ -794,7 +794,7 @@ function initRevisitModalEvents() {
   }
 
   modalEl.addEventListener('hidden.bs.modal', () => {
-    sessionStorage.setItem('ashok_popup_dismissed_session', 'true');
+    sessionStorage.setItem(getRevisitPopupStorageKey('dismissed'), 'true');
     resetRevisitModal();
   });
 
@@ -803,28 +803,35 @@ function initRevisitModalEvents() {
 }
 
 function scheduleRevisitPopup() {
-  // Prevent duplicate popups and intra-session navigation interruptions
-  if (sessionStorage.getItem('ashok_popup_dismissed_session')) return;
+  const dismissedKey = getRevisitPopupStorageKey('dismissed');
+  const lastShownKey = getRevisitPopupStorageKey('last_shown');
 
-  const lastShown = parseInt(localStorage.getItem('ashok_popup_last_shown') || '0', 10);
+  // Suppress repeats on this page while allowing the popup on a different page.
+  if (sessionStorage.getItem(dismissedKey)) return;
+
+  const lastShown = parseInt(localStorage.getItem(lastShownKey) || '0', 10);
   const now = Date.now();
-  const revisitCooldown = 45 * 60 * 1000; // 45-minute revisit cooldown
+  const revisitCooldown = 45 * 60 * 1000;
   if (now - lastShown < revisitCooldown) return;
 
   setTimeout(() => {
     // Prevent modal stacking if user opened another modal or mobile drawer
     if (document.querySelector('.modal.show') || document.body.classList.contains('modal-open')) return;
     if (document.body.classList.contains('mobile-drawer-open')) return;
-    if (sessionStorage.getItem('ashok_popup_dismissed_session')) return;
+    if (sessionStorage.getItem(dismissedKey)) return;
 
     const modalEl = document.getElementById('revisitEnquiryModal');
     if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
       const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
       bsModal.show();
-      localStorage.setItem('ashok_popup_last_shown', now.toString());
-      sessionStorage.setItem('ashok_popup_dismissed_session', 'true');
+      localStorage.setItem(lastShownKey, now.toString());
+      sessionStorage.setItem(dismissedKey, 'true');
     }
   }, 3500);
+}
+
+function getRevisitPopupStorageKey(state) {
+  return `ashok_popup_${state}:${window.location.pathname.toLowerCase()}`;
 }
 
 function resetRevisitModal() {
@@ -846,5 +853,4 @@ function resetRevisitModal() {
   if (nameInput) nameInput.classList.remove('is-invalid');
   if (phoneInput) phoneInput.classList.remove('is-invalid');
 }
-
 

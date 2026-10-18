@@ -23,6 +23,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
+  '.htm': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.js': 'text/javascript; charset=utf-8',
   '.mjs': 'text/javascript; charset=utf-8',
@@ -48,7 +49,7 @@ const MIME_TYPES = {
 function serveFile(req, res, filePath) {
   fs.stat(filePath, (err, stats) => {
     if (err) {
-      // 404 Not Found (strict .html extension enforcement)
+      // 404 Not Found for an unavailable page.
       const notFoundPage = path.join(__dirname, '404.html');
       fs.readFile(notFoundPage, (nfErr, nfData) => {
         if (!nfErr) {
