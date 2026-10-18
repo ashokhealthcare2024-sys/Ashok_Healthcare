@@ -189,6 +189,25 @@ for (const page of [
   });
 }
 
+check('New standalone pages are included in cPanel deployment', () => {
+  const deployment = fs.readFileSync(path.join(rootDir, '.cpanel.yml'), 'utf8');
+  const pages = [
+    'home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html',
+    'home-nursing-charges-bangalore.html',
+    'Hospital-discharge-checklist-bangalore.html',
+    'home-nurse-vs-caregiver-bangalore.html',
+    'nri-parents-care-monitoring-bangalore.html',
+    'rehabilitation-centre-in-bangalore.html',
+    'home-nursing-&-healthcare-services-in-bangalore.htm'
+  ];
+  const missingPages = pages.filter(page => {
+    const escapedPage = page.includes('&') ? `'${page}'` : page;
+    return !deployment.includes(`/bin/cp -f ${escapedPage} $DEPLOYPATH`);
+  });
+  if (missingPages.length) throw new Error(`Missing deployment entries: ${missingPages.join(', ')}`);
+  return true;
+});
+
 // 4. Client-side Scripts
 console.log('\n[4/6] Production Scripts & JavaScript Syntax:');
 for (const scr of REQUIRED_SCRIPTS) {
