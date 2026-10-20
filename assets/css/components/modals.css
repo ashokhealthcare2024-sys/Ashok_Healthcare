@@ -1,34 +1,83 @@
 /* ============================================================
-   MODALS COMPONENT (BOOTSTRAP OVERRIDES)
+   MODALS COMPONENT (RESPONSIVE PHONE & DESKTOP STYLES)
    ============================================================ */
-.modal-content-healthcare {
-  border-radius: 1.5rem;
-  border: 1px solid var(--slate-100, #f1f5f9);
-  overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+/* Base Dialog Sizing & Placement */
+.modal {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
+.modal-dialog {
+  margin: 1.5rem auto;
+  max-width: 480px;
+  width: calc(100% - 2rem);
+  transition: transform 0.25s ease-out;
+}
+
+.modal-dialog-centered {
+  min-height: calc(100% - 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content Card */
+.modal-content-healthcare {
+  border-radius: 1.25rem;
+  border: 1px solid var(--slate-100, #f1f5f9);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 2.5rem);
+  max-height: calc(100vh - 2.5rem);
+  width: 100%;
+}
+
+/* Scrollable Modal Support */
+.modal-dialog-scrollable {
+  height: calc(100% - 2rem);
+}
+
+.modal-dialog-scrollable .modal-content {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.modal-content-healthcare .modal-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100dvh - 120px);
+  max-height: calc(100vh - 120px);
+  flex: 1 1 auto;
+}
+
+/* Headers */
 .modal-header-healthcare {
   background: linear-gradient(135deg, var(--primary-600, #0858a4) 0%, var(--primary-500, #0A6EBD) 50%, #0284c7 100%);
   color: #ffffff;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-bottom: none;
+  flex-shrink: 0;
 }
 
 .modal-header-dark {
   background: linear-gradient(135deg, var(--slate-900, #0f172a) 0%, var(--primary-900, #0c2f59) 100%);
   color: #ffffff;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   border-bottom: none;
+  flex-shrink: 0;
 }
 
 /* Form inputs */
 .form-control-custom,
 .form-select-custom {
   width: 100%;
-  padding: 0.65rem 1rem;
+  padding: 0.6rem 0.85rem;
   font-size: 0.875rem;
-  border-radius: 0.75rem;
+  border-radius: 0.65rem;
   border: 1px solid var(--slate-200, #e2e8f0);
   transition: all 0.2s ease;
   background-color: #ffffff;
@@ -40,4 +89,159 @@
   outline: none;
   border-color: var(--primary-500, #0A6EBD);
   box-shadow: 0 0 0 3px rgba(10, 110, 189, 0.15);
+}
+
+/* ============================================================
+   MOBILE PHONE RESPONSIVE MODAL OPTIMIZATIONS (< 576px)
+   Adapts exact height & width for mobile viewport ergonomics
+   ============================================================ */
+@media (max-width: 575.98px) {
+  .modal-dialog {
+    margin: 0.5rem auto !important;
+    width: calc(100% - 1.25rem) !important;
+    max-width: 410px !important;
+  }
+
+  .modal-dialog-centered {
+    min-height: calc(100dvh - 1rem) !important;
+    min-height: calc(100vh - 1rem) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .modal-dialog-scrollable {
+    height: calc(100dvh - 1rem) !important;
+    height: calc(100vh - 1rem) !important;
+  }
+
+  .modal-dialog-scrollable .modal-content {
+    max-height: calc(100dvh - 1rem) !important;
+    max-height: calc(100vh - 1rem) !important;
+  }
+
+  .modal-content-healthcare {
+    border-radius: 1rem !important;
+    max-height: calc(100dvh - 1rem) !important;
+    max-height: calc(100vh - 1rem) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35) !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .modal-header-healthcare,
+  .modal-header-dark {
+    padding: 0.65rem 0.95rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .modal-header-healthcare .modal-title,
+  .modal-header-dark .modal-title {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    line-height: 1.25 !important;
+  }
+
+  .modal-header-healthcare p,
+  .modal-header-dark p {
+    font-size: 0.7rem !important;
+  }
+
+  .modal-content-healthcare .modal-body {
+    padding: 0.75rem 0.95rem !important;
+    max-height: calc(100dvh - 75px) !important;
+    max-height: calc(100vh - 75px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    flex: 1 1 auto !important;
+  }
+
+  .modal-content-healthcare .form-label {
+    font-size: 0.7rem !important;
+    margin-bottom: 0.2rem !important;
+    letter-spacing: 0.02em;
+    font-weight: 700 !important;
+  }
+
+  .modal-content-healthcare .mb-3,
+  .modal-content-healthcare .mb-2 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .modal-content-healthcare .form-control-custom,
+  .modal-content-healthcare .form-select-custom {
+    padding: 0.45rem 0.65rem !important;
+    font-size: 0.82rem !important;
+    min-height: 38px !important;
+    border-radius: 0.55rem !important;
+  }
+
+  .modal-content-healthcare .input-group-text {
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.8rem !important;
+    border-radius: 0.55rem 0 0 0.55rem !important;
+  }
+
+  .modal-content-healthcare .btn-primary-custom {
+    padding: 0.52rem 1rem !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    border-radius: 0.65rem !important;
+  }
+
+  .modal-content-healthcare .btn-outline-primary {
+    padding: 0.42rem 0.75rem !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+  }
+
+  .modal-content-healthcare .py-2.border-top,
+  .modal-content-healthcare .py-1\.5.border-top {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.45rem !important;
+    font-size: 0.68rem !important;
+  }
+}
+
+/* ============================================================
+   EXTRA SHORT / SMALL PHONE VIEWPORTS (height <= 700px)
+   Handles small devices or open virtual keyboards seamlessly
+   ============================================================ */
+@media (max-height: 700px) and (max-width: 575.98px) {
+  .modal-dialog {
+    margin: 0.25rem auto !important;
+    width: calc(100% - 0.75rem) !important;
+  }
+
+  .modal-content-healthcare {
+    max-height: calc(100dvh - 0.5rem) !important;
+  }
+
+  .modal-content-healthcare .modal-body {
+    max-height: calc(100dvh - 65px) !important;
+    padding: 0.55rem 0.8rem !important;
+  }
+
+  .modal-content-healthcare .mb-3,
+  .modal-content-healthcare .mb-2 {
+    margin-bottom: 0.38rem !important;
+  }
+
+  .modal-content-healthcare .form-control-custom,
+  .modal-content-healthcare .form-select-custom {
+    padding: 0.38rem 0.55rem !important;
+    min-height: 35px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .modal-content-healthcare .btn-primary-custom {
+    padding: 0.45rem 0.85rem !important;
+    font-size: 0.8rem !important;
+  }
+
+  .modal-content-healthcare .btn-outline-primary {
+    padding: 0.38rem 0.7rem !important;
+    font-size: 0.72rem !important;
+  }
 }

@@ -84,7 +84,7 @@ function ensureModalsExist() {
     const el = document.createElement('div');
     el.innerHTML = `
     <div class="modal fade" id="quickAssessmentModal" tabindex="-1" aria-labelledby="quickAssessmentModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
         <div class="modal-content modal-content-healthcare">
           <div class="modal-header modal-header-healthcare">
             <div class="d-flex align-items-center gap-3">
@@ -166,7 +166,7 @@ function ensureModalsExist() {
     const el = document.createElement('div');
     el.innerHTML = `
     <div class="modal fade" id="equipmentQuoteModal" tabindex="-1" aria-labelledby="equipmentQuoteModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content modal-content-healthcare">
           <div class="modal-header modal-header-dark">
             <div>
@@ -231,7 +231,7 @@ function ensureModalsExist() {
     const el = document.createElement('div');
     el.innerHTML = `
     <div class="modal fade" id="careerApplyModal" tabindex="-1" aria-labelledby="careerApplyModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content modal-content-healthcare">
           <div class="modal-header modal-header-dark">
             <div>
@@ -295,10 +295,10 @@ function ensureModalsExist() {
     const el = document.createElement('div');
     el.innerHTML = `
     <div class="modal fade" id="revisitEnquiryModal" tabindex="-1" aria-labelledby="revisitEnquiryModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" style="max-width: 460px;">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content modal-content-healthcare border-0 shadow-2xl rounded-4 overflow-hidden">
-          <div class="modal-header modal-header-healthcare px-4 py-3 position-relative" style="background: linear-gradient(135deg, #061833 0%, #073d70 60%, #0858a4 100%);">
-            <div class="d-flex align-items-center gap-3">
+          <div class="modal-header modal-header-healthcare px-3 px-sm-4 py-2.5 py-sm-3 position-relative" style="background: linear-gradient(135deg, #061833 0%, #073d70 60%, #0858a4 100%);">
+            <div class="d-flex align-items-center gap-2 gap-sm-3">
               <span class="fs-4">🩺</span>
               <div>
                 <h3 class="modal-title h5 fw-bold text-white mb-0" id="revisitEnquiryModalLabel">Enquire About Home Healthcare</h3>
@@ -307,14 +307,14 @@ function ensureModalsExist() {
             </div>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" id="revisitPopupCloseBtn"></button>
           </div>
-          <div class="modal-body p-4" id="revisitFormView">
+          <div class="modal-body p-3 p-sm-4" id="revisitFormView">
             <form id="revisitEnquiryForm" novalidate>
-              <div class="mb-3">
+              <div class="mb-2 mb-sm-3">
                 <label for="revisitName" class="form-label text-xs fw-bold text-uppercase text-slate-700">Patient or Attendant Name <span class="text-danger">*</span></label>
                 <input type="text" id="revisitName" class="form-control form-control-custom" placeholder="e.g. Ramesh Kumar" required>
                 <div id="revisitNameError" class="text-danger text-xs mt-1 d-none fw-semibold">Please enter your name.</div>
               </div>
-              <div class="mb-3">
+              <div class="mb-2 mb-sm-3">
                 <label for="revisitPhone" class="form-label text-xs fw-bold text-uppercase text-slate-700">10-Digit Mobile Number <span class="text-danger">*</span></label>
                 <div class="input-group">
                   <span class="input-group-text bg-light fw-bold text-slate-600 text-xs border-slate-300">+91</span>
@@ -322,7 +322,7 @@ function ensureModalsExist() {
                 </div>
                 <div id="revisitPhoneError" class="text-danger text-xs mt-1 d-none fw-semibold">Please enter a valid 10-digit Indian mobile number starting with 6, 7, 8, or 9.</div>
               </div>
-              <div class="mb-3">
+              <div class="mb-2 mb-sm-3">
                 <label for="revisitService" class="form-label text-xs fw-bold text-uppercase text-slate-700">Service Required (Optional)</label>
                 <select id="revisitService" class="form-select form-select-custom">
                   <option value="Home Nursing Care">Home Nursing Care (12h / 24h)</option>
@@ -334,21 +334,21 @@ function ensureModalsExist() {
                   <option value="24/7 Ambulance Service">24/7 Ambulance Service</option>
                 </select>
               </div>
-              <div class="py-2 border-top d-flex align-items-center justify-content-between text-xs text-slate-500 mb-3">
+              <div class="py-1.5 py-sm-2 border-top d-flex align-items-center justify-content-between text-xs text-slate-500 mb-2 mb-sm-3">
                 <span class="text-success fw-bold">✓ Certified Clinical Nurses</span>
                 <span>🔒 100% Medical Confidentiality</span>
               </div>
               <div class="d-flex flex-column gap-2">
-                <button type="submit" id="revisitSubmitBtn" class="btn-primary-custom w-100 py-2.5 text-center">
+                <button type="submit" id="revisitSubmitBtn" class="btn-primary-custom w-100 py-2 py-sm-2.5 text-center">
                   Submit Enquiry
                 </button>
-                <a href="tel:+917829753538" class="btn btn-outline-primary rounded-pill py-2 text-xs fw-bold text-center text-decoration-none">
+                <a href="tel:+917829753538" class="btn btn-outline-primary rounded-pill py-1.5 py-sm-2 text-xs fw-bold text-center text-decoration-none">
                   📞 Or Call Emergency Helpline: +91 78297 53538
                 </a>
               </div>
             </form>
           </div>
-          <div class="modal-body p-4 text-center d-none" id="revisitSuccessView">
+          <div class="modal-body p-3 p-sm-4 text-center d-none" id="revisitSuccessView">
             <div class="rounded-circle bg-success bg-opacity-10 text-success d-inline-flex align-items-center justify-content-center p-3 mb-3" style="width: 64px; height: 64px;">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
             </div>

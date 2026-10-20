@@ -4,12 +4,8 @@ deployment:
     # --------------------------------------------------------------------------
     # ASHOK HOME HEALTHCARE SERVICES - CPANEL GIT DEPLOYMENT CONFIGURATION
     # --------------------------------------------------------------------------
-    # NOTE:
-    # Replace 'username' with your actual cPanel username.
-    # - Primary domain: /home/username/public_html
-    # - Subdomain / Addon domain: /home/username/yourdomain.com
-    # --------------------------------------------------------------------------
     - export DEPLOYPATH=/home1/ashokhea/public_html/
+
     # 1. Deploy Root HTML Pages
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f about.html $DEPLOYPATH
@@ -51,7 +47,7 @@ deployment:
     - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH
     - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
 
-    # 3. Deploy Media, Components & Asset Directories Recursively
+    # 3. Deploy Media, Components & Asset Directories Recursively (including all .webp media)
     - /bin/cp -R -f assets $DEPLOYPATH
     - /bin/cp -R -f components $DEPLOYPATH
     - /bin/cp -R -f Gallery $DEPLOYPATH
@@ -64,3 +60,7 @@ deployment:
     - /bin/cp -R -f medical-equipment-rent-and-sales $DEPLOYPATH
     - /bin/cp -R -f physiotherapy $DEPLOYPATH
     - /bin/cp -R -f rehabilitation-neuro-and-ortho $DEPLOYPATH
+
+    # 4. Enforce standard file and folder permissions (755 for dirs, 644 for files)
+    - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} + 2>/dev/null || true
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} + 2>/dev/null || true

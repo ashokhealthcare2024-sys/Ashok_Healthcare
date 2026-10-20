@@ -1225,18 +1225,7 @@ img {
 /* ============================================================
    PAGE HEADER BANNERS
    ============================================================ */
-.page-banner-section {
-  background-color: var(--slate-950);
-  position: relative;
-  overflow: hidden;
-  padding-top: 6.5rem;
-}
-
-.page-banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+/* See components/hero.css for the full responsive banner system */
 
 /* Breadcrumbs */
 .breadcrumb-custom {

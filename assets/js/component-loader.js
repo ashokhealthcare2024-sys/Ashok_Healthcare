@@ -61,7 +61,7 @@
         <nav class="main-navbar">
           <div class="container-max d-flex align-items-center justify-content-between">
             <a href="{{PREFIX}}index.html" class="d-flex align-items-center text-decoration-none">
-              <img src="{{PREFIX}}images/ashoklogoh-tras.png" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+              <img src="{{PREFIX}}images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
             </a>
 
             <!-- Desktop Navigation Links -->
@@ -141,7 +141,7 @@
           <div class="row g-4 g-lg-5 mb-5">
             <div class="col-lg-4">
               <a href="{{PREFIX}}index.html" class="d-inline-block mb-3">
-                <img src="{{PREFIX}}images/ashoklogoh-tras.png" alt="Ashok Home Healthcare Services" style="height: 48px; filter: brightness(0) invert(1);">
+                <img src="{{PREFIX}}images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 48px; filter: brightness(0) invert(1);">
               </a>
               <p class="text-slate-400 small mb-4">
                 Ashok Home Healthcare Services is Bengaluru's premier provider of clinical home ICU setup, licensed bedside nursing, neuro rehabilitation, and certified surgical equipment rental. Founded and supervised by former Apollo Hospitals clinical nurse leaders.

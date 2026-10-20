@@ -1,5 +1,23 @@
+# Ashok Home Healthcare Services — Robots Policy
 User-agent: *
 Allow: /
 
-# Sitemap Indexation
+# Disallow internal components and hidden directories
+Disallow: /components/
+Disallow: /.git/
+
+# Allow Search Engine Image Crawlers for optimized WebP assets
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /Gallery/
+Allow: /Bg_Banner/
+
+# Allow major bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# XML Sitemap Indexation
 Sitemap: https://ashokhealthcare.in/sitemap.xml

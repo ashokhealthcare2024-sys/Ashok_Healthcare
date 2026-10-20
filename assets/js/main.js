@@ -4,10 +4,31 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeaderOffset();
   initNavbarScroll();
   initScrollToTop();
   updateCurrentYear();
 });
+
+/**
+ * Dynamically computes and updates the site header height variable
+ * Prevents fixed navbar from overlapping page banners or content across devices
+ */
+function initHeaderOffset() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  const updateHeight = () => {
+    const height = header.offsetHeight;
+    if (height > 0) {
+      document.documentElement.style.setProperty('--site-header-height', `${height}px`);
+    }
+  };
+
+  updateHeight();
+  window.addEventListener('resize', updateHeight, { passive: true });
+  window.addEventListener('orientationchange', updateHeight, { passive: true });
+}
 
 /**
  * Toggles navbar background styling on scroll
