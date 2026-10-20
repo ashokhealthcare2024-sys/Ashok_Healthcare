@@ -88,7 +88,7 @@ Options -Indexes -MultiViews
 </IfModule>
 
 # 8. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES
-<FilesMatch "^(\.git|\.env.*|\.cpanel\.yml|\.gitignore|README\.md|vercel\.json)">
+<FilesMatch "^(\.git|\.env.*|\.cpanel\.yml|\.gitignore|README\.md)">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>

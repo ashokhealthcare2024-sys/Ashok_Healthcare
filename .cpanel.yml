@@ -2,14 +2,16 @@
 deployment:
   tasks:
     # --------------------------------------------------------------------------
-    # ASHOK HOME HEALTHCARE SERVICES - CPANEL GIT DEPLOYMENT CONFIGURATION
+    # ASHOK HOME HEALTHCARE SERVICES - BLUEHOST CPANEL GIT DEPLOYMENT
+    # Target Host: y.bluehost.in | Apache Web Server
     # --------------------------------------------------------------------------
-    - export DEPLOYPATH=/home1/ashokhea/public_html/
+    - export DEPLOYPATH=${DEPLOYPATH:-$HOME/public_html/}
+    - /bin/mkdir -p $DEPLOYPATH
 
     # 1. Deploy Root HTML Pages
     - /bin/cp -f index.html $DEPLOYPATH
     - /bin/cp -f about.html $DEPLOYPATH
-    - /bin/cp -f about-ashok-healthcare-bangalore.html $DEPLOYPATH
+    - /bin/cp -f about-ashok-healthcare-bangalore.html $DEPLOYPATH 2>/dev/null || true
     - /bin/cp -f services.html $DEPLOYPATH
     - /bin/cp -f products.html $DEPLOYPATH
     - /bin/cp -f gallery.html $DEPLOYPATH
@@ -34,17 +36,17 @@ deployment:
     - /bin/cp -f home-nurse-vs-caregiver-bangalore.html $DEPLOYPATH
     - /bin/cp -f nri-parents-care-monitoring-bangalore.html $DEPLOYPATH
     - /bin/cp -f rehabilitation-centre-in-bangalore.html $DEPLOYPATH
-    - /bin/cp -f 'home-nursing-&-healthcare-services-in-bangalore.htm' $DEPLOYPATH
+    - /bin/cp -f 'home-nursing-&-healthcare-services-in-bangalore.htm' $DEPLOYPATH 2>/dev/null || true
     - /bin/cp -f privacy.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
 
     # 2. Deploy Root Assets, Icons, Verification & SEO Metadata
-    - /bin/cp -f favicon.svg $DEPLOYPATH
-    - /bin/cp -f icons.svg $DEPLOYPATH
+    - /bin/cp -f favicon.svg $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -f icons.svg $DEPLOYPATH 2>/dev/null || true
     - /bin/cp -f sitemap.xml $DEPLOYPATH
     - /bin/cp -f robots.txt $DEPLOYPATH
-    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH
+    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH 2>/dev/null || true
     - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || true
 
     # 3. Deploy Media, Components & Asset Directories Recursively (including all .webp media)
@@ -55,12 +57,12 @@ deployment:
     - /bin/cp -R -f Bg_Banner $DEPLOYPATH
     - /bin/cp -R -f services $DEPLOYPATH
     - /bin/cp -R -f blog $DEPLOYPATH
-    - /bin/cp -R -f ambulance-services $DEPLOYPATH
-    - /bin/cp -R -f diagnostics $DEPLOYPATH
-    - /bin/cp -R -f medical-equipment-rent-and-sales $DEPLOYPATH
-    - /bin/cp -R -f physiotherapy $DEPLOYPATH
-    - /bin/cp -R -f rehabilitation-neuro-and-ortho $DEPLOYPATH
+    - /bin/cp -R -f ambulance-services $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R -f diagnostics $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R -f medical-equipment-rent-and-sales $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R -f physiotherapy $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -R -f rehabilitation-neuro-and-ortho $DEPLOYPATH 2>/dev/null || true
 
-    # 4. Enforce standard file and folder permissions (755 for dirs, 644 for files)
+    # 4. Enforce standard Bluehost / Apache file and directory permissions (755 for dirs, 644 for files)
     - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} + 2>/dev/null || true
     - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} + 2>/dev/null || true
