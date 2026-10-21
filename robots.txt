@@ -12,12 +12,6 @@ Allow: /images/
 Allow: /Gallery/
 Allow: /Bg_Banner/
 
-# Allow major bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
 # XML Sitemap Indexation
 Sitemap: https://ashokhealthcare.in/sitemap.xml
+

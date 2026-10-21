@@ -18,39 +18,30 @@ Options -Indexes -MultiViews
   CheckSpelling Off
 </IfModule>
 
-# 4. JAPANESE SPAM HACK BLOCK (410 GONE SIGNAL)
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{REQUEST_URI} !^/medical-equipment [NC]
-  RewriteCond %{REQUEST_URI} !^/(assets|components|images|services|blog|Gallery|Bg_Banner) [NC]
-  RewriteCond %{REQUEST_URI} ^/(ja|jp)(/|$) [NC,OR]
-  RewriteCond %{REQUEST_URI} ^/(m|x|j|o|q|z)(/|[0-9]|\.php|\.html?|$) [NC,OR]
-  RewriteCond %{REQUEST_URI} ^/[0-9]+(\.html?|\.php|/|$) [NC]
-  RewriteRule ^ - [R=410,L]
-</IfModule>
-
-# 5. HTTPS ENFORCEMENT & CANONICAL DOMAIN (NON-WWW)
+# 4. HTTPS ENFORCEMENT & CANONICAL DOMAIN (NON-WWW)
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 5A. Redirect www to non-www (https://ashokhealthcare.in)
+  # 4A. Redirect www to non-www (https://ashokhealthcare.in)
   RewriteCond %{HTTP_HOST} ^www\.ashokhealthcare\.in$ [NC]
   RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 
-  # 5B. Redirect HTTP to HTTPS
+  # 4B. Redirect HTTP to HTTPS
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 </IfModule>
 
-# 6. SEO 301 CANONICAL REDIRECTS FOR DUPLICATE & DIRECTORY URLS
+# 5. SEO 301 CANONICAL REDIRECTS FOR LEGACY, DUPLICATE & EXTENSIONLESS URLS
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Legacy About page
+  # 5A. Specific Legacy & Alternative Pages
   RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L]
+  RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L]
+  RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NE]
 
-  # Legacy Services root & legacy service pages
+  # 5B. Legacy Services Pages
   RewriteRule ^services/?$ /services.html [R=301,L]
   RewriteRule ^services/index\.html$ /services.html [R=301,L]
   RewriteRule ^services/home-healthcare-services-bangalore\.html$ /services.html [R=301,L]
@@ -60,12 +51,31 @@ Options -Indexes -MultiViews
   RewriteRule ^services/physiotherapy\.html$ /physiotherapy.html [R=301,L]
   RewriteRule ^services/rehabilitation\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
 
-  # Duplicate subfolders: redirect folder, trailing slash, and index.html to root canonical .html
+  # 5C. Duplicate Subfolders: Redirect folder, trailing slash, and index.html to canonical root .html
   RewriteRule ^ambulance-services(/.*)?$ /ambulance-services.html [R=301,L]
   RewriteRule ^diagnostics(/.*)?$ /diagnostics.html [R=301,L]
   RewriteRule ^physiotherapy(/.*)?$ /physiotherapy.html [R=301,L]
   RewriteRule ^rehabilitation-neuro-and-ortho(/.*)?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
   RewriteRule ^medical-equipment-rent-and-sales(/.*)?$ /medical-equipment-rent-and-sales.html [R=301,L]
+
+  # 5D. Extensionless URLs: Automatically 301 redirect to existing .html pages
+  # Root pages (e.g. /about -> /about.html, /contact -> /contact.html)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^/]+)/?$ /$1.html [R=301,L]
+
+  # Subfolder services pages (e.g. /services/home-nursing -> /services/home-nursing.html)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
+  RewriteRule ^services/([^/]+)/?$ /services/$1.html [R=301,L]
+
+  # Subfolder blog pages (e.g. /blog/home-icu-setup-bangalore -> /blog/home-icu-setup-bangalore.html)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
+  RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [R=301,L]
 </IfModule>
 
 # 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS

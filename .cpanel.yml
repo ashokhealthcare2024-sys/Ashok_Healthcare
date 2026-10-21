@@ -32,11 +32,11 @@ deployment:
     - /bin/cp -f suction-machine-rental-bangalore.html $DEPLOYPATH
     - /bin/cp -f home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html $DEPLOYPATH
     - /bin/cp -f home-nursing-charges-bangalore.html $DEPLOYPATH
-    - /bin/cp -f Hospital-discharge-checklist-bangalore.html $DEPLOYPATH
+    - /bin/cp -f hospital-discharge-checklist-bangalore.html $DEPLOYPATH
     - /bin/cp -f home-nurse-vs-caregiver-bangalore.html $DEPLOYPATH
     - /bin/cp -f nri-parents-care-monitoring-bangalore.html $DEPLOYPATH
     - /bin/cp -f rehabilitation-centre-in-bangalore.html $DEPLOYPATH
-    - /bin/cp -f 'home-nursing-&-healthcare-services-in-bangalore.htm' $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -f home-nursing-healthcare-services-bangalore.html $DEPLOYPATH
     - /bin/cp -f privacy.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
