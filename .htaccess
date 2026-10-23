@@ -51,6 +51,9 @@ Options -Indexes -MultiViews
   RewriteRule ^services/physiotherapy\.html$ /physiotherapy.html [R=301,L]
   RewriteRule ^services/rehabilitation\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
 
+  # Keep the public blog landing page canonical instead of serving the article directory.
+  RewriteRule ^blog/?$ /blog.html [R=301,L]
+
   # 5C. Duplicate Subfolders: Redirect folder, trailing slash, and index.html to canonical root .html
   RewriteRule ^ambulance-services(/.*)?$ /ambulance-services.html [R=301,L]
   RewriteRule ^diagnostics(/.*)?$ /diagnostics.html [R=301,L]
