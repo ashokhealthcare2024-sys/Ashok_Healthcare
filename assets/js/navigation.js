@@ -126,11 +126,11 @@
           <div id="mobileServicesList" class="mobile-services-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2">
             <a href="${prefix}services/home-nursing.html" class="mobile-nav-subitem">Home Nursing Care</a>
             <a href="${prefix}services/home-icu.html" class="mobile-nav-subitem">Home ICU Setup</a>
-            <a href="${prefix}services/rehabilitation.html" class="mobile-nav-subitem">Neuro &amp; Ortho Rehab</a>
-            <a href="${prefix}services/physiotherapy.html" class="mobile-nav-subitem">Physiotherapy at Home</a>
+            <a href="${prefix}rehabilitation-neuro-and-ortho.html" class="mobile-nav-subitem">Neuro &amp; Ortho Rehab</a>
+            <a href="${prefix}physiotherapy.html" class="mobile-nav-subitem">Physiotherapy at Home</a>
             <a href="${prefix}services/elder-care.html" class="mobile-nav-subitem">Elder Care &amp; Palliative</a>
-            <a href="${prefix}services/diagnostic-services.html" class="mobile-nav-subitem">Diagnostic Lab Tests</a>
-            <a href="${prefix}services/ambulance.html" class="mobile-nav-subitem">24/7 ALS Ambulance</a>
+            <a href="${prefix}diagnostics.html" class="mobile-nav-subitem">Diagnostic Lab Tests</a>
+            <a href="${prefix}ambulance-services.html" class="mobile-nav-subitem">24/7 ALS Ambulance</a>
             <a href="${prefix}services.html" class="mobile-nav-subitem text-primary fw-bold">Explore All Services →</a>
           </div>
         </div>

@@ -83,11 +83,11 @@
                     <span class="mega-menu-item-title">Home ICU Setup</span>
                     <span class="mega-menu-item-desc">Ventilators, multipara monitors &amp; critical care</span>
                   </a>
-                  <a href="{{PREFIX}}services/rehabilitation.html" class="mega-menu-item">
+                  <a href="{{PREFIX}}rehabilitation-neuro-and-ortho.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Neuro &amp; Ortho Rehab</span>
                     <span class="mega-menu-item-desc">Stroke, spinal cord &amp; trauma recovery</span>
                   </a>
-                  <a href="{{PREFIX}}services/physiotherapy.html" class="mega-menu-item">
+                  <a href="{{PREFIX}}physiotherapy.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Physiotherapy at Home</span>
                     <span class="mega-menu-item-desc">Post-surgery mobility &amp; pain relief</span>
                   </a>
@@ -95,11 +95,11 @@
                     <span class="mega-menu-item-title">Elder Care &amp; Palliative</span>
                     <span class="mega-menu-item-desc">Senior care &amp; medication assistance</span>
                   </a>
-                  <a href="{{PREFIX}}services/diagnostic-services.html" class="mega-menu-item">
+                  <a href="{{PREFIX}}diagnostics.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Diagnostic Lab Tests</span>
                     <span class="mega-menu-item-desc">Doorstep blood &amp; sample collection</span>
                   </a>
-                  <a href="{{PREFIX}}services/ambulance.html" class="mega-menu-item">
+                  <a href="{{PREFIX}}ambulance-services.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">24/7 ALS Ambulance</span>
                     <span class="mega-menu-item-desc">Advanced life support patient transport</span>
                   </a>
@@ -167,11 +167,11 @@
               <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
                 <li><a href="{{PREFIX}}services/home-nursing.html">Home Nursing</a></li>
                 <li><a href="{{PREFIX}}services/home-icu.html">Home ICU Setup</a></li>
-                <li><a href="{{PREFIX}}services/rehabilitation.html">Neuro Rehab</a></li>
-                <li><a href="{{PREFIX}}services/physiotherapy.html">Physiotherapy</a></li>
+                <li><a href="{{PREFIX}}rehabilitation-neuro-and-ortho.html">Neuro Rehab</a></li>
+                <li><a href="{{PREFIX}}physiotherapy.html">Physiotherapy</a></li>
                 <li><a href="{{PREFIX}}services/elder-care.html">Elder Care</a></li>
-                <li><a href="{{PREFIX}}services/diagnostic-services.html">Diagnostics</a></li>
-                <li><a href="{{PREFIX}}services/ambulance.html">ALS Ambulance</a></li>
+                <li><a href="{{PREFIX}}diagnostics.html">Diagnostics</a></li>
+                <li><a href="{{PREFIX}}ambulance-services.html">ALS Ambulance</a></li>
               </ul>
             </div>
 

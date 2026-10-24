@@ -35,9 +35,23 @@ Options -Indexes -MultiViews
   RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 </IfModule>
 
-# 5. SEO 301 CANONICAL REDIRECTS FOR LEGACY, DUPLICATE & EXTENSIONLESS URLS
+# 5. SEO ROUTING, LEGACY REDIRECTS & EXTENSIONLESS HTML 404 HANDLING
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Reject extensionless URLs that would otherwise resolve to an HTML document.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^ - [R=404,L]
+
+  # Do not serve directory index pages at extensionless directory URLs.
+  RewriteCond %{REQUEST_URI} !^/$
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^ - [R=404,L]
+
+  # The blog directory has no index document; its public landing page is blog.html.
+  RewriteRule ^blog/?$ - [R=404,L]
 
   # 5A. Specific Legacy & Alternative Pages
   RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L]
@@ -45,7 +59,6 @@ Options -Indexes -MultiViews
   RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NE]
 
   # 5B. Legacy Services Pages
-  RewriteRule ^services/?$ /services.html [R=301,L]
   RewriteRule ^services/index\.html$ /services.html [R=301,L]
   RewriteRule ^services/home-healthcare-services-bangalore\.html$ /services.html [R=301,L]
   RewriteRule ^services/home-healthcare-nursing-services-bangalore\.html$ /services.html [R=301,L]
@@ -54,39 +67,13 @@ Options -Indexes -MultiViews
   RewriteRule ^services/physiotherapy\.html$ /physiotherapy.html [R=301,L]
   RewriteRule ^services/rehabilitation\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
 
-  # Keep the public blog landing page canonical instead of serving the article directory.
-  RewriteRule ^blog/?$ /blog.html [R=301,L]
-
-  # 5C. Redirect only duplicate directory entrypoints; preserve nested files and pages.
-  RewriteRule ^ambulance-services/?$ /ambulance-services.html [R=301,L]
+  # 5C. Redirect explicit duplicate index documents; extensionless paths return 404 above.
   RewriteRule ^ambulance-services/index\.html$ /ambulance-services.html [R=301,L]
-  RewriteRule ^diagnostics/?$ /diagnostics.html [R=301,L]
   RewriteRule ^diagnostics/index\.html$ /diagnostics.html [R=301,L]
-  RewriteRule ^physiotherapy/?$ /physiotherapy.html [R=301,L]
   RewriteRule ^physiotherapy/index\.html$ /physiotherapy.html [R=301,L]
-  RewriteRule ^rehabilitation-neuro-and-ortho/?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
   RewriteRule ^rehabilitation-neuro-and-ortho/index\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^medical-equipment-rent-and-sales/?$ /medical-equipment-rent-and-sales.html [R=301,L]
   RewriteRule ^medical-equipment-rent-and-sales/index\.html$ /medical-equipment-rent-and-sales.html [R=301,L]
 
-  # 5D. Extensionless URLs: Automatically 301 redirect to existing .html pages
-  # Root pages (e.g. /about -> /about.html, /contact -> /contact.html)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^([^/]+)/?$ /$1.html [R=301,L]
-
-  # Subfolder services pages (e.g. /services/home-nursing -> /services/home-nursing.html)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
-  RewriteRule ^services/([^/]+)/?$ /services/$1.html [R=301,L]
-
-  # Subfolder blog pages (e.g. /blog/home-icu-setup-bangalore -> /blog/home-icu-setup-bangalore.html)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
-  RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [R=301,L]
 </IfModule>
 
 # 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS
