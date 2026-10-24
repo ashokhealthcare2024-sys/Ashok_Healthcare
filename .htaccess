@@ -22,6 +22,9 @@ Options -Indexes -MultiViews
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # Serve the homepage only at the canonical root URL, not /index.html.
+  RewriteRule ^index\.html$ https://ashokhealthcare.in/ [R=301,L]
+
   # 4A. Redirect www to non-www (https://ashokhealthcare.in)
   RewriteCond %{HTTP_HOST} ^www\.ashokhealthcare\.in$ [NC]
   RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
@@ -54,12 +57,17 @@ Options -Indexes -MultiViews
   # Keep the public blog landing page canonical instead of serving the article directory.
   RewriteRule ^blog/?$ /blog.html [R=301,L]
 
-  # 5C. Duplicate Subfolders: Redirect folder, trailing slash, and index.html to canonical root .html
-  RewriteRule ^ambulance-services(/.*)?$ /ambulance-services.html [R=301,L]
-  RewriteRule ^diagnostics(/.*)?$ /diagnostics.html [R=301,L]
-  RewriteRule ^physiotherapy(/.*)?$ /physiotherapy.html [R=301,L]
-  RewriteRule ^rehabilitation-neuro-and-ortho(/.*)?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^medical-equipment-rent-and-sales(/.*)?$ /medical-equipment-rent-and-sales.html [R=301,L]
+  # 5C. Redirect only duplicate directory entrypoints; preserve nested files and pages.
+  RewriteRule ^ambulance-services/?$ /ambulance-services.html [R=301,L]
+  RewriteRule ^ambulance-services/index\.html$ /ambulance-services.html [R=301,L]
+  RewriteRule ^diagnostics/?$ /diagnostics.html [R=301,L]
+  RewriteRule ^diagnostics/index\.html$ /diagnostics.html [R=301,L]
+  RewriteRule ^physiotherapy/?$ /physiotherapy.html [R=301,L]
+  RewriteRule ^physiotherapy/index\.html$ /physiotherapy.html [R=301,L]
+  RewriteRule ^rehabilitation-neuro-and-ortho/?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
+  RewriteRule ^rehabilitation-neuro-and-ortho/index\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
+  RewriteRule ^medical-equipment-rent-and-sales/?$ /medical-equipment-rent-and-sales.html [R=301,L]
+  RewriteRule ^medical-equipment-rent-and-sales/index\.html$ /medical-equipment-rent-and-sales.html [R=301,L]
 
   # 5D. Extensionless URLs: Automatically 301 redirect to existing .html pages
   # Root pages (e.g. /about -> /about.html, /contact -> /contact.html)

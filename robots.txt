@@ -2,11 +2,10 @@
 User-agent: *
 Allow: /
 
-# Keep reusable page fragments and repository metadata out of search results.
-Disallow: /components/
+# Keep repository metadata out of search results.
 Disallow: /.git/
 
-# Public service and editorial pages are intentionally crawlable.
+# Components are fetched by the site renderer and must remain crawlable.
 Allow: /services/
 Allow: /blog/
 
