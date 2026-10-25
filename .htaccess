@@ -71,24 +71,28 @@ Options -Indexes -MultiViews
   RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L]
   RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NE]
 
-  # 5D. Extensionless URLs: Automatically follow and 301 redirect to existing .html documents
-  # Subfolder services pages (e.g. /services/home-nursing -> /services/home-nursing.html)
+  # 5D. Extensionless URLs: Seamless resolution without 404
+  # Check if requested filename + .html exists physically on server
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
-  RewriteRule ^services/([^/]+)/?$ /services/$1.html [R=301,L]
+  RewriteCond %{REQUEST_FILENAME}\.html -f
+  RewriteRule ^(.+?)/?$ /$1.html [L]
 
-  # Subfolder blog pages (e.g. /blog/home-icu-setup-bangalore -> /blog/home-icu-setup-bangalore.html)
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
-  RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [R=301,L]
-
-  # Root pages (e.g. /about -> /about.html, /contact -> /contact.html, /diagnostics -> /diagnostics.html)
+  # Fallback checks using DOCUMENT_ROOT for root and subdirectories
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^([^/]+)/?$ /$1.html [R=301,L]
+  RewriteRule ^([^/]+)/?$ /$1.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/services/$1.html -f
+  RewriteRule ^services/([^/]+)/?$ /services/$1.html [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
+  RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [L]
 </IfModule>
 
 # 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS
