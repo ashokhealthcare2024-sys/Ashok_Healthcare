@@ -69,31 +69,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://ashokhealthcare.in/services/ambulance-services.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ashokhealthcare.in/services/diagnostics.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ashokhealthcare.in/services/medical-equipment-rent-and-sales.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ashokhealthcare.in/services/physiotherapy-at-home.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://ashokhealthcare.in/services/rehabilitation-neuro-and-ortho.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://ashokhealthcare.in/services/home-nursing.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

@@ -3,19 +3,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="/" />
   <meta name="google-site-verification" content="365c6c761a442363" />
   <title>Page Not Found (404) | Ashok Home Healthcare Services Bangalore</title>
+  <meta name="description" content="The page you are looking for may have moved or is unavailable. Connect with Ashok Home Healthcare Services for 24/7 home nursing, ICU setup, and emergency medical care in Bengaluru." />
   <meta name="robots" content="noindex, follow" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/faviconf-87x87.webp" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/faviconf-300x300.webp" />
+  <link rel="apple-touch-icon" href="/images/faviconf-300x300.webp" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <style>
+    .error-hero-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+    }
+    .service-nav-tile {
+      display: flex;
+      flex-direction: column;
+      padding: 1.1rem;
+      border-radius: 1rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: all 0.2s ease-in-out;
+      height: 100%;
+    }
+    .service-nav-tile:hover {
+      border-color: #0284c7;
+      box-shadow: 0 8px 20px -6px rgba(2, 132, 199, 0.15);
+      transform: translateY(-2px);
+    }
+    .service-nav-tile-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .service-nav-tile-desc {
+      font-size: 0.8rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-900 d-flex flex-column min-vh-100">
 
-      <!-- ================= TOP CONTACT BAR ================= -->
+  <!-- ================= TOP CONTACT BAR ================= -->
   <header class="site-header">
     <div class="top-bar">
       <div class="container-max d-flex align-items-center justify-content-between">
@@ -24,8 +68,8 @@
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             Yeshwanthpur, Bengaluru
           </span>
-          <span class="d-inline-flex align-items-center gap-1 text-success fw-medium">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="d-inline-flex align-items-center gap-1.5 text-success fw-medium">
+            <span class="pulse-dot-green"></span>
             24/7 Doorstep ICU &amp; Nursing Support
           </span>
         </div>
@@ -40,60 +84,60 @@
     <!-- MAIN NAVBAR -->
     <nav class="main-navbar">
       <div class="container-max d-flex align-items-center justify-content-between">
-        <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+        <a href="/index.html" class="d-flex align-items-center text-decoration-none">
+          <img src="/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
         </a>
 
         <!-- Desktop Navigation Links -->
         <div class="d-none d-lg-flex align-items-center gap-1">
-          <a href="index.html" class="nav-item-link">Home</a>
-          <a href="about.html" class="nav-item-link">About Us</a>
+          <a href="/index.html" class="nav-item-link">Home</a>
+          <a href="/about.html" class="nav-item-link">About Us</a>
 
           <div class="nav-dropdown">
-            <a href="services.html" class="nav-item-link">
+            <a href="/services.html" class="nav-item-link">
               Services
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
             </a>
             <div class="mega-menu">
-              <a href="services/home-nursing.html" class="mega-menu-item">
+              <a href="/services/home-nursing.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Home Nursing Care</span>
                 <span class="mega-menu-item-desc">Registered GNM &amp; B.Sc nurses (12h/24h)</span>
               </a>
-              <a href="services/home-icu.html" class="mega-menu-item">
+              <a href="/services/home-icu.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Home ICU Setup</span>
                 <span class="mega-menu-item-desc">Ventilators, multipara monitors &amp; critical care</span>
               </a>
-              <a href="rehabilitation-neuro-and-ortho.html" class="mega-menu-item">
+              <a href="/rehabilitation-neuro-and-ortho.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Neuro &amp; Ortho Rehab</span>
                 <span class="mega-menu-item-desc">Stroke, spinal cord &amp; trauma recovery</span>
               </a>
-              <a href="physiotherapy.html" class="mega-menu-item">
+              <a href="/physiotherapy.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Physiotherapy at Home</span>
                 <span class="mega-menu-item-desc">Post-surgery mobility &amp; pain relief</span>
               </a>
-              <a href="services/elder-care.html" class="mega-menu-item">
+              <a href="/services/elder-care.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Elder Care &amp; Palliative</span>
                 <span class="mega-menu-item-desc">Senior care &amp; medication assistance</span>
               </a>
-              <a href="diagnostics.html" class="mega-menu-item">
+              <a href="/diagnostics.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">Diagnostic Lab Tests</span>
                 <span class="mega-menu-item-desc">Doorstep blood &amp; sample collection</span>
               </a>
-              <a href="ambulance-services.html" class="mega-menu-item">
+              <a href="/ambulance-services.html" class="mega-menu-item">
                 <span class="mega-menu-item-title">24/7 ALS Ambulance</span>
                 <span class="mega-menu-item-desc">Advanced life support patient transport</span>
               </a>
-              <a href="services.html" class="mega-menu-item">
+              <a href="/services.html" class="mega-menu-item">
                 <span class="mega-menu-item-title text-primary">All Healthcare Services</span>
                 <span class="mega-menu-item-desc">Explore full service spectrum</span>
               </a>
             </div>
           </div>
 
-          <a href="products.html" class="nav-item-link">Equipment &amp; Products</a>
-          <a href="gallery.html" class="nav-item-link">Gallery</a>
-          <a href="careers.html" class="nav-item-link">Careers</a>
-          <a href="contact.html" class="nav-item-link">Contact</a>
+          <a href="/products.html" class="nav-item-link">Equipment &amp; Products</a>
+          <a href="/gallery.html" class="nav-item-link">Gallery</a>
+          <a href="/careers.html" class="nav-item-link">Careers</a>
+          <a href="/contact.html" class="nav-item-link">Contact</a>
         </div>
 
         <div class="d-none d-lg-flex align-items-center gap-2">
@@ -112,43 +156,121 @@
 
   <!-- ================= 404 CONTENT ================= -->
   <main class="flex-grow-1 d-flex align-items-center py-5">
-    <div class="container text-center py-5">
-      <div class="max-w-xl mx-auto">
-        <span class="badge bg-danger-subtle text-danger border border-danger-subtle rounded-pill text-uppercase px-3 py-1 fw-bold text-xs mb-3">
-          Error 404
-        </span>
-        <h1 class="display-3 fw-extrabold text-slate-900 mb-3">Page Not Found</h1>
-        <p class="text-muted leading-relaxed mb-4">
-          The page or clinical resource you were looking for may have moved or is temporarily unavailable. Need immediate medical care for a patient?
-        </p>
+    <div class="container py-4">
+      <div class="max-w-3xl mx-auto text-center">
+        
+        <div class="error-hero-card p-4 p-md-5 mb-5 text-center">
+          <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25 rounded-pill text-uppercase px-3 py-1.5 fw-bold text-xs mb-3 d-inline-block">
+            HTTP 404 · Page Not Found
+          </span>
+          <h1 class="display-5 fw-extrabold text-slate-900 mb-3" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+            Looking for Clinical Care or a Medical Resource?
+          </h1>
+          <p class="text-slate-600 leading-relaxed mb-4 mx-auto" style="max-width: 620px;">
+            The clinical resource or page you requested may have moved or is temporarily unavailable. If you need urgent patient care, bedside nursing, ICU equipment, or an ambulance in Bengaluru, our dispatchers are available 24/7.
+          </p>
 
-        <div class="d-flex flex-wrap justify-content-center gap-3 mb-5">
-          <a href="index.html" class="btn btn-primary fw-bold px-4 py-3 rounded-3 text-xs">
-            Return to Homepage
-          </a>
-          <a href="services.html" class="btn btn-outline-dark fw-bold px-4 py-3 rounded-3 text-xs">
-            Browse All Services
-          </a>
-          <a href="tel:+917829753538" class="btn btn-danger fw-bold px-4 py-3 rounded-3 text-xs">
-            Emergency Helpline
-          </a>
-        </div>
-
-        <div class="p-4 rounded-4 bg-white border border-slate-200 text-start">
-          <h6 class="fw-bold text-slate-900 mb-2 text-xs text-uppercase tracking-wider">Quick Links</h6>
-          <div class="row g-2 text-xs">
-            <div class="col-6 col-sm-3"><a href="services/home-nursing.html" class="text-decoration-none text-slate-700 hover-primary">Home Nursing</a></div>
-            <div class="col-6 col-sm-3"><a href="services/home-icu.html" class="text-decoration-none text-slate-700 hover-primary">Home ICU Setup</a></div>
-            <div class="col-6 col-sm-3"><a href="products.html" class="text-decoration-none text-slate-700 hover-primary">Equipment Rental</a></div>
-            <div class="col-6 col-sm-3"><a href="contact.html" class="text-decoration-none text-slate-700 hover-primary">Contact & Map</a></div>
+          <!-- Core Action Group -->
+          <div class="d-flex flex-wrap justify-content-center gap-2 mb-2">
+            <a href="/index.html" class="btn btn-primary fw-bold px-4 py-2.5 rounded-3 text-xs shadow-sm">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-1"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              Return to Homepage
+            </a>
+            <a href="/services.html" class="btn btn-outline-dark fw-bold px-4 py-2.5 rounded-3 text-xs">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-1"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10M6 10h10"/></svg>
+              Browse All Services
+            </a>
+            <a href="tel:+917829753538" class="btn btn-danger fw-bold px-4 py-2.5 rounded-3 text-xs shadow-sm">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="me-1"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Emergency Call Desk: +91 78297 53538
+            </a>
+            <a href="https://wa.me/917829753538?text=Hello%20Ashok%20Healthcare%2C%20I%20need%20healthcare%20support." target="_blank" rel="noreferrer" class="btn btn-success fw-bold px-4 py-2.5 rounded-3 text-xs shadow-sm">
+              WhatsApp Support
+            </a>
           </div>
         </div>
+
+        <!-- Directory of Clinical Services -->
+        <div class="text-start mb-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h2 class="h5 fw-bold text-slate-900 mb-0" style="font-family: 'Plus Jakarta Sans', sans-serif;">
+              Direct Access to Healthcare Departments
+            </h2>
+            <a href="/services.html" class="text-primary text-xs fw-bold text-decoration-none">View All Spectrum →</a>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-sm-6 col-md-3">
+              <a href="/services/home-nursing.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🩺 Home Nursing</span>
+                <span class="service-nav-tile-desc">12h/24h GNM &amp; B.Sc bedside care</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/services/home-icu.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🫁 Home ICU Setup</span>
+                <span class="service-nav-tile-desc">Ventilator, monitor &amp; critical nurse</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/rehabilitation-neuro-and-ortho.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🧠 Neuro Rehab</span>
+                <span class="service-nav-tile-desc">Stroke, paralysis &amp; trauma recovery</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/physiotherapy.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🏃 Physiotherapy</span>
+                <span class="service-nav-tile-desc">Post-op joint mobility &amp; pain relief</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/services/elder-care.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">👵 Elder Care</span>
+                <span class="service-nav-tile-desc">Dementia, palliative &amp; daily vitals</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/diagnostics.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🔬 Lab Diagnostics</span>
+                <span class="service-nav-tile-desc">Doorstep blood sample collection</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/ambulance-services.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">🚑 ALS Ambulance</span>
+                <span class="service-nav-tile-desc">24/7 ventilator patient transport</span>
+              </a>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <a href="/medical-equipment-rent-and-sales.html" class="service-nav-tile">
+                <span class="service-nav-tile-title">📦 Equipment Hub</span>
+                <span class="service-nav-tile-desc">Oxygen, ICU beds, BiPAP/CPAP rental</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links Hub -->
+        <div class="p-4 rounded-4 bg-white border border-slate-200 text-start">
+          <h3 class="h6 fw-bold text-slate-900 mb-3 text-xs text-uppercase tracking-wider">Helpful Resources</h3>
+          <div class="row g-2 text-xs">
+            <div class="col-6 col-md-3"><a href="/oxygen-concentrator-rental-bangalore.html" class="text-decoration-none text-slate-700 hover-primary">Oxygen Concentrators (5L/10L)</a></div>
+            <div class="col-6 col-md-3"><a href="/hospital-bed-rental-bangalore.html" class="text-decoration-none text-slate-700 hover-primary">Motorized ICU Beds on Rent</a></div>
+            <div class="col-6 col-md-3"><a href="/bipap-cpap-machine-rental-bangalore.html" class="text-decoration-none text-slate-700 hover-primary">BiPAP &amp; CPAP Sleep Care</a></div>
+            <div class="col-6 col-md-3"><a href="/patient-monitor-rental-bangalore.html" class="text-decoration-none text-slate-700 hover-primary">Multipara Patient Monitors</a></div>
+            <div class="col-6 col-md-3"><a href="/wheelchair-rental-bangalore.html" class="text-decoration-none text-slate-700 hover-primary">Wheelchair Rental &amp; Sales</a></div>
+            <div class="col-6 col-md-3"><a href="/blog.html" class="text-decoration-none text-slate-700 hover-primary">Healthcare Knowledge Blog</a></div>
+            <div class="col-6 col-md-3"><a href="/about.html" class="text-decoration-none text-slate-700 hover-primary">About Ashok Healthcare</a></div>
+            <div class="col-6 col-md-3"><a href="/contact.html" class="text-decoration-none text-slate-700 hover-primary">Contact Yeshwanthpur Hub</a></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-        <!-- ================= UNIVERSAL FOOTER ================= -->
+  <!-- ================= UNIVERSAL FOOTER ================= -->
   <footer class="site-footer bg-slate-950 text-slate-300 pt-5 pb-4 border-top border-slate-800" style="background-color: #020617;">
     <div class="container-max">
       <!-- Top Callouts -->
@@ -181,39 +303,35 @@
 
         <div class="col-md-4">
           <div class="p-3 rounded-4 bg-slate-900 border border-slate-800 d-flex align-items-start gap-3">
-            <span class="p-2.5 rounded-3 bg-warning bg-opacity-10 text-warning">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+            <span class="p-2.5 rounded-3 bg-info bg-opacity-10 text-info">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
             </span>
             <div>
-              <div class="text-xs text-uppercase fw-bold text-slate-400">Award Winning Care</div>
-              <div class="fs-6 fw-bold text-white mb-0 mt-0.5">Int'l Excellence Award 2026</div>
-              <div class="text-xs text-slate-400">Doorstep clinical leadership recognition</div>
+              <div class="text-xs text-uppercase fw-bold text-slate-400">Dispatch Center</div>
+              <span class="fs-6 fw-bold text-white d-block mt-0.5">Yeshwanthpur Hub</span>
+              <div class="text-xs text-slate-400">Serving all Bengaluru North, South &amp; East</div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Links Grid -->
-      <div class="row g-4 py-4">
+      <div class="row g-4 g-lg-5 my-3">
         <div class="col-lg-4">
-          <div class="footer-logo-badge">
-            <img src="images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services">
-          </div>
-          <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
-            Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp; ortho rehabilitation, and medical equipment rental across Yeshwanthpur and all of Bengaluru.
+          <a href="/index.html" class="d-inline-block mb-3">
+            <img src="/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 48px; filter: brightness(0) invert(1);">
+          </a>
+          <p class="text-slate-400 small mb-4">
+            Ashok Home Healthcare Services is Bengaluru's premier provider of clinical home ICU setup, licensed bedside nursing, neuro rehabilitation, and certified surgical equipment rental. Founded and supervised by former Apollo Hospitals clinical nurse leaders.
           </p>
           <div class="d-flex flex-column gap-2 text-xs text-slate-300">
             <div class="d-flex align-items-start gap-2">
-              <span class="text-primary">📍</span>
-              <span>28, Ground Floor, 4th Cross Rd, A. T. Street, Dr. Ambedkar Nagar, Yeshwanthpur, Bengaluru 560022</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0 mt-0.5"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>28, Ground Floor, 4th Cross Rd, A. T. Street, Dr. Ambedkar Nagar, Yeshwanthpur, Bengaluru, Karnataka 560022</span>
             </div>
             <div class="d-flex align-items-center gap-2">
-              <span class="text-primary">✉</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-primary flex-shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
               <a href="mailto:contact@ashokhealthcare.com" class="text-slate-300 text-decoration-none">contact@ashokhealthcare.com</a>
-            </div>
-            <div class="d-flex align-items-center gap-2">
-              <span class="text-success">⏰</span>
-              <span>24 Hours a Day / 7 Days a Week</span>
             </div>
           </div>
         </div>
@@ -221,55 +339,51 @@
         <div class="col-6 col-lg-2">
           <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Clinical Services</h4>
           <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="services/home-nursing.html">Home Nursing</a></li>
-            <li><a href="services/home-icu.html">Home ICU Setup</a></li>
-            <li><a href="rehabilitation-neuro-and-ortho.html">Neuro Rehab</a></li>
-            <li><a href="physiotherapy.html">Physiotherapy</a></li>
-            <li><a href="services/elder-care.html">Elder Care</a></li>
-            <li><a href="diagnostics.html">Diagnostics</a></li>
-            <li><a href="ambulance-services.html">ALS Ambulance</a></li>
+            <li><a href="/services/home-nursing.html" class="text-slate-400 text-decoration-none">Home Nursing</a></li>
+            <li><a href="/services/home-icu.html" class="text-slate-400 text-decoration-none">Home ICU Setup</a></li>
+            <li><a href="/rehabilitation-neuro-and-ortho.html" class="text-slate-400 text-decoration-none">Neuro Rehab</a></li>
+            <li><a href="/physiotherapy.html" class="text-slate-400 text-decoration-none">Physiotherapy</a></li>
+            <li><a href="/services/elder-care.html" class="text-slate-400 text-decoration-none">Elder Care</a></li>
+            <li><a href="/diagnostics.html" class="text-slate-400 text-decoration-none">Diagnostics</a></li>
+            <li><a href="/ambulance-services.html" class="text-slate-400 text-decoration-none">ALS Ambulance</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-lg-3">
-          <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Equipment Rent &amp; Buy</h4>
+          <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Medical Equipment</h4>
           <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="products.html">Oxygen Concentrators (5L/10L)</a></li>
-            <li><a href="products.html">BiPAP &amp; CPAP Machines</a></li>
-            <li><a href="products.html">Portable ICU Ventilators</a></li>
-            <li><a href="products.html">Motorized ICU Hospital Beds</a></li>
-            <li><a href="products.html">Multipara Patient Monitors</a></li>
-            <li><a href="products.html">Motorized Wheelchairs</a></li>
+            <li><a href="/oxygen-concentrator-rental-bangalore.html" class="text-slate-400 text-decoration-none">Oxygen Concentrators (5L/10L)</a></li>
+            <li><a href="/hospital-bed-rental-bangalore.html" class="text-slate-400 text-decoration-none">Motorized ICU Beds</a></li>
+            <li><a href="/bipap-cpap-machine-rental-bangalore.html" class="text-slate-400 text-decoration-none">BiPAP &amp; CPAP Machines</a></li>
+            <li><a href="/patient-monitor-rental-bangalore.html" class="text-slate-400 text-decoration-none">Multipara Patient Monitors</a></li>
+            <li><a href="/wheelchair-rental-bangalore.html" class="text-slate-400 text-decoration-none">Motorized Wheelchairs</a></li>
+            <li><a href="/suction-machine-rental-bangalore.html" class="text-slate-400 text-decoration-none">Suction Machines on Rent</a></li>
+            <li><a href="/products.html" class="text-slate-400 text-decoration-none">All Medical Equipment</a></li>
           </ul>
         </div>
 
-        <div class="col-6 col-lg-3">
+        <div class="col-12 col-lg-3">
           <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Company &amp; Legal</h4>
           <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="about.html">About Ashok Healthcare</a></li>
-            <li><a href="careers.html">Careers &amp; Vacancies</a></li>
-            <li><a href="blog.html" class="fw-bold text-white text-decoration-none">Blog (Health Insights)</a></li>
-            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
-            <li><a href="contact.html">Contact &amp; Dispatch Hub</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="/about.html" class="text-slate-400 text-decoration-none">About Ashok Healthcare</a></li>
+            <li><a href="/careers.html" class="text-slate-400 text-decoration-none">Careers &amp; Vacancies</a></li>
+            <li><a href="/blog.html" class="text-slate-400 text-decoration-none fw-bold text-white">Healthcare Blog</a></li>
+            <li><a href="/gallery.html" class="text-slate-400 text-decoration-none">Photo &amp; Video Gallery</a></li>
+            <li><a href="/contact.html" class="text-slate-400 text-decoration-none">Contact &amp; Dispatch Hub</a></li>
+            <li><a href="/privacy.html" class="text-slate-400 text-decoration-none">Privacy Policy</a></li>
+            <li><a href="/terms.html" class="text-slate-400 text-decoration-none">Terms of Service</a></li>
           </ul>
         </div>
       </div>
 
-      <!-- Copyright Bar -->
-      <div class="pt-4 border-top border-slate-800 d-flex flex-column flex-sm-row align-items-center justify-content-between small text-slate-500 gap-2">
-        <div>© <span id="currentYear">2026</span> Ashok Home Healthcare Services. All Rights Reserved. <span class="mx-1 text-slate-600">|</span> <span class="text-slate-400">Design By <a href="tel:+918197473097" class="text-slate-300 fw-semibold text-decoration-none">Faasadot (8197473097)</a></span></div>
-        <div class="d-flex align-items-center gap-3">
-          <a href="https://maps.app.goo.gl/AYZDX2eLoGjnKWXC9" target="_blank" rel="noreferrer" class="text-slate-400 text-decoration-none">Google Maps Direction</a>
-          <span>|</span>
-          <span class="text-slate-400">Yeshwanthpur, Bengaluru</span>
-        </div>
+      <div class="pt-4 border-top border-slate-800 d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between small text-slate-500 gap-2">
+        <div>© <span id="currentYear">2026</span> Ashok Home Healthcare Services. All Rights Reserved.</div>
+        <div><span>Yeshwanthpur, Bengaluru</span></div>
       </div>
     </div>
   </footer>
 
-  <!-- Floating Sticky Action Buttons -->
+  <!-- Desktop Floating Sticky Action Buttons -->
   <div class="floating-actions-desktop">
     <button type="button" id="scrollTopBtn" class="floating-scroll-top" aria-label="Scroll to top">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
@@ -294,8 +408,8 @@
   </div>
   <div class="mobile-bottom-spacer"></div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/navigation.js"></script>
-  <script src="assets/js/modals.js"></script>
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/navigation.js"></script>
+  <script src="/assets/js/modals.js"></script>
 </body>
 </html>
