@@ -42,6 +42,7 @@ Options -Indexes -MultiViews
   # 5A. Direct Shortcuts & Directory Landing Page Normalization
   RewriteRule ^services/?$ /services.html [R=301,L]
   RewriteRule ^blog/?$ /blog.html [R=301,L]
+  RewriteRule ^products/?$ /products.html [R=301,L]
 
   # Shortcut routes to clinical service pages (with or without .html)
   RewriteRule ^home-nursing(\.html)?$ /services/home-nursing.html [R=301,L,NC]
