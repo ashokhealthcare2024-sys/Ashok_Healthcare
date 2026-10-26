@@ -9,7 +9,6 @@
   function initAll() {
     ensureMobileDrawer();
     initMobileDrawer();
-    initServicesDropdown();
     highlightActiveNavLink();
   }
 
@@ -17,60 +16,6 @@
     document.addEventListener('DOMContentLoaded', initAll);
   } else {
     initAll();
-  }
-
-  /**
-   * Handles desktop services dropdown toggle, hover resilience, and outside clicks
-   */
-  function initServicesDropdown() {
-    const dropdowns = document.querySelectorAll('.nav-dropdown');
-
-    dropdowns.forEach((dropdown) => {
-      const trigger = dropdown.querySelector(':scope > a');
-      const megaMenu = dropdown.querySelector('.mega-menu');
-      if (!trigger || !megaMenu) return;
-
-      // Toggle on click
-      trigger.addEventListener('click', (e) => {
-        // If clicking on desktop to open/close menu
-        if (window.innerWidth >= 992) {
-          e.preventDefault();
-          const isOpen = dropdown.classList.contains('dropdown-open');
-          dropdowns.forEach((d) => d.classList.remove('dropdown-open'));
-          if (!isOpen) {
-            dropdown.classList.add('dropdown-open');
-          }
-        }
-      });
-
-      // Hover grace period
-      let timeoutId = null;
-      dropdown.addEventListener('mouseleave', () => {
-        timeoutId = setTimeout(() => {
-          dropdown.classList.remove('dropdown-open');
-        }, 200);
-      });
-
-      dropdown.addEventListener('mouseenter', () => {
-        if (timeoutId) clearTimeout(timeoutId);
-      });
-    });
-
-    // Close when clicking outside
-    document.addEventListener('click', (e) => {
-      dropdowns.forEach((dropdown) => {
-        if (!dropdown.contains(e.target)) {
-          dropdown.classList.remove('dropdown-open');
-        }
-      });
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        dropdowns.forEach((dropdown) => dropdown.classList.remove('dropdown-open'));
-      }
-    });
   }
 
   /**
