@@ -39,7 +39,9 @@ deployment:
     - /bin/cp -f home-nursing-healthcare-services-bangalore.html $DEPLOYPATH
     - /bin/cp -f privacy.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
+    - /bin/cp -f sitemap.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
+
 
     # 2. Deploy Root Assets, Icons, Verification & SEO Metadata
     - /bin/cp -f favicon.svg $DEPLOYPATH 2>/dev/null || true
