@@ -72,7 +72,26 @@ Options -Indexes -MultiViews
   RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L]
   RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NE]
 
-  # 5D. Extensionless URLs: Seamless resolution without 404
+  # 5D. Prevent Direct Access to Component Snippets (Return 404 Not Found)
+  RewriteRule ^components(/.*)?$ - [R=404,L]
+
+  # 5E. Legacy WordPress & Attack Query String Parameters - Return HTTP 410 Gone
+  # Instantly purges millions of ?p=, ?s=, ?page_id=, ?post_type=, etc.
+  RewriteCond %{QUERY_STRING} (?:^|&)(p|page_id|s|post_type|attachment_id|feed|cat|tag|author|m|replytocom|wordfence_lh)= [NC]
+  RewriteRule ^.*$ - [G,L]
+
+  # 5F. Legacy WordPress Paths, Date Archives & Any PHP Scripts - Return HTTP 410 Gone
+  # The website is 100% static HTML. Zero PHP files exist. All legacy WP endpoints permanently return 410.
+  RewriteRule ^(wp-.*|xmlrpc\.php|wp-content|wp-includes|wp-json|category|tag|author|feed|comments|page/[0-9]+|20[0-9]{2}/[0-9]{2})(/.*)?$ - [G,L]
+  RewriteRule \.php$ - [G,L]
+
+  # 5G. Strip Unwanted Query Parameters & 301 Redirect to Clean Canonical URL
+  # Whitelists legitimate marketing analytics (utm_*, gclid, fbclid); strips all bot/spam parameters
+  RewriteCond %{QUERY_STRING} !^$
+  RewriteCond %{QUERY_STRING} !(^|&)(utm_[a-z]+|gclid|fbclid)= [NC]
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1? [R=301,L]
+
+  # 5H. Extensionless URLs: Seamless resolution without 404
   # Check if requested filename + .html exists physically on server
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-f
@@ -94,10 +113,8 @@ Options -Indexes -MultiViews
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
   RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [L]
-
-  # 5E. Deleted Legacy WordPress Endpoints - Return HTTP 410 Gone
-  RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-admin|wp-includes|wp-content/plugins) - [G,L]
 </IfModule>
+
 
 # 6. COMPONENT PARTIALS - PREVENT RAW FRAGMENT INDEXING
 <IfModule mod_headers.c>

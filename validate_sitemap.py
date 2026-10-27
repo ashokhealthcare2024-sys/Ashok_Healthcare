@@ -57,13 +57,25 @@ def parse_htaccess(path=HTACCESS_FILE):
         return redirects, gone_patterns
     
     with open(path, 'r', encoding='utf-8', errors='ignore') as f:
+        has_query_cond = False
         for line in f:
             line = line.strip()
             if not line or line.startswith('#'):
                 continue
+            if 'RewriteCond %{QUERY_STRING}' in line:
+                has_query_cond = True
+                continue
+
             m_gone = re.search(r'RewriteRule\s+\^?([^\s]+)\s+-\s+\[.*G.*\]', line)
             if m_gone:
-                gone_patterns.append(m_gone.group(1))
+                pat = m_gone.group(1)
+                # Ignore query-dependent or catch-all rules
+                if not has_query_cond and pat not in ('^', '^.*$', '.*'):
+                    gone_patterns.append(pat)
+                has_query_cond = False
+                continue
+
+            has_query_cond = False
             
             m_redir = re.search(r'RewriteRule\s+\^?([^\s]+)\s+([^\s]+)\s+\[.*R=301.*\]', line)
             if m_redir:
@@ -78,6 +90,7 @@ def parse_htaccess(path=HTACCESS_FILE):
                 except re.error:
                     pass
     return redirects, gone_patterns
+
 
 
 
