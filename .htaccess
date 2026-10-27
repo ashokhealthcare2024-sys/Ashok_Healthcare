@@ -94,6 +94,16 @@ Options -Indexes -MultiViews
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
   RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [L]
+
+  # 5E. Deleted Legacy WordPress Endpoints - Return HTTP 410 Gone
+  RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-admin|wp-includes|wp-content/plugins) - [G,L]
+</IfModule>
+
+# 6. COMPONENT PARTIALS - PREVENT RAW FRAGMENT INDEXING
+<IfModule mod_headers.c>
+  <FilesMatch "^(care-finder|emergency-banner|floating-actions|footer|header|mobile-nav|modals|topbar)\.html$">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </FilesMatch>
 </IfModule>
 
 # 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS
