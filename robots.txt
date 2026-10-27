@@ -8,6 +8,8 @@ Disallow: /.git/
 # Components are fetched by the site renderer and must remain crawlable.
 Allow: /services/
 Allow: /blog/
+Allow: /sitemap.html
+Allow: /rss.xml
 
 # Allow search engine image crawlers to access site media.
 User-agent: Googlebot-Image
@@ -15,5 +17,5 @@ Allow: /images/
 Allow: /Gallery/
 Allow: /Bg_Banner/
 
-# Sitemap
+# Sitemap & Feed
 Sitemap: https://ashokhealthcare.in/sitemap.xml

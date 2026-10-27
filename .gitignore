@@ -43,3 +43,6 @@ Thumbs.db
 scratch/
 .vercel
 
+# Google Cloud Service Account Keys
+service_account*.json
+

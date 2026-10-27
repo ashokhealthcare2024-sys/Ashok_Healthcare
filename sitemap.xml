@@ -41,6 +41,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://ashokhealthcare.in/sitemap.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 
   <!-- Clinical Healthcare Services & Treatments -->
   <url>
