@@ -50,7 +50,7 @@
     drawer.innerHTML = `
       <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-3 flex-shrink-0">
         <a href="${prefix}index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="${prefix}images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 38px; width: auto; max-width: 200px; object-fit: contain;">
+          <img src="${prefix}assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 38px; width: auto; max-width: 200px; object-fit: contain;">
         </a>
         <button type="button" id="closeMobileDrawer" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;" aria-label="Close menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>

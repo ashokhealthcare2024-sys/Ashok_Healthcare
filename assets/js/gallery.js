@@ -12,7 +12,7 @@
   {
     "id": "img-1",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.11 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.11 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #1",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -22,7 +22,7 @@
   {
     "id": "img-2",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.11 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.11 PM.webp",
     "title": "Certified Motorized Hospital Bed #2",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -32,7 +32,7 @@
   {
     "id": "img-3",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.12 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.12 PM (1).webp",
     "title": "Neuro & Ortho Rehabilitation Session #3",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -42,7 +42,7 @@
   {
     "id": "img-4",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.12 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.12 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #4",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -52,7 +52,7 @@
   {
     "id": "img-5",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.13 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.13 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #5",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -62,7 +62,7 @@
   {
     "id": "img-6",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.14 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.14 PM.webp",
     "title": "Professional Bedside Nursing Care #6",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -72,7 +72,7 @@
   {
     "id": "img-7",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.16 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.16 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #7",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -82,7 +82,7 @@
   {
     "id": "img-8",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.17 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.17 PM.webp",
     "title": "Certified Motorized Hospital Bed #8",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -92,7 +92,7 @@
   {
     "id": "img-9",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.18 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.18 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #9",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -102,7 +102,7 @@
   {
     "id": "img-10",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.33 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.33 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #10",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -112,7 +112,7 @@
   {
     "id": "img-11",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.34 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.34 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #11",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -122,7 +122,7 @@
   {
     "id": "img-12",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.34 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.34 PM.webp",
     "title": "Professional Bedside Nursing Care #12",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -132,7 +132,7 @@
   {
     "id": "img-13",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #13",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -142,7 +142,7 @@
   {
     "id": "img-14",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #14",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -152,7 +152,7 @@
   {
     "id": "img-15",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.35 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #15",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -162,7 +162,7 @@
   {
     "id": "img-16",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #16",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -172,7 +172,7 @@
   {
     "id": "img-17",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #17",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -182,7 +182,7 @@
   {
     "id": "img-18",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.36 PM.webp",
     "title": "Professional Bedside Nursing Care #18",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -192,7 +192,7 @@
   {
     "id": "img-19",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #19",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -202,7 +202,7 @@
   {
     "id": "img-20",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #20",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -212,7 +212,7 @@
   {
     "id": "img-21",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.37 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #21",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -222,7 +222,7 @@
   {
     "id": "img-22",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #22",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -232,7 +232,7 @@
   {
     "id": "img-23",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #23",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -242,7 +242,7 @@
   {
     "id": "img-24",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (3).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM (3).webp",
     "title": "Professional Bedside Nursing Care #24",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -252,7 +252,7 @@
   {
     "id": "img-25",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.38 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #25",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -262,7 +262,7 @@
   {
     "id": "img-26",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM (1).webp",
     "title": "Certified Motorized Hospital Bed #26",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -272,7 +272,7 @@
   {
     "id": "img-27",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM (2).webp",
     "title": "Neuro & Ortho Rehabilitation Session #27",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -282,7 +282,7 @@
   {
     "id": "img-28",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.39 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #28",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -292,7 +292,7 @@
   {
     "id": "img-29",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #29",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -302,7 +302,7 @@
   {
     "id": "img-30",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM (2).webp",
     "title": "Professional Bedside Nursing Care #30",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -312,7 +312,7 @@
   {
     "id": "img-31",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.40 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #31",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -322,7 +322,7 @@
   {
     "id": "img-32",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM (1).webp",
     "title": "Certified Motorized Hospital Bed #32",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -332,7 +332,7 @@
   {
     "id": "img-33",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM (2).webp",
     "title": "Neuro & Ortho Rehabilitation Session #33",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -342,7 +342,7 @@
   {
     "id": "img-34",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.41 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #34",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -352,7 +352,7 @@
   {
     "id": "img-35",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #35",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -362,7 +362,7 @@
   {
     "id": "img-36",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (2).webp",
     "title": "Professional Bedside Nursing Care #36",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -372,7 +372,7 @@
   {
     "id": "img-37",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (3).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM (3).webp",
     "title": "Hospital-Grade Home ICU Setup #37",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -382,7 +382,7 @@
   {
     "id": "img-38",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.42 PM.webp",
     "title": "Certified Motorized Hospital Bed #38",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -392,7 +392,7 @@
   {
     "id": "img-39",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.43 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.43 PM (1).webp",
     "title": "Neuro & Ortho Rehabilitation Session #39",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -402,7 +402,7 @@
   {
     "id": "img-40",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.43 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.43 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #40",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -412,7 +412,7 @@
   {
     "id": "img-41",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #41",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -422,7 +422,7 @@
   {
     "id": "img-42",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM (2).webp",
     "title": "Professional Bedside Nursing Care #42",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -432,7 +432,7 @@
   {
     "id": "img-43",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.44 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #43",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -442,7 +442,7 @@
   {
     "id": "img-44",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.45 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.45 PM (1).webp",
     "title": "Certified Motorized Hospital Bed #44",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -452,7 +452,7 @@
   {
     "id": "img-45",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.45 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.45 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #45",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -462,7 +462,7 @@
   {
     "id": "img-46",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #46",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -472,7 +472,7 @@
   {
     "id": "img-47",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #47",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -482,7 +482,7 @@
   {
     "id": "img-48",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.46 PM.webp",
     "title": "Professional Bedside Nursing Care #48",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -492,7 +492,7 @@
   {
     "id": "img-49",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #49",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -502,7 +502,7 @@
   {
     "id": "img-50",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #50",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -512,7 +512,7 @@
   {
     "id": "img-51",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.47 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #51",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -522,7 +522,7 @@
   {
     "id": "img-52",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #52",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -532,7 +532,7 @@
   {
     "id": "img-53",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #53",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -542,7 +542,7 @@
   {
     "id": "img-54",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.48 PM.webp",
     "title": "Professional Bedside Nursing Care #54",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -552,7 +552,7 @@
   {
     "id": "img-55",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.49 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.49 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #55",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -562,7 +562,7 @@
   {
     "id": "img-56",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.49 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.49 PM.webp",
     "title": "Certified Motorized Hospital Bed #56",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -572,7 +572,7 @@
   {
     "id": "img-57",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM (1).webp",
     "title": "Neuro & Ortho Rehabilitation Session #57",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -582,7 +582,7 @@
   {
     "id": "img-58",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM (2).webp",
     "title": "Patient Mobility & Wheelchair Equipment #58",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -592,7 +592,7 @@
   {
     "id": "img-59",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.50 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #59",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -602,7 +602,7 @@
   {
     "id": "img-60",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.51 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.51 PM (1).webp",
     "title": "Professional Bedside Nursing Care #60",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -612,7 +612,7 @@
   {
     "id": "img-61",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.51 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.51 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #61",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -622,7 +622,7 @@
   {
     "id": "img-62",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM (1).webp",
     "title": "Certified Motorized Hospital Bed #62",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -632,7 +632,7 @@
   {
     "id": "img-63",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM (2).webp",
     "title": "Neuro & Ortho Rehabilitation Session #63",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -642,7 +642,7 @@
   {
     "id": "img-64",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.52 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #64",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -652,7 +652,7 @@
   {
     "id": "img-65",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.53 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.53 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #65",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -662,7 +662,7 @@
   {
     "id": "img-66",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.53 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.53 PM.webp",
     "title": "Professional Bedside Nursing Care #66",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -672,7 +672,7 @@
   {
     "id": "img-67",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #67",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -682,7 +682,7 @@
   {
     "id": "img-68",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #68",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -692,7 +692,7 @@
   {
     "id": "img-69",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (3).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (3).webp",
     "title": "Neuro & Ortho Rehabilitation Session #69",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -702,7 +702,7 @@
   {
     "id": "img-70",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (4).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM (4).webp",
     "title": "Patient Mobility & Wheelchair Equipment #70",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -712,7 +712,7 @@
   {
     "id": "img-71",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.54 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #71",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -722,7 +722,7 @@
   {
     "id": "img-72",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (1).webp",
     "title": "Professional Bedside Nursing Care #72",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -732,7 +732,7 @@
   {
     "id": "img-73",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (2).webp",
     "title": "Hospital-Grade Home ICU Setup #73",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -742,7 +742,7 @@
   {
     "id": "img-74",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (3).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM (3).webp",
     "title": "Certified Motorized Hospital Bed #74",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -752,7 +752,7 @@
   {
     "id": "img-75",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.55 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #75",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -762,7 +762,7 @@
   {
     "id": "img-76",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #76",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -772,7 +772,7 @@
   {
     "id": "img-77",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (2).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #77",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -782,7 +782,7 @@
   {
     "id": "img-78",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (3).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM (3).webp",
     "title": "Professional Bedside Nursing Care #78",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -792,7 +792,7 @@
   {
     "id": "img-79",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.56 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #79",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -802,7 +802,7 @@
   {
     "id": "img-80",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.57 PM (1).webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.57 PM (1).webp",
     "title": "Certified Motorized Hospital Bed #80",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -812,7 +812,7 @@
   {
     "id": "img-81",
     "type": "photo",
-    "src": "Gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.57 PM.webp",
+    "src": "assets/gallery/gallery_1/WhatsApp Image 2026-09-25 at 7.47.57 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #81",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -822,7 +822,7 @@
   {
     "id": "vid-1",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.18 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.18 PM.mp4",
     "title": "Advanced Home ICU Setup with Multipara Monitor & Ventilator",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -832,7 +832,7 @@
   {
     "id": "vid-3",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.19 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.19 PM.mp4",
     "title": "Clinical Bedside Nursing & Vitals Monitoring in Bengaluru",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -842,7 +842,7 @@
   {
     "id": "vid-4",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.20 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.20 PM.mp4",
     "title": "Portable Oxygen Concentrator & BiPAP Machine Clinical Demo",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -852,7 +852,7 @@
   {
     "id": "vid-5",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.21 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.21 PM.mp4",
     "title": "Stroke Patient Neuro-Rehabilitation & Gait Therapy",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -862,7 +862,7 @@
   {
     "id": "vid-6",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.22 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.22 PM.mp4",
     "title": "Deluxe Motorized Power Wheelchair Maneuverability Demo",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -872,7 +872,7 @@
   {
     "id": "vid-7",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.24 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.24 PM.mp4",
     "title": "Bedside Patient Care & Post-Operative Wound Dressing",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -882,7 +882,7 @@
   {
     "id": "vid-8",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.25 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.25 PM.mp4",
     "title": "Home ICU Installation & Medical Gas Pipeline Setup",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -892,7 +892,7 @@
   {
     "id": "vid-9",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.27 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.27 PM.mp4",
     "title": "Orthopedic Post-Hip Replacement Bed Mobility Assistance",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -902,7 +902,7 @@
   {
     "id": "vid-10",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.29 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.29 PM.mp4",
     "title": "Hospital Fowler Bed Backrest & Knee-rest Ergonomics",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -912,7 +912,7 @@
   {
     "id": "vid-11",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.30 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.30 PM.mp4",
     "title": "Multipara Vital Signs Patient Monitor Demo",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -922,7 +922,7 @@
   {
     "id": "vid-12",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.31 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.31 PM.mp4",
     "title": "Elder Care Assistance & Physical Therapy Session",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -932,7 +932,7 @@
   {
     "id": "vid-13",
     "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.33 PM.mp4",
+    "src": "assets/gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.33 PM.mp4",
     "title": "Critical Patient Oxygen Therapy & Delivery Fleet Dispatch",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -942,7 +942,7 @@
   {
     "id": "img-82",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.57 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.57 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #82",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -952,7 +952,7 @@
   {
     "id": "img-83",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.58 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.58 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #83",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -962,7 +962,7 @@
   {
     "id": "img-84",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.59 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.59 PM (1).webp",
     "title": "Professional Bedside Nursing Care #84",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -972,7 +972,7 @@
   {
     "id": "img-85",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.59 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.46.59 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #85",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -982,7 +982,7 @@
   {
     "id": "img-86",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.02 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.02 PM.webp",
     "title": "Certified Motorized Hospital Bed #86",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -992,7 +992,7 @@
   {
     "id": "img-87",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM (1).webp",
     "title": "Neuro & Ortho Rehabilitation Session #87",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -1002,7 +1002,7 @@
   {
     "id": "img-88",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM (2).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM (2).webp",
     "title": "Patient Mobility & Wheelchair Equipment #88",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -1012,7 +1012,7 @@
   {
     "id": "img-89",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.03 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #89",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -1022,7 +1022,7 @@
   {
     "id": "img-90",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.04 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.04 PM.webp",
     "title": "Professional Bedside Nursing Care #90",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -1032,7 +1032,7 @@
   {
     "id": "img-91",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #91",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -1042,7 +1042,7 @@
   {
     "id": "img-92",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM (2).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #92",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -1052,7 +1052,7 @@
   {
     "id": "img-93",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.05 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #93",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -1062,7 +1062,7 @@
   {
     "id": "img-94",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM (1).webp",
     "title": "Patient Mobility & Wheelchair Equipment #94",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -1072,7 +1072,7 @@
   {
     "id": "img-95",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM (2).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM (2).webp",
     "title": "Ashok Healthcare Clinical Supervision #95",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -1082,7 +1082,7 @@
   {
     "id": "img-96",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.06 PM.webp",
     "title": "Professional Bedside Nursing Care #96",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -1092,7 +1092,7 @@
   {
     "id": "img-97",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM (1).webp",
     "title": "Hospital-Grade Home ICU Setup #97",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -1102,7 +1102,7 @@
   {
     "id": "img-98",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM (2).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM (2).webp",
     "title": "Certified Motorized Hospital Bed #98",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -1112,7 +1112,7 @@
   {
     "id": "img-99",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.07 PM.webp",
     "title": "Neuro & Ortho Rehabilitation Session #99",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -1122,7 +1122,7 @@
   {
     "id": "img-100",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.08 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.08 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #100",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -1132,7 +1132,7 @@
   {
     "id": "img-101",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.09 PM (1).webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.09 PM (1).webp",
     "title": "Ashok Healthcare Clinical Supervision #101",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -1142,7 +1142,7 @@
   {
     "id": "img-102",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.09 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.09 PM.webp",
     "title": "Professional Bedside Nursing Care #102",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",
@@ -1152,7 +1152,7 @@
   {
     "id": "img-103",
     "type": "photo",
-    "src": "Gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.10 PM.webp",
+    "src": "assets/gallery/gallery_2/WhatsApp Image 2026-09-25 at 7.47.10 PM.webp",
     "title": "Hospital-Grade Home ICU Setup #103",
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
@@ -1162,7 +1162,7 @@
   {
     "id": "vid-14",
     "type": "video",
-    "src": "Gallery/gallery_2/WhatsApp Video 2026-09-25 at 7.47.01 PM.mp4",
+    "src": "assets/gallery/gallery_2/WhatsApp Video 2026-09-25 at 7.47.01 PM.mp4",
     "title": "Specialized Home Care Bed and Pressure Relieving Air Mattress",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -1172,7 +1172,7 @@
   {
     "id": "img-104",
     "type": "photo",
-    "src": "Gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.54 PM.webp",
+    "src": "assets/gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.54 PM.webp",
     "title": "Certified Motorized Hospital Bed #104",
     "category": "beds",
     "categoryLabel": "Motorized Hospital Beds",
@@ -1182,7 +1182,7 @@
   {
     "id": "img-105",
     "type": "photo",
-    "src": "Gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.55 PM (1).webp",
+    "src": "assets/gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.55 PM (1).webp",
     "title": "Neuro & Ortho Rehabilitation Session #105",
     "category": "rehab",
     "categoryLabel": "Neuro & Ortho Rehabilitation",
@@ -1192,7 +1192,7 @@
   {
     "id": "img-106",
     "type": "photo",
-    "src": "Gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.55 PM.webp",
+    "src": "assets/gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.55 PM.webp",
     "title": "Patient Mobility & Wheelchair Equipment #106",
     "category": "mobility",
     "categoryLabel": "Wheelchairs & Patient Mobility",
@@ -1202,7 +1202,7 @@
   {
     "id": "img-107",
     "type": "photo",
-    "src": "Gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.56 PM.webp",
+    "src": "assets/gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.46.56 PM.webp",
     "title": "Ashok Healthcare Clinical Supervision #107",
     "category": "team",
     "categoryLabel": "Clinical Leadership & Facility",
@@ -1212,7 +1212,7 @@
   {
     "id": "img-108",
     "type": "photo",
-    "src": "Gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.48.01 PM.webp",
+    "src": "assets/gallery/gallery_3/WhatsApp Image 2026-09-25 at 7.48.01 PM.webp",
     "title": "Professional Bedside Nursing Care #108",
     "category": "nursing",
     "categoryLabel": "Bedside Nursing & Patient Care",

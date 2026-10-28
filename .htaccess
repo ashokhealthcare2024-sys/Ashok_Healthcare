@@ -113,6 +113,11 @@ Options -Indexes -MultiViews
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/blog/$1.html -f
   RewriteRule ^blog/([^/]+)/?$ /blog/$1.html [L]
+
+  # 5I. Media Relocation: 301 Redirect legacy /images/ and /Gallery/ requests to /assets/
+  RewriteRule ^images/(.+)$ /assets/images/$1 [R=301,L,NC]
+  RewriteRule ^Gallery/(.+)$ /assets/gallery/$1 [R=301,L,NC]
+  RewriteRule ^gallery_([1-3])/(.+)$ /assets/gallery/gallery_$1/$2 [R=301,L,NC]
 </IfModule>
 
 
