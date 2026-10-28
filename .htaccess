@@ -50,27 +50,27 @@ Options -Indexes -MultiViews
   RewriteRule ^elder-care(\.html)?$ /services/elder-care.html [R=301,L,NC]
 
   # 5B. Canonical 301 Redirects for Duplicate & Legacy Services Pages
-  RewriteRule ^services/index\.html$ /services.html [R=301,L]
-  RewriteRule ^services/home-healthcare-services-bangalore(\.html)?$ /services.html [R=301,L]
-  RewriteRule ^services/home-healthcare-nursing-services-bangalore(\.html)?$ /services.html [R=301,L]
+  RewriteRule ^services/index\.html$ /services.html [R=301,L,NC]
+  RewriteRule ^services/home-healthcare-services-bangalore(\.html)?$ /services.html [R=301,L,NC]
+  RewriteRule ^services/home-healthcare-nursing-services-bangalore(\.html)?$ /services.html [R=301,L,NC]
 
-  RewriteRule ^services/ambulance(-services)?(\.html)?$ /ambulance-services.html [R=301,L]
-  RewriteRule ^services/diagnostics?(-services)?(\.html)?$ /diagnostics.html [R=301,L]
-  RewriteRule ^services/physiotherapy(-at-home)?(\.html)?$ /physiotherapy.html [R=301,L]
-  RewriteRule ^services/rehabilitation(-neuro-and-ortho)?(\.html)?$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^services/medical-equipment-rent-and-sales(\.html)?$ /medical-equipment-rent-and-sales.html [R=301,L]
+  RewriteRule ^services/ambulance(-services)?(\.html)?$ /ambulance-services.html [R=301,L,NC]
+  RewriteRule ^services/diagnostics?(-services)?(\.html)?$ /diagnostics.html [R=301,L,NC]
+  RewriteRule ^services/physiotherapy(-at-home)?(\.html)?$ /physiotherapy.html [R=301,L,NC]
+  RewriteRule ^services/rehabilitation(-neuro-and-ortho)?(\.html)?$ /rehabilitation-neuro-and-ortho.html [R=301,L,NC]
+  RewriteRule ^services/medical-equipment-rent-and-sales(\.html)?$ /medical-equipment-rent-and-sales.html [R=301,L,NC]
 
   # Duplicate directory index documents
-  RewriteRule ^ambulance-services/index\.html$ /ambulance-services.html [R=301,L]
-  RewriteRule ^diagnostics/index\.html$ /diagnostics.html [R=301,L]
-  RewriteRule ^physiotherapy/index\.html$ /physiotherapy.html [R=301,L]
-  RewriteRule ^rehabilitation-neuro-and-ortho/index\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L]
-  RewriteRule ^medical-equipment-rent-and-sales/index\.html$ /medical-equipment-rent-and-sales.html [R=301,L]
+  RewriteRule ^ambulance-services/index\.html$ /ambulance-services.html [R=301,L,NC]
+  RewriteRule ^diagnostics/index\.html$ /diagnostics.html [R=301,L,NC]
+  RewriteRule ^physiotherapy/index\.html$ /physiotherapy.html [R=301,L,NC]
+  RewriteRule ^rehabilitation-neuro-and-ortho/index\.html$ /rehabilitation-neuro-and-ortho.html [R=301,L,NC]
+  RewriteRule ^medical-equipment-rent-and-sales/index\.html$ /medical-equipment-rent-and-sales.html [R=301,L,NC]
 
   # 5C. Legacy & Alternative Pages
-  RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L]
-  RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L]
-  RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NE]
+  RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L,NC]
+  RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L,NC]
+  RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NC,NE]
 
   # 5D. Prevent Direct Access to Component Snippets (Return 404 Not Found)
   RewriteRule ^components(/.*)?$ - [R=404,L]

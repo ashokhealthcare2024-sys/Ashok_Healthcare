@@ -384,6 +384,7 @@
   </section>
 
   <!-- ================= UNIVERSAL FOOTER ================= -->
+    <!-- Site Footer Component -->
   <footer class="site-footer bg-slate-950 text-slate-300 pt-5 pb-4 border-top border-slate-800" style="background-color: #020617;">
     <div class="container-max">
       <!-- Top Callouts -->
@@ -431,9 +432,9 @@
       <!-- Links Grid -->
       <div class="row g-4 py-4">
         <div class="col-lg-4">
-          <div class="footer-logo-badge">
-            <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services">
-          </div>
+          <a href="index.html" class="footer-logo-badge mb-3 d-inline-block">
+            <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 48px; filter: brightness(0) invert(1);">
+          </a>
           <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
             Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp; ortho rehabilitation, and medical equipment rental across Yeshwanthpur and all of Bengaluru.
           </p>
@@ -456,54 +457,112 @@
         <div class="col-6 col-lg-2">
           <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Clinical Services</h4>
           <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="services/home-nursing.html">Home Nursing</a></li>
-            <li><a href="services/home-icu.html">Home ICU Setup</a></li>
-            <li><a href="rehabilitation-neuro-and-ortho.html">Neuro Rehab</a></li>
-            <li><a href="physiotherapy.html">Physiotherapy</a></li>
-            <li><a href="services/elder-care.html">Elder Care</a></li>
-            <li><a href="diagnostics.html">Diagnostics</a></li>
-            <li><a href="ambulance-services.html">ALS Ambulance</a></li>
+            <li><a href="services/home-nursing.html" class="text-slate-400 hover-primary text-decoration-none">Home Nursing</a></li>
+            <li><a href="services/home-icu.html" class="text-slate-400 hover-primary text-decoration-none">Home ICU Setup</a></li>
+            <li><a href="rehabilitation-neuro-and-ortho.html" class="text-slate-400 hover-primary text-decoration-none">Neuro Rehab</a></li>
+            <li><a href="physiotherapy.html" class="text-slate-400 hover-primary text-decoration-none">Physiotherapy</a></li>
+            <li><a href="services/elder-care.html" class="text-slate-400 hover-primary text-decoration-none">Elder Care</a></li>
+            <li><a href="diagnostics.html" class="text-slate-400 hover-primary text-decoration-none">Diagnostics</a></li>
+            <li><a href="ambulance-services.html" class="text-slate-400 hover-primary text-decoration-none">ALS Ambulance</a></li>
+            <li><a href="palliative-care-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Palliative Care</a></li>
+            <li><a href="services.html" class="text-primary fw-semibold text-decoration-none">All Services &rarr;</a></li>
           </ul>
         </div>
 
         <div class="col-6 col-lg-3">
           <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Equipment Rent &amp; Buy</h4>
           <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="oxygen-concentrator-rental-bangalore.html">Oxygen Concentrators (5L/10L)</a></li>
-            <li><a href="bipap-cpap-machine-rental-bangalore.html">BiPAP &amp; CPAP Machines</a></li>
-            <li><a href="products.html">Portable ICU Ventilators</a></li>
-            <li><a href="hospital-bed-rental-bangalore.html">Motorized ICU Hospital Beds</a></li>
-            <li><a href="patient-monitor-rental-bangalore.html">Multipara Patient Monitors</a></li>
-            <li><a href="wheelchair-rental-bangalore.html">Motorized Wheelchairs</a></li>
+            <li><a href="oxygen-concentrator-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Oxygen Concentrators (5L/10L)</a></li>
+            <li><a href="bipap-cpap-machine-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">BiPAP &amp; CPAP Machines</a></li>
+            <li><a href="hospital-bed-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Motorized ICU Hospital Beds</a></li>
+            <li><a href="patient-monitor-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Multipara Patient Monitors</a></li>
+            <li><a href="wheelchair-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Motorized Wheelchairs</a></li>
+            <li><a href="suction-machine-rental-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Suction Machines on Rent</a></li>
+            <li><a href="medical-equipment-rent-and-sales.html" class="text-slate-400 hover-primary text-decoration-none">Medical Equipment Hub</a></li>
+            <li><a href="products.html" class="text-primary fw-semibold text-decoration-none">All Products &rarr;</a></li>
           </ul>
         </div>
 
-        <div class="col-6 col-lg-3">
+        <div class="col-12 col-lg-3 footer-company-col pt-3 pt-lg-0 border-top border-slate-800 border-top-lg-0">
           <h4 class="text-xs text-uppercase fw-bold text-white mb-3 tracking-wider">Company &amp; Legal</h4>
-          <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
-            <li><a href="about.html">About Ashok Healthcare</a></li>
-            <li><a href="careers.html">Careers &amp; Vacancies</a></li>
-            <li><a href="blog.html" class="fw-bold text-white text-decoration-none">Blog (Health Insights)</a></li>
-            <li><a href="gallery.html">Photo &amp; Video Gallery</a></li>
-            <li><a href="contact.html">Contact &amp; Dispatch Hub</a></li>
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
+          <div class="row g-2">
+            <div class="col-6 col-lg-12">
+              <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0">
+                <li><a href="about.html" class="text-slate-400 hover-primary text-decoration-none">About Ashok Healthcare</a></li>
+                <li><a href="careers.html" class="text-slate-400 hover-primary text-decoration-none">Careers &amp; Vacancies</a></li>
+                <li><a href="blog.html" class="fw-bold text-white text-decoration-none">Blog (Health Insights)</a></li>
+                <li><a href="gallery.html" class="text-slate-400 hover-primary text-decoration-none">Photo &amp; Video Gallery</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-12">
+              <ul class="list-unstyled d-flex flex-column gap-2 small text-slate-400 mb-0 pt-lg-2">
+                <li><a href="contact.html" class="text-slate-400 hover-primary text-decoration-none">Contact &amp; Dispatch Hub</a></li>
+                <li><a href="privacy.html" class="text-slate-400 hover-primary text-decoration-none">Privacy Policy</a></li>
+                <li><a href="terms.html" class="text-slate-400 hover-primary text-decoration-none">Terms of Service</a></li>
+                <li><a href="sitemap.html" class="text-info fw-semibold text-decoration-none">🗺️ HTML Sitemap (Directory)</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Extended SEO Links Directory: Bangalore Care Guides & Blog Articles -->
+      <div class="pt-4 mt-4 border-top border-slate-800">
+        <div class="row g-4 text-xs text-slate-400">
+          <div class="col-12 col-md-6">
+            <h5 class="text-xs text-uppercase fw-bold text-slate-300 mb-2 tracking-wider">Bangalore Home Healthcare &amp; Nursing Guides</h5>
+            <div class="d-flex flex-wrap gap-x-3 gap-y-1">
+              <a href="home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html" class="text-slate-400 hover-primary text-decoration-none">Yeshwanthpur, Malleshwaram &amp; Rajajinagar Nursing</a>
+              <span class="text-slate-700">·</span>
+              <a href="home-nursing-charges-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Home Nursing Charges Bangalore</a>
+              <span class="text-slate-700">·</span>
+              <a href="hospital-discharge-checklist-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Hospital Discharge Transition Checklist</a>
+              <span class="text-slate-700">·</span>
+              <a href="home-nurse-vs-caregiver-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Home Nurse vs Caregiver Guide</a>
+              <span class="text-slate-700">·</span>
+              <a href="nri-parents-care-monitoring-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">NRI Parents Care Monitoring</a>
+              <span class="text-slate-700">·</span>
+              <a href="rehabilitation-centre-in-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Rehabilitation Centre Bangalore</a>
+              <span class="text-slate-700">·</span>
+              <a href="home-nursing-healthcare-services-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Comprehensive Home Nursing Care</a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <h5 class="text-xs text-uppercase fw-bold text-slate-300 mb-2 tracking-wider">Clinical Care Articles &amp; Patient Guides</h5>
+            <div class="d-flex flex-wrap gap-x-3 gap-y-1">
+              <a href="blog/best-home-healthcare-services-in-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Best Home Healthcare in Bangalore</a>
+              <span class="text-slate-700">·</span>
+              <a href="blog/home-nursing-services-in-bangalore-complete-guide.html" class="text-slate-400 hover-primary text-decoration-none">Home Nursing Complete Guide 2026</a>
+              <span class="text-slate-700">·</span>
+              <a href="blog/bipap-machine-in-yeshwanthpur-expert-home-healthcare-for-sleep-apnea-copd-patients.html" class="text-slate-400 hover-primary text-decoration-none">BiPAP Machine in Yeshwanthpur Guide</a>
+              <span class="text-slate-700">·</span>
+              <a href="blog/home-icu-setup-bangalore.html" class="text-slate-400 hover-primary text-decoration-none">Home ICU Setup Protocol</a>
+              <span class="text-slate-700">·</span>
+              <a href="blog/physiotherapy-at-home-after-surgery.html" class="text-slate-400 hover-primary text-decoration-none">Post-Surgery Physiotherapy Recovery</a>
+              <span class="text-slate-700">·</span>
+              <a href="blog/elder-care-services-guide.html" class="text-slate-400 hover-primary text-decoration-none">Elder Care Services Guide</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Copyright Bar -->
-      <div class="pt-4 border-top border-slate-800 d-flex flex-column flex-sm-row align-items-center justify-content-between small text-slate-500 gap-2">
-        <div>© <span id="currentYear">2026</span> Ashok Home Healthcare Services. All Rights Reserved. <span class="mx-1 text-slate-600">|</span> <span class="text-slate-400">Design By <a href="tel:+918197473097" class="text-slate-300 fw-semibold text-decoration-none">Faasadot (8197473097)</a></span></div>
-        <div class="d-flex align-items-center gap-3">
+      <div class="pt-4 border-top border-slate-800 d-flex flex-column flex-sm-row align-items-start align-items-sm-center justify-content-between small text-slate-500 gap-2">
+        <div>
+          <span>© <span id="currentYear">2026</span> Ashok Home Healthcare Services. All Rights Reserved.</span>
+          <span class="d-none d-sm-inline mx-1 text-slate-600">|</span>
+          <span class="d-block d-sm-inline text-slate-400 mt-1 mt-sm-0">Design By <a href="tel:+918197473097" class="text-slate-300 fw-semibold text-decoration-none">Faasadot (8197473097)</a></span>
+        </div>
+        <div class="d-flex align-items-center gap-2 gap-sm-3 text-slate-400 mt-1 mt-sm-0">
           <a href="https://maps.app.goo.gl/AYZDX2eLoGjnKWXC9" target="_blank" rel="noreferrer" class="text-slate-400 text-decoration-none">Google Maps Direction</a>
-          <span>|</span>
-          <span class="text-slate-400">Yeshwanthpur, Bengaluru</span>
+          <span class="text-slate-600">|</span>
+          <span>Yeshwanthpur, Bengaluru</span>
         </div>
       </div>
+
       <!-- Medical & Healthcare Disclaimer (Google YMYL / E-E-A-T Compliance) -->
       <div class="pt-3 mt-3 border-top border-slate-800 text-slate-500 small" style="font-size: 0.76rem; line-height: 1.6;">
-        <span class="fw-semibold text-slate-400">Clinical &amp; Medical Disclaimer:</span> The healthcare and medical information on this website is provided solely for general informational and patient educational purposes. It does not substitute for professional medical advice, clinical diagnosis, or individualized treatment plans. Nursing interventions, home ICU setups, and clinical procedures must be conducted under the direction and valid prescription of a registered medical practitioner (MBBS/MD) or treating hospital.
+        <span class="fw-semibold text-slate-400">Clinical &amp; Medical Disclaimer:</span> The healthcare and medical information on this website is provided solely for general informational and patient educational purposes. It does not substitute for professional medical advice, clinical diagnosis, or individualized treatment plans. Nursing interventions, home ICU setups, and medical equipment use must be conducted in accordance with the guidance and valid prescription of a registered medical practitioner (MBBS/MD) or treating hospital.
       </div>
     </div>
   </footer>
