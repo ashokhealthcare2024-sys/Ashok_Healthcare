@@ -7,7 +7,7 @@
 (function () {
   'use strict';
 
-  // 122 Verified Media Assets (108 Photos, 14 Videos)
+  // 121 Verified Media Assets (108 Photos, 13 Videos)
   const GALLERY_ITEMS = [
   {
     "id": "img-1",
@@ -827,16 +827,6 @@
     "category": "icu",
     "categoryLabel": "Home ICU Setup & Critical Care",
     "desc": "Demonstration of critical care setup installed at patient residence in Bengaluru by Ashok Healthcare clinical engineers.",
-    "featured": true
-  },
-  {
-    "id": "vid-2",
-    "type": "video",
-    "src": "Gallery/gallery_1/WhatsApp Video 2026-09-25 at 7.47.19 PM (1).mp4",
-    "title": "Motorized Electric ICU Hospital Bed Remote Adjustment",
-    "category": "beds",
-    "categoryLabel": "Motorized Hospital Beds",
-    "desc": "Electronic 5-function ICU bed operation with cardiac chair and height adjustment for paralyzed patients.",
     "featured": true
   },
   {

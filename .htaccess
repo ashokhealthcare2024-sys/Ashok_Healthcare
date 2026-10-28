@@ -136,6 +136,15 @@ Options -Indexes -MultiViews
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
   RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,L]
+
+  # 7C. Directory alias fallbacks for services & equipment image folders
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/images/services_img/$1 -f
+  RewriteRule ^images/services/(.+)$ /images/services_img/$1 [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/images/equipment_img/$1 -f
+  RewriteRule ^images/equipment/(.+)$ /images/equipment_img/$1 [L]
 </IfModule>
 
 <IfModule mod_headers.c>

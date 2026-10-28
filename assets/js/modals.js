@@ -9,11 +9,64 @@ const SITE_CONFIG = {
   whatsappNumber: '917829753538',
 };
 
+// Safe storage helper functions to prevent SecurityError exceptions in private/strict browsing
+function safeGetStorage(storage, key) {
+  try {
+    return window[storage] ? window[storage].getItem(key) : null;
+  } catch (e) {
+    return null;
+  }
+}
+
+function safeSetStorage(storage, key, val) {
+  try {
+    if (window[storage]) window[storage].setItem(key, val);
+  } catch (e) {
+    // Ignore security / privacy mode storage restrictions
+  }
+}
+
 // Universal listener to strictly enforce numbers only and max 10 digits across all modal phone inputs
 document.addEventListener('input', (e) => {
   if (e.target && (e.target.type === 'tel' || (e.target.id && e.target.id.toLowerCase().includes('phone')))) {
     e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
   }
+}, true);
+
+// Universal accessibility fix: Prevent "Blocked aria-hidden on an element because its descendant retained focus"
+function safelyReleaseModalFocus(modalEl) {
+  if (modalEl && typeof modalEl.contains === 'function' && modalEl.contains(document.activeElement)) {
+    if (document.activeElement && typeof document.activeElement.blur === 'function') {
+      document.activeElement.blur();
+    }
+  }
+  if (document.activeElement && document.activeElement !== document.body && typeof document.activeElement.blur === 'function') {
+    const parentModal = document.activeElement.closest ? document.activeElement.closest('.modal') : null;
+    if (parentModal) {
+      document.activeElement.blur();
+    }
+  }
+}
+
+// Intercept dismiss button interactions in capture phase before Bootstrap triggers hide & aria-hidden
+document.addEventListener('pointerdown', (e) => {
+  const dismissBtn = e.target && e.target.closest ? e.target.closest('[data-bs-dismiss="modal"], .btn-close') : null;
+  if (dismissBtn && typeof dismissBtn.blur === 'function') {
+    dismissBtn.blur();
+  }
+}, true);
+
+document.addEventListener('click', (e) => {
+  const dismissBtn = e.target && e.target.closest ? e.target.closest('[data-bs-dismiss="modal"], .btn-close') : null;
+  if (dismissBtn) {
+    if (typeof dismissBtn.blur === 'function') dismissBtn.blur();
+    const parentModal = dismissBtn.closest ? dismissBtn.closest('.modal') : null;
+    if (parentModal) safelyReleaseModalFocus(parentModal);
+  }
+}, true);
+
+document.addEventListener('hide.bs.modal', (e) => {
+  safelyReleaseModalFocus(e.target);
 }, true);
 
 // Global Assessment Action - Emergency Call Only (Requirement 2)
@@ -780,8 +833,8 @@ function initRevisitModalEvents() {
           submitBtn.innerHTML = origText;
         }
 
-        sessionStorage.setItem(getRevisitPopupStorageKey('dismissed'), 'true');
-        localStorage.setItem('ashok_popup_last_submitted', Date.now().toString());
+        safeSetStorage('sessionStorage', getRevisitPopupStorageKey('dismissed'), 'true');
+        safeSetStorage('localStorage', 'ashok_popup_last_submitted', Date.now().toString());
       }, 400);
     });
   }
@@ -793,9 +846,45 @@ function initRevisitModalEvents() {
     });
   }
 
+  const closeBtn = document.getElementById('revisitPopupCloseBtn');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeBtn.blur();
+      safelyReleaseModalFocus(modalEl);
+    }, true);
+  }
+
+  // Focus management across modal lifecycle to eliminate aria-hidden accessibility warnings
+  modalEl.addEventListener('hide.bs.modal', () => {
+    if (modalEl.contains(document.activeElement)) {
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
+      if (document.body && typeof document.body.focus === 'function') {
+        document.body.focus();
+      }
+    }
+  });
+
+  modalEl.addEventListener('shown.bs.modal', () => {
+    if (nameInput && typeof nameInput.focus === 'function') {
+      nameInput.focus();
+    } else {
+      const closeBtn = document.getElementById('revisitPopupCloseBtn');
+      if (closeBtn && typeof closeBtn.focus === 'function') {
+        closeBtn.focus();
+      }
+    }
+  });
+
   modalEl.addEventListener('hidden.bs.modal', () => {
-    sessionStorage.setItem(getRevisitPopupStorageKey('dismissed'), 'true');
+    safeSetStorage('sessionStorage', getRevisitPopupStorageKey('dismissed'), 'true');
     resetRevisitModal();
+    if (modalEl.contains(document.activeElement)) {
+      if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+      }
+    }
   });
 
   // Schedule popup on fresh visit / revisit
@@ -807,9 +896,9 @@ function scheduleRevisitPopup() {
   const lastShownKey = getRevisitPopupStorageKey('last_shown');
 
   // Suppress repeats on this page while allowing the popup on a different page.
-  if (sessionStorage.getItem(dismissedKey)) return;
+  if (safeGetStorage('sessionStorage', dismissedKey)) return;
 
-  const lastShown = parseInt(localStorage.getItem(lastShownKey) || '0', 10);
+  const lastShown = parseInt(safeGetStorage('localStorage', lastShownKey) || '0', 10);
   const now = Date.now();
   const revisitCooldown = 45 * 60 * 1000;
   if (now - lastShown < revisitCooldown) return;
@@ -818,14 +907,14 @@ function scheduleRevisitPopup() {
     // Prevent modal stacking if user opened another modal or mobile drawer
     if (document.querySelector('.modal.show') || document.body.classList.contains('modal-open')) return;
     if (document.body.classList.contains('mobile-drawer-open')) return;
-    if (sessionStorage.getItem(dismissedKey)) return;
+    if (safeGetStorage('sessionStorage', dismissedKey)) return;
 
     const modalEl = document.getElementById('revisitEnquiryModal');
     if (modalEl && typeof bootstrap !== 'undefined' && bootstrap.Modal) {
       const bsModal = bootstrap.Modal.getOrCreateInstance(modalEl);
       bsModal.show();
-      localStorage.setItem(lastShownKey, now.toString());
-      sessionStorage.setItem(dismissedKey, 'true');
+      safeSetStorage('localStorage', lastShownKey, now.toString());
+      safeSetStorage('sessionStorage', dismissedKey, 'true');
     }
   }, 3500);
 }
