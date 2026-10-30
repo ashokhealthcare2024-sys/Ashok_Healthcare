@@ -7,7 +7,6 @@ Allow: /
 # Disallow internal scripts & raw component fragments
 Disallow: /.git/
 Disallow: /components/
-Disallow: /scratch/
 
 # Image Crawlers - Full media access across all asset directories
 User-agent: Googlebot-Image

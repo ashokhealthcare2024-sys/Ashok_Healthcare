@@ -6,7 +6,24 @@
 (function () {
   'use strict';
 
+  function initFileProtocolCompat() {
+    if (window.location.protocol !== 'file:') return;
+    const isSub = /\/(about-us|services|equipment-products|gallery|blog|careers|contact)\//i.test(window.location.pathname.replace(/\\/g, '/'));
+    document.querySelectorAll('a[href]').forEach(a => {
+      const h = a.getAttribute('href');
+      if (!h || h.includes('://') || h.startsWith('tel:') || h.startsWith('mailto:') || h.startsWith('#') || h.startsWith('javascript:')) return;
+      if (h === '/' || h === '') {
+        a.setAttribute('href', isSub ? '../index.html' : 'index.html');
+      } else if (h === '../') {
+        a.setAttribute('href', '../index.html');
+      } else if (h.endsWith('/')) {
+        a.setAttribute('href', h + 'index.html');
+      }
+    });
+  }
+
   function initAll() {
+    initFileProtocolCompat();
     ensureMobileDrawer();
     initMobileDrawer();
     highlightActiveNavLink();
@@ -25,7 +42,13 @@
     if (document.getElementById('mobileDrawer')) return;
 
     const pathname = window.location.pathname.toLowerCase();
-    const isSubfolder = pathname.includes('/services/') || pathname.includes('/blog/');
+    const isSubfolder = pathname.includes('/services/') ||
+                        pathname.includes('/blog/') ||
+                        pathname.includes('/about-us/') ||
+                        pathname.includes('/equipment-products/') ||
+                        pathname.includes('/gallery/') ||
+                        pathname.includes('/careers/') ||
+                        pathname.includes('/contact/');
     const prefix = isSubfolder ? '../' : '';
 
     // Backdrop
@@ -49,7 +72,7 @@
 
     drawer.innerHTML = `
       <div class="d-flex align-items-center justify-content-between pb-3 border-bottom mb-3 flex-shrink-0">
-        <a href="${prefix}index.html" class="d-flex align-items-center text-decoration-none">
+        <a href="${prefix}" class="d-flex align-items-center text-decoration-none">
           <img src="${prefix}assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" style="height: 38px; width: auto; max-width: 200px; object-fit: contain;">
         </a>
         <button type="button" id="closeMobileDrawer" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;" aria-label="Close menu">
@@ -58,12 +81,12 @@
       </div>
 
       <div class="d-flex flex-column gap-1.5 mb-4 overflow-y-auto flex-grow-1" style="scrollbar-width: thin;">
-        <a href="${prefix}index.html" class="mobile-nav-item" data-nav="home">Home</a>
-        <a href="${prefix}about.html" class="mobile-nav-item" data-nav="about">About Us</a>
+        <a href="${prefix}" class="mobile-nav-item" data-nav="home">Home</a>
+        <a href="${prefix}about-us/" class="mobile-nav-item" data-nav="about">About Us</a>
         
         <div class="mobile-nav-group my-1">
           <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-services-toggle" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileServicesList" onclick="toggleMobileServicesMenu(event)">
-            <span class="fw-bold text-slate-800 small user-select-none">All Healthcare Services</span>
+            <span class="fw-bold text-slate-800 small user-select-none">Clinical Healthcare Services</span>
             <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.25s ease;"><path d="m6 9 6 6 6-6"/></svg>
             </span>
@@ -73,18 +96,59 @@
             <a href="${prefix}services/home-icu.html" class="mobile-nav-subitem">Home ICU Setup</a>
             <a href="${prefix}rehabilitation-neuro-and-ortho.html" class="mobile-nav-subitem">Neuro &amp; Ortho Rehab</a>
             <a href="${prefix}physiotherapy.html" class="mobile-nav-subitem">Physiotherapy at Home</a>
-            <a href="${prefix}services/elder-care.html" class="mobile-nav-subitem">Elder Care &amp; Palliative</a>
+            <a href="${prefix}services/elder-care.html" class="mobile-nav-subitem">Elder Care &amp; Support</a>
+            <a href="${prefix}palliative-care-bangalore.html" class="mobile-nav-subitem">Palliative &amp; Hospice Care</a>
             <a href="${prefix}diagnostics.html" class="mobile-nav-subitem">Diagnostic Lab Tests</a>
             <a href="${prefix}ambulance-services.html" class="mobile-nav-subitem">24/7 ALS Ambulance</a>
-            <a href="${prefix}services.html" class="mobile-nav-subitem text-primary fw-bold">Explore All Services →</a>
+            <a href="${prefix}rehabilitation-centre-in-bangalore.html" class="mobile-nav-subitem">Rehabilitation Centre</a>
+            <a href="${prefix}nri-parents-care-monitoring-bangalore.html" class="mobile-nav-subitem">NRI Parents Healthcare</a>
+            <a href="${prefix}home-nursing-healthcare-services-bangalore.html" class="mobile-nav-subitem">Clinical Nursing Services</a>
+            <a href="${prefix}services/" class="mobile-nav-subitem text-primary fw-bold">Explore All Services →</a>
           </div>
         </div>
 
-        <a href="${prefix}products.html" class="mobile-nav-item" data-nav="products">Equipment &amp; Products</a>
-        <a href="${prefix}gallery.html" class="mobile-nav-item" data-nav="gallery">Photo &amp; Video Gallery</a>
-        <a href="${prefix}blog.html" class="mobile-nav-item" data-nav="blog">Healthcare Blogs</a>
-        <a href="${prefix}careers.html" class="mobile-nav-item" data-nav="careers">Careers &amp; Vacancies</a>
-        <a href="${prefix}contact.html" class="mobile-nav-item" data-nav="contact">Contact &amp; Hub</a>
+        <!-- Medical Equipment Rentals Group -->
+        <div class="mobile-nav-group my-1">
+          <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-equipment-toggle" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileEquipmentList" onclick="toggleMobileEquipmentMenu(event)">
+            <span class="fw-bold text-slate-800 small user-select-none">Medical Equipment Rentals</span>
+            <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.25s ease;"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div id="mobileEquipmentList" class="mobile-equipment-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2" style="display: none;">
+            <a href="${prefix}oxygen-concentrator-rental-bangalore.html" class="mobile-nav-subitem">Oxygen Concentrators (5L/10L)</a>
+            <a href="${prefix}bipap-cpap-machine-rental-bangalore.html" class="mobile-nav-subitem">BiPAP &amp; CPAP Machines</a>
+            <a href="${prefix}hospital-bed-rental-bangalore.html" class="mobile-nav-subitem">ICU Hospital Beds</a>
+            <a href="${prefix}patient-monitor-rental-bangalore.html" class="mobile-nav-subitem">Multipara Patient Monitors</a>
+            <a href="${prefix}wheelchair-rental-bangalore.html" class="mobile-nav-subitem">Motorized &amp; Manual Wheelchairs</a>
+            <a href="${prefix}suction-machine-rental-bangalore.html" class="mobile-nav-subitem">Suction Machines on Rent</a>
+            <a href="${prefix}medical-equipment-rent-and-sales.html" class="mobile-nav-subitem">Medical Equipment Hub</a>
+            <a href="${prefix}equipment-products/" class="mobile-nav-subitem text-primary fw-bold">All Equipment Catalog →</a>
+          </div>
+        </div>
+
+        <!-- Bangalore Patient & Care Guides Group -->
+        <div class="mobile-nav-group my-1">
+          <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-guides-toggle" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileGuidesList" onclick="toggleMobileGuidesMenu(event)">
+            <span class="fw-bold text-slate-800 small user-select-none">Bangalore Care Guides</span>
+            <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.25s ease;"><path d="m6 9 6 6 6-6"/></svg>
+            </span>
+          </div>
+          <div id="mobileGuidesList" class="mobile-guides-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2" style="display: none;">
+            <a href="${prefix}home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html" class="mobile-nav-subitem">Yeshwanthpur &amp; Malleshwaram Nursing</a>
+            <a href="${prefix}home-nursing-charges-bangalore.html" class="mobile-nav-subitem">Home Nursing Charges Bangalore</a>
+            <a href="${prefix}home-nurse-vs-caregiver-bangalore.html" class="mobile-nav-subitem">Nurse vs Caregiver Comparison</a>
+            <a href="${prefix}hospital-discharge-checklist-bangalore.html" class="mobile-nav-subitem">Hospital Discharge Checklist</a>
+            <a href="${prefix}home-nursing-healthcare-services-bangalore.html" class="mobile-nav-subitem">Complete Home Nursing Services</a>
+          </div>
+        </div>
+
+        <a href="${prefix}equipment-products/" class="mobile-nav-item" data-nav="products">Equipment &amp; Products</a>
+        <a href="${prefix}gallery/" class="mobile-nav-item" data-nav="gallery">Photo &amp; Video Gallery</a>
+        <a href="${prefix}blog/" class="mobile-nav-item" data-nav="blog">Healthcare Blogs</a>
+        <a href="${prefix}careers/" class="mobile-nav-item" data-nav="careers">Careers &amp; Vacancies</a>
+        <a href="${prefix}contact/" class="mobile-nav-item" data-nav="contact">Contact &amp; Hub</a>
       </div>
 
       <div class="pt-3 border-top d-flex flex-column gap-2 mt-auto flex-shrink-0">
@@ -170,9 +234,75 @@
     });
   }
 
+  function toggleMobileEquipmentMenu(e, forceState) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (typeof e === 'boolean') {
+      forceState = e;
+    }
+    const list = document.getElementById('mobileEquipmentList');
+    const toggles = document.querySelectorAll('.mobile-equipment-toggle');
+    if (!list) return;
+
+    const isCurrentlyOpen = list.classList.contains('show') || list.classList.contains('open') || window.getComputedStyle(list).display === 'flex';
+    const shouldOpen = typeof forceState === 'boolean' ? forceState : !isCurrentlyOpen;
+
+    if (shouldOpen) {
+      list.classList.add('show', 'open');
+      list.style.setProperty('display', 'flex', 'important');
+    } else {
+      list.classList.remove('show', 'open');
+      list.style.setProperty('display', 'none', 'important');
+    }
+
+    toggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      const icon = toggle.querySelector('svg');
+      if (icon) {
+        icon.style.transform = shouldOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    });
+  }
+
+  function toggleMobileGuidesMenu(e, forceState) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (typeof e === 'boolean') {
+      forceState = e;
+    }
+    const list = document.getElementById('mobileGuidesList');
+    const toggles = document.querySelectorAll('.mobile-guides-toggle');
+    if (!list) return;
+
+    const isCurrentlyOpen = list.classList.contains('show') || list.classList.contains('open') || window.getComputedStyle(list).display === 'flex';
+    const shouldOpen = typeof forceState === 'boolean' ? forceState : !isCurrentlyOpen;
+
+    if (shouldOpen) {
+      list.classList.add('show', 'open');
+      list.style.setProperty('display', 'flex', 'important');
+    } else {
+      list.classList.remove('show', 'open');
+      list.style.setProperty('display', 'none', 'important');
+    }
+
+    toggles.forEach(toggle => {
+      toggle.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+      const icon = toggle.querySelector('svg');
+      if (icon) {
+        icon.style.transform = shouldOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
+    });
+  }
+
   // Export functions globally
   window.closeMobileDrawerAction = closeMobileDrawerAction;
   window.toggleMobileServicesMenu = toggleMobileServicesMenu;
+  window.toggleMobileEquipmentMenu = toggleMobileEquipmentMenu;
+  window.toggleMobileGuidesMenu = toggleMobileGuidesMenu;
 
   /**
    * Initializes event listeners via robust event delegation
@@ -206,6 +336,16 @@
       const subToggle = e.target.closest('.mobile-services-toggle, #toggleMobileSubmenu, .nav-toggle-sub');
       if (subToggle) {
         toggleMobileServicesMenu(e);
+        return;
+      }
+      const equipToggle = e.target.closest('.mobile-equipment-toggle');
+      if (equipToggle) {
+        toggleMobileEquipmentMenu(e);
+        return;
+      }
+      const guidesToggle = e.target.closest('.mobile-guides-toggle');
+      if (guidesToggle) {
+        toggleMobileGuidesMenu(e);
         return;
       }
 

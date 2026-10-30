@@ -641,6 +641,11 @@ img {
   margin-top: 0.5rem;
 }
 
+.nav-dropdown-end .mega-menu {
+  left: auto;
+  right: 0;
+}
+
 /* Invisible bridge prevents hover gap disconnect */
 .mega-menu::before {
   content: '';

@@ -2,46 +2,111 @@
 <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
 <div class="mobile-nav-drawer" id="mobileNavDrawer" aria-hidden="true">
   <div class="p-4 border-bottom d-flex align-items-center justify-content-between bg-light">
-    <a href="index.html" class="d-flex align-items-center text-decoration-none">
-      <img src="images/ashoklogoh-tras.webp" alt="Ashok Healthcare" style="height: 38px;">
+    <a href="/" class="d-flex align-items-center text-decoration-none">
+      <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Healthcare" style="height: 38px;">
     </a>
-    <button type="button" class="btn btn-sm btn-light rounded-circle p-2" id="mobileNavClose" aria-label="Close navigation">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <button type="button" class="btn btn-sm btn-light rounded-circle p-2" id="mobileNavClose"
+      aria-label="Close navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
     </button>
   </div>
 
   <div class="p-4 d-flex flex-column gap-3 overflow-y-auto" style="max-height: calc(100vh - 180px);">
     <a href="index.html" class="mobile-nav-item" data-nav="home">Home</a>
-    <a href="about.html" class="mobile-nav-item" data-nav="about">About Us</a>
+    <a href="about-us/" class="mobile-nav-item" data-nav="about">About Us</a>
 
     <div class="mobile-nav-group my-1">
-      <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-services-toggle" style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileServicesList" onclick="toggleMobileServicesMenu(event)">
-        <span class="fw-bold text-slate-800 small user-select-none">All Healthcare Services</span>
-        <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="transition: transform 0.25s ease;"><path d="m6 9 6 6 6-6"/></svg>
+      <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-services-toggle"
+        style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileServicesList"
+        onclick="toggleMobileServicesMenu(event)">
+        <span class="fw-bold text-slate-800 small user-select-none">Clinical Healthcare Services</span>
+        <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center"
+          style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            style="transition: transform 0.25s ease;">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
         </span>
       </div>
-      <div id="mobileServicesList" class="mobile-services-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2">
+      <div id="mobileServicesList"
+        class="mobile-services-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2">
         <a href="services/home-nursing.html" class="mobile-nav-subitem">Home Nursing Care</a>
         <a href="services/home-icu.html" class="mobile-nav-subitem">Home ICU Setup</a>
         <a href="rehabilitation-neuro-and-ortho.html" class="mobile-nav-subitem">Neuro &amp; Ortho Rehab</a>
         <a href="physiotherapy.html" class="mobile-nav-subitem">Physiotherapy at Home</a>
-        <a href="services/elder-care.html" class="mobile-nav-subitem">Elder Care &amp; Palliative</a>
+        <a href="services/elder-care.html" class="mobile-nav-subitem">Elder Care &amp; Support</a>
+        <a href="palliative-care-bangalore.html" class="mobile-nav-subitem">Palliative &amp; Hospice Care</a>
         <a href="diagnostics.html" class="mobile-nav-subitem">Diagnostic Lab Tests</a>
         <a href="ambulance-services.html" class="mobile-nav-subitem">24/7 ALS Ambulance</a>
-        <a href="services.html" class="mobile-nav-subitem text-primary fw-bold">Explore All Services →</a>
+        <a href="rehabilitation-centre-in-bangalore.html" class="mobile-nav-subitem">Rehabilitation Centre</a>
+        <a href="nri-parents-care-monitoring-bangalore.html" class="mobile-nav-subitem">NRI Parents Healthcare</a>
+        <a href="home-nursing-healthcare-services-bangalore.html" class="mobile-nav-subitem">Clinical Nursing Services</a>
+        <a href="services/" class="mobile-nav-subitem text-primary fw-bold">Explore All Services →</a>
       </div>
     </div>
 
-    <a href="products.html" class="mobile-nav-item" data-nav="products">Equipment &amp; Products</a>
-    <a href="gallery.html" class="mobile-nav-item" data-nav="gallery">Photo &amp; Video Gallery</a>
-    <a href="blog.html" class="mobile-nav-item" data-nav="blog">Healthcare Blog</a>
-    <a href="careers.html" class="mobile-nav-item" data-nav="careers">Careers &amp; Hiring</a>
-    <a href="contact.html" class="mobile-nav-item" data-nav="contact">Contact &amp; Location</a>
+    <!-- Medical Equipment Rentals Group -->
+    <div class="mobile-nav-group my-1">
+      <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-equipment-toggle"
+        style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileEquipmentList"
+        onclick="toggleMobileEquipmentMenu(event)">
+        <span class="fw-bold text-slate-800 small user-select-none">Medical Equipment Rentals</span>
+        <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center"
+          style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            style="transition: transform 0.25s ease;">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
+      </div>
+      <div id="mobileEquipmentList"
+        class="mobile-equipment-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2" style="display: none;">
+        <a href="oxygen-concentrator-rental-bangalore.html" class="mobile-nav-subitem">Oxygen Concentrators (5L/10L)</a>
+        <a href="bipap-cpap-machine-rental-bangalore.html" class="mobile-nav-subitem">BiPAP &amp; CPAP Machines</a>
+        <a href="hospital-bed-rental-bangalore.html" class="mobile-nav-subitem">ICU Hospital Beds</a>
+        <a href="patient-monitor-rental-bangalore.html" class="mobile-nav-subitem">Multipara Patient Monitors</a>
+        <a href="wheelchair-rental-bangalore.html" class="mobile-nav-subitem">Motorized &amp; Manual Wheelchairs</a>
+        <a href="suction-machine-rental-bangalore.html" class="mobile-nav-subitem">Suction Machines on Rent</a>
+        <a href="medical-equipment-rent-and-sales.html" class="mobile-nav-subitem">Medical Equipment Hub</a>
+        <a href="equipment-products/" class="mobile-nav-subitem text-primary fw-bold">All Equipment Catalog →</a>
+      </div>
+    </div>
+
+    <!-- Bangalore Patient & Care Guides Group -->
+    <div class="mobile-nav-group my-1">
+      <div class="d-flex align-items-center justify-content-between p-2 rounded-3 bg-light mobile-guides-toggle"
+        style="cursor: pointer;" role="button" tabindex="0" aria-expanded="false" aria-controls="mobileGuidesList"
+        onclick="toggleMobileGuidesMenu(event)">
+        <span class="fw-bold text-slate-800 small user-select-none">Bangalore Care Guides</span>
+        <span class="nav-toggle-sub text-slate-600 p-1 d-flex align-items-center justify-content-center"
+          style="width: 32px; height: 32px; pointer-events: none;" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            style="transition: transform 0.25s ease;">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </span>
+      </div>
+      <div id="mobileGuidesList"
+        class="mobile-guides-list ps-3 flex-column gap-1 border-start border-2 border-primary-200 ms-2 mt-2" style="display: none;">
+        <a href="home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html" class="mobile-nav-subitem">Yeshwanthpur &amp; Malleshwaram Nursing</a>
+        <a href="home-nursing-charges-bangalore.html" class="mobile-nav-subitem">Home Nursing Charges Bangalore</a>
+        <a href="home-nurse-vs-caregiver-bangalore.html" class="mobile-nav-subitem">Nurse vs Caregiver Comparison</a>
+        <a href="hospital-discharge-checklist-bangalore.html" class="mobile-nav-subitem">Hospital Discharge Checklist</a>
+        <a href="home-nursing-healthcare-services-bangalore.html" class="mobile-nav-subitem">Complete Home Nursing Services</a>
+      </div>
+    </div>
+    <a href="gallery/" class="mobile-nav-item" data-nav="gallery">Photo &amp; Video Gallery</a>
+    <a href="blog/" class="mobile-nav-item" data-nav="blog">Healthcare Blog</a>
+    <a href="careers/" class="mobile-nav-item" data-nav="careers">Careers &amp; Hiring</a>
+    <a href="contact/" class="mobile-nav-item" data-nav="contact">Contact &amp; Location</a>
   </div>
 
   <div class="p-4 border-top bg-light mt-auto">
-    <a href="tel:+917829753538" class="btn-primary-custom w-100 justify-content-center mb-2 text-decoration-none" aria-label="Book Assessment - Call Emergency Line">
+    <a href="tel:+917829753538" class="btn-primary-custom w-100 justify-content-center mb-2 text-decoration-none"
+      aria-label="Book Assessment - Call Emergency Line">
       Book Assessment
     </a>
     <a href="tel:+917829753538" class="btn btn-outline-primary w-100 fw-bold rounded-pill text-center py-2">

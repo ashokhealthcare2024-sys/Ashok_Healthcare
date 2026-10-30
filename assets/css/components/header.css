@@ -77,6 +77,11 @@
   margin-top: 0.5rem;
 }
 
+.nav-dropdown-end .mega-menu {
+  left: auto;
+  right: 0;
+}
+
 /* Invisible hover bridge to prevent menu from closing when moving mouse across the gap */
 .mega-menu::before {
   content: '';

@@ -82,7 +82,7 @@ def parse_htaccess(path=HTACCESS_FILE):
                 src_pattern = m_redir.group(1)
                 dest = m_redir.group(2)
                 # Ignore global domain redirects like ^(.*)$ and index.html to canonical root
-                if '(.*)' in src_pattern or 'index\\.html' in src_pattern:
+                if '(.*)' in src_pattern or 'index\\.html' in src_pattern or 'index.html' in dest:
                     continue
                 try:
                     compiled = re.compile(f"^{src_pattern}")
@@ -265,7 +265,13 @@ def validate_sitemap(live_test=False):
             excluded_repo_files[f] = "HTML Sitemap directory for users (kept separate from search engine XML sitemap)"
             continue
 
-        expected_url = f"{DOMAIN}/" if f == 'index.html' else f"{DOMAIN}/{f}"
+        norm_f = f.replace('\\', '/')
+        if norm_f == 'index.html':
+            expected_url = f"{DOMAIN}/"
+        elif norm_f.endswith('/index.html'):
+            expected_url = f"{DOMAIN}/{norm_f.replace('index.html', '')}"
+        else:
+            expected_url = f"{DOMAIN}/{norm_f}"
 
 
         if p['canonical'] != expected_url:
@@ -288,6 +294,8 @@ def validate_sitemap(live_test=False):
         rel_path = u[len(DOMAIN):].lstrip('/')
         if not rel_path:
             rel_path = 'index.html'
+        elif rel_path.endswith('/'):
+            rel_path = f"{rel_path}index.html"
         
         if rel_path in excluded_repo_files:
             issues.append(f"Sitemap includes excluded file: {u} (Reason: {excluded_repo_files[rel_path]})")
@@ -313,6 +321,8 @@ def validate_sitemap(live_test=False):
         rel_path = u[len(DOMAIN):].lstrip('/')
         if not rel_path:
             rel_path = 'index.html'
+        elif rel_path.endswith('/'):
+            rel_path = f"{rel_path}index.html"
         
         if rel_path in analyzed_pages:
             p = analyzed_pages[rel_path]

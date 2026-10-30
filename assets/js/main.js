@@ -1,7 +1,57 @@
 /**
- * ASHOK HOME HEALTHCARE SERVICES - MAIN JAVASCRIPT
- * Core UI interactions, scroll behaviors, and global initializers
+ * Local File Protocol (file://) Compatibility Handler
+ * When testing pages offline by double-clicking HTML files without a web server,
+ * browsers show a folder directory listing instead of serving index.html.
+ * This automatically appends index.html to folder links so the site navigates seamlessly offline.
  */
+(function initFileProtocolCompat() {
+  if (window.location.protocol !== 'file:') return;
+
+  function resolveFileLink(href) {
+    if (!href || href.includes('://') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('#') || href.startsWith('javascript:')) {
+      return null;
+    }
+    const isSub = /\/(about-us|services|equipment-products|gallery|blog|careers|contact)\//i.test(window.location.pathname.replace(/\\/g, '/'));
+    const clean = href.split('?')[0].split('#')[0];
+    if (clean === '/' || clean === '') {
+      return isSub ? '../index.html' : 'index.html';
+    }
+    if (clean === '../') {
+      return '../index.html';
+    }
+    if (clean.endsWith('/')) {
+      return clean + 'index.html';
+    }
+    return null;
+  }
+
+  // Intercept all link clicks immediately
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const resolved = resolveFileLink(link.getAttribute('href'));
+    if (resolved) {
+      e.preventDefault();
+      window.location.href = resolved;
+    }
+  }, true);
+
+  // Also rewrite href attributes in DOM when ready
+  const rewriteLinks = () => {
+    document.querySelectorAll('a[href]').forEach(a => {
+      const resolved = resolveFileLink(a.getAttribute('href'));
+      if (resolved) {
+        a.setAttribute('href', resolved);
+      }
+    });
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', rewriteLinks);
+  } else {
+    rewriteLinks();
+  }
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderOffset();

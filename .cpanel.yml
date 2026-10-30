@@ -8,63 +8,54 @@ deployment:
     - export DEPLOYPATH=${DEPLOYPATH:-$HOME/public_html/}
     - /bin/mkdir -p $DEPLOYPATH
 
-    # 1. Deploy Root HTML Pages
+    # 1. Deploy Root Core Pages & Localized Landing Pages
     - /bin/cp -f index.html $DEPLOYPATH
-    - /bin/cp -f about.html $DEPLOYPATH
-    - /bin/cp -f about-ashok-healthcare-bangalore.html $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -f services.html $DEPLOYPATH
-    - /bin/cp -f products.html $DEPLOYPATH
-    - /bin/cp -f gallery.html $DEPLOYPATH
-    - /bin/cp -f careers.html $DEPLOYPATH
-    - /bin/cp -f blog.html $DEPLOYPATH
-    - /bin/cp -f contact.html $DEPLOYPATH
-    - /bin/cp -f palliative-care-bangalore.html $DEPLOYPATH
     - /bin/cp -f ambulance-services.html $DEPLOYPATH
-    - /bin/cp -f diagnostics.html $DEPLOYPATH
-    - /bin/cp -f medical-equipment-rent-and-sales.html $DEPLOYPATH
-    - /bin/cp -f physiotherapy.html $DEPLOYPATH
-    - /bin/cp -f rehabilitation-neuro-and-ortho.html $DEPLOYPATH
-    - /bin/cp -f oxygen-concentrator-rental-bangalore.html $DEPLOYPATH
-    - /bin/cp -f hospital-bed-rental-bangalore.html $DEPLOYPATH
     - /bin/cp -f bipap-cpap-machine-rental-bangalore.html $DEPLOYPATH
-    - /bin/cp -f patient-monitor-rental-bangalore.html $DEPLOYPATH
-    - /bin/cp -f wheelchair-rental-bangalore.html $DEPLOYPATH
-    - /bin/cp -f suction-machine-rental-bangalore.html $DEPLOYPATH
-    - /bin/cp -f home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html $DEPLOYPATH
-    - /bin/cp -f home-nursing-charges-bangalore.html $DEPLOYPATH
-    - /bin/cp -f hospital-discharge-checklist-bangalore.html $DEPLOYPATH
+    - /bin/cp -f diagnostics.html $DEPLOYPATH
     - /bin/cp -f home-nurse-vs-caregiver-bangalore.html $DEPLOYPATH
-    - /bin/cp -f nri-parents-care-monitoring-bangalore.html $DEPLOYPATH
-    - /bin/cp -f rehabilitation-centre-in-bangalore.html $DEPLOYPATH
+    - /bin/cp -f home-nursing-charges-bangalore.html $DEPLOYPATH
     - /bin/cp -f home-nursing-healthcare-services-bangalore.html $DEPLOYPATH
+    - /bin/cp -f home-nursing-services-yeshwanthpur-malleshwaram-rajajinagar.html $DEPLOYPATH
+    - /bin/cp -f hospital-bed-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f hospital-discharge-checklist-bangalore.html $DEPLOYPATH
+    - /bin/cp -f medical-equipment-rent-and-sales.html $DEPLOYPATH
+    - /bin/cp -f nri-parents-care-monitoring-bangalore.html $DEPLOYPATH
+    - /bin/cp -f oxygen-concentrator-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f palliative-care-bangalore.html $DEPLOYPATH
+    - /bin/cp -f patient-monitor-rental-bangalore.html $DEPLOYPATH
+    - /bin/cp -f physiotherapy.html $DEPLOYPATH
     - /bin/cp -f privacy.html $DEPLOYPATH
+    - /bin/cp -f rehabilitation-centre-in-bangalore.html $DEPLOYPATH
+    - /bin/cp -f rehabilitation-neuro-and-ortho.html $DEPLOYPATH
+    - /bin/cp -f suction-machine-rental-bangalore.html $DEPLOYPATH
     - /bin/cp -f terms.html $DEPLOYPATH
+    - /bin/cp -f wheelchair-rental-bangalore.html $DEPLOYPATH
     - /bin/cp -f sitemap.html $DEPLOYPATH
     - /bin/cp -f 404.html $DEPLOYPATH
 
-
-    # 2. Deploy Root Assets, Icons, Verification & SEO Metadata
-    - /bin/cp -f favicon.svg $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -f icons.svg $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -f sitemap.xml $DEPLOYPATH
-    - /bin/cp -f robots.txt $DEPLOYPATH
-    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH 2>/dev/null || true
+    # 2. Deploy Server & Search Engine Configurations, Feeds & Verifications
     - /bin/cp -f .htaccess $DEPLOYPATH
+    - /bin/cp -f robots.txt $DEPLOYPATH
+    - /bin/cp -f sitemap.xml $DEPLOYPATH
+    - /bin/cp -f rss.xml $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -f google365c6c761a442363.html $DEPLOYPATH 2>/dev/null || true
+    - /bin/cp -f 8f4b29c1d0e34a65b719e83c0f2a4d91.txt $DEPLOYPATH 2>/dev/null || true
 
-    # 3. Deploy Media, Components & Asset Directories Recursively (including all .webp media)
+    # 3. Deploy Page Directories (Clean SEO Directory Architecture)
+    - /bin/cp -R -f about-us $DEPLOYPATH
+    - /bin/cp -R -f services $DEPLOYPATH
+    - /bin/cp -R -f equipment-products $DEPLOYPATH
+    - /bin/cp -R -f gallery $DEPLOYPATH
+    - /bin/cp -R -f blog $DEPLOYPATH
+    - /bin/cp -R -f careers $DEPLOYPATH
+    - /bin/cp -R -f contact $DEPLOYPATH
+
+    # 4. Deploy Assets & Components Recursively
     - /bin/cp -R -f assets $DEPLOYPATH
     - /bin/cp -R -f components $DEPLOYPATH
-    - /bin/cp -R -f Gallery $DEPLOYPATH
-    - /bin/cp -R -f images $DEPLOYPATH
-    - /bin/cp -R -f Bg_Banner $DEPLOYPATH
-    - /bin/cp -R -f services $DEPLOYPATH
-    - /bin/cp -R -f blog $DEPLOYPATH
-    - /bin/cp -R -f ambulance-services $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R -f diagnostics $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R -f medical-equipment-rent-and-sales $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R -f physiotherapy $DEPLOYPATH 2>/dev/null || true
-    - /bin/cp -R -f rehabilitation-neuro-and-ortho $DEPLOYPATH 2>/dev/null || true
 
-    # 4. Enforce standard Bluehost / Apache file and directory permissions (755 for dirs, 644 for files)
+    # 5. Enforce Standard Apache / Linux Permissions (755 for directories, 644 for files)
     - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} + 2>/dev/null || true
     - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} + 2>/dev/null || true
+

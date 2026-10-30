@@ -7,6 +7,16 @@
 (function () {
   'use strict';
 
+  const pathname = window.location.pathname.toLowerCase();
+  const isSubfolder = pathname.includes('/gallery/') ||
+                      pathname.includes('/services/') ||
+                      pathname.includes('/blog/') ||
+                      pathname.includes('/about-us/') ||
+                      pathname.includes('/equipment-products/') ||
+                      pathname.includes('/careers/') ||
+                      pathname.includes('/contact/');
+  const pathPrefix = isSubfolder ? '../' : '';
+
   // 121 Verified Media Assets (108 Photos, 13 Videos)
   const GALLERY_ITEMS = [
   {
@@ -1333,7 +1343,7 @@
 
     let html = '';
     toShow.forEach((item, index) => {
-      const encodedSrc = encodeURI(item.src);
+      const encodedSrc = pathPrefix + encodeURI(item.src);
       const isVideo = item.type === 'video';
 
       html += `
@@ -1422,7 +1432,7 @@
     if (!lightboxModal) initDOMElements();
     if (!lightboxModal) return;
 
-    const encodedSrc = encodeURI(item.src);
+    const encodedSrc = pathPrefix + encodeURI(item.src);
 
     // Stop any existing video before showing
     if (lightboxVideo) {

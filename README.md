@@ -154,7 +154,7 @@ To generate an optimized production bundle:
 npm run build
 ```
 
-This compiles all HTML files, minifies stylesheets and assets, and packages all static directories (`Gallery/`, `images/`, `Bg_Banner/`, `components/`) into the `dist/` directory.
+This compiles all HTML files, minifies stylesheets and assets, and packages all static directories (`assets/`, `components/`) into the `dist/` directory.
 
 ### Deploying the `dist/` Folder:
 - **Vercel / Netlify / Cloudflare Pages**: Set build command to `npm run build` and publish directory to `dist`.

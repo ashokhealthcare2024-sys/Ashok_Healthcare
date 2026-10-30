@@ -8,8 +8,14 @@
   'use strict';
 
   // Detect path prefix based on directory depth
-  const isSubfolder = window.location.pathname.toLowerCase().includes('/services/') ||
-                      window.location.pathname.toLowerCase().includes('/blog/');
+  const pathname = window.location.pathname.toLowerCase();
+  const isSubfolder = pathname.includes('/services/') ||
+                      pathname.includes('/blog/') ||
+                      pathname.includes('/about-us/') ||
+                      pathname.includes('/equipment-products/') ||
+                      pathname.includes('/gallery/') ||
+                      pathname.includes('/careers/') ||
+                      pathname.includes('/contact/');
   const prefix = isSubfolder ? '../' : '';
 
   // Embedded component templates for instant fallback (guarantees local file:// and offline support)
@@ -81,7 +87,7 @@
                   </a>
                   <a href="{{PREFIX}}services/home-icu.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Home ICU Setup</span>
-                    <span class="mega-menu-item-desc">Ventilators, multipara monitors &amp; critical care</span>
+                    <span class="mega-menu-item-desc">Ventilators, monitors &amp; critical care</span>
                   </a>
                   <a href="{{PREFIX}}rehabilitation-neuro-and-ortho.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Neuro &amp; Ortho Rehab</span>
@@ -92,8 +98,12 @@
                     <span class="mega-menu-item-desc">Post-surgery mobility &amp; pain relief</span>
                   </a>
                   <a href="{{PREFIX}}services/elder-care.html" class="mega-menu-item">
-                    <span class="mega-menu-item-title">Elder Care &amp; Palliative</span>
+                    <span class="mega-menu-item-title">Elder Care &amp; Support</span>
                     <span class="mega-menu-item-desc">Senior care &amp; medication assistance</span>
+                  </a>
+                  <a href="{{PREFIX}}palliative-care-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Palliative &amp; Hospice Care</span>
+                    <span class="mega-menu-item-desc">Compassionate symptom &amp; pain relief</span>
                   </a>
                   <a href="{{PREFIX}}diagnostics.html" class="mega-menu-item">
                     <span class="mega-menu-item-title">Diagnostic Lab Tests</span>
@@ -103,17 +113,70 @@
                     <span class="mega-menu-item-title">24/7 ALS Ambulance</span>
                     <span class="mega-menu-item-desc">Advanced life support patient transport</span>
                   </a>
-                  <a href="{{PREFIX}}services.html" class="mega-menu-item">
-                    <span class="mega-menu-item-title text-primary">All Healthcare Services</span>
+                  <a href="{{PREFIX}}rehabilitation-centre-in-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Rehabilitation Centre</span>
+                    <span class="mega-menu-item-desc">In-patient &amp; outpatient recovery</span>
+                  </a>
+                  <a href="{{PREFIX}}nri-parents-care-monitoring-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">NRI Parents Healthcare</span>
+                    <span class="mega-menu-item-desc">Dedicated clinical monitoring visits</span>
+                  </a>
+                  <a href="{{PREFIX}}home-nursing-healthcare-services-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Clinical Nursing Services</span>
+                    <span class="mega-menu-item-desc">Complete home healthcare solutions</span>
+                  </a>
+                  <a href="{{PREFIX}}services/" class="mega-menu-item">
+                    <span class="mega-menu-item-title text-primary">All Healthcare Services →</span>
                     <span class="mega-menu-item-desc">Explore full service spectrum</span>
                   </a>
                 </div>
               </div>
 
-              <a href="{{PREFIX}}products.html" class="nav-item-link" data-nav="products">Equipment &amp; Products</a>
-              <a href="{{PREFIX}}gallery.html" class="nav-item-link" data-nav="gallery">Gallery</a>
-              <a href="{{PREFIX}}careers.html" class="nav-item-link" data-nav="careers">Careers</a>
-              <a href="{{PREFIX}}contact.html" class="nav-item-link" data-nav="contact">Contact</a>
+              <div class="nav-dropdown nav-dropdown-end">
+                <a href="{{PREFIX}}equipment-products/" class="nav-item-link" data-nav="products">
+                  Equipment &amp; Products
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+                </a>
+                <div class="mega-menu">
+                  <a href="{{PREFIX}}oxygen-concentrator-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Oxygen Concentrators</span>
+                    <span class="mega-menu-item-desc">5L &amp; 10L medical-grade rental &amp; sales</span>
+                  </a>
+                  <a href="{{PREFIX}}bipap-cpap-machine-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">BiPAP &amp; CPAP Machines</span>
+                    <span class="mega-menu-item-desc">Philips &amp; ResMed for COPD &amp; sleep apnea</span>
+                  </a>
+                  <a href="{{PREFIX}}hospital-bed-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">ICU Hospital Beds</span>
+                    <span class="mega-menu-item-desc">Motorized &amp; semi-fowler hospital beds</span>
+                  </a>
+                  <a href="{{PREFIX}}patient-monitor-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Multipara Patient Monitors</span>
+                    <span class="mega-menu-item-desc">5-para ICU vital signs monitoring</span>
+                  </a>
+                  <a href="{{PREFIX}}wheelchair-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Wheelchair Rental</span>
+                    <span class="mega-menu-item-desc">Motorized &amp; foldable manual wheelchairs</span>
+                  </a>
+                  <a href="{{PREFIX}}suction-machine-rental-bangalore.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Suction Machines</span>
+                    <span class="mega-menu-item-desc">Electrical mucus &amp; phlegm extractors</span>
+                  </a>
+                  <a href="{{PREFIX}}medical-equipment-rent-and-sales.html" class="mega-menu-item">
+                    <span class="mega-menu-item-title">Medical Equipment Hub</span>
+                    <span class="mega-menu-item-desc">Complete equipment rental directory</span>
+                  </a>
+                  <a href="{{PREFIX}}equipment-products/" class="mega-menu-item">
+                    <span class="mega-menu-item-title text-primary">All Equipment Catalog →</span>
+                    <span class="mega-menu-item-desc">Browse full product inventory</span>
+                  </a>
+                </div>
+              </div>
+
+              <a href="{{PREFIX}}gallery/" class="nav-item-link" data-nav="gallery">Gallery</a>
+              <a href="{{PREFIX}}blog/" class="nav-item-link">Blog</a>
+              <a href="{{PREFIX}}careers/" class="nav-item-link" data-nav="careers">Careers</a>
+              <a href="{{PREFIX}}contact/" class="nav-item-link" data-nav="contact">Contact</a>
             </div>
 
             <!-- Action Buttons -->

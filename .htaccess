@@ -39,10 +39,24 @@ Options -Indexes -MultiViews
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 5A. Direct Shortcuts & Directory Landing Page Normalization
-  RewriteRule ^services/?$ /services.html [R=301,L]
-  RewriteRule ^blog/?$ /blog.html [R=301,L]
-  RewriteRule ^products/?$ /products.html [R=301,L]
+  # 5A. Canonical 301 Redirects from Legacy .html URLs to New Page Directories
+  RewriteRule ^about(\.html)?$ /about-us/ [R=301,L,NC]
+  RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about-us/ [R=301,L,NC]
+  RewriteRule ^services\.html$ /services/ [R=301,L,NC]
+  RewriteRule ^products(\.html)?/?$ /equipment-products/ [R=301,L,NC]
+  RewriteRule ^gallery\.html$ /gallery/ [R=301,L,NC]
+  RewriteRule ^blog\.html$ /blog/ [R=301,L,NC]
+  RewriteRule ^careers\.html$ /careers/ [R=301,L,NC]
+  RewriteRule ^contact\.html$ /contact/ [R=301,L,NC]
+
+  # Normalize /index.html in subdirectories to canonical trailing slash
+  RewriteRule ^about-us/index\.html$ /about-us/ [R=301,L,NC]
+  RewriteRule ^services/index\.html$ /services/ [R=301,L,NC]
+  RewriteRule ^equipment-products/index\.html$ /equipment-products/ [R=301,L,NC]
+  RewriteRule ^gallery/index\.html$ /gallery/ [R=301,L,NC]
+  RewriteRule ^blog/index\.html$ /blog/ [R=301,L,NC]
+  RewriteRule ^careers/index\.html$ /careers/ [R=301,L,NC]
+  RewriteRule ^contact/index\.html$ /contact/ [R=301,L,NC]
 
   # Shortcut routes to clinical service pages (with or without .html)
   RewriteRule ^home-nursing(\.html)?$ /services/home-nursing.html [R=301,L,NC]
@@ -50,9 +64,8 @@ Options -Indexes -MultiViews
   RewriteRule ^elder-care(\.html)?$ /services/elder-care.html [R=301,L,NC]
 
   # 5B. Canonical 301 Redirects for Duplicate & Legacy Services Pages
-  RewriteRule ^services/index\.html$ /services.html [R=301,L,NC]
-  RewriteRule ^services/home-healthcare-services-bangalore(\.html)?$ /services.html [R=301,L,NC]
-  RewriteRule ^services/home-healthcare-nursing-services-bangalore(\.html)?$ /services.html [R=301,L,NC]
+  RewriteRule ^services/home-healthcare-services-bangalore(\.html)?$ /services/ [R=301,L,NC]
+  RewriteRule ^services/home-healthcare-nursing-services-bangalore(\.html)?$ /services/ [R=301,L,NC]
 
   RewriteRule ^services/ambulance(-services)?(\.html)?$ /ambulance-services.html [R=301,L,NC]
   RewriteRule ^services/diagnostics?(-services)?(\.html)?$ /diagnostics.html [R=301,L,NC]
@@ -68,7 +81,6 @@ Options -Indexes -MultiViews
   RewriteRule ^medical-equipment-rent-and-sales/index\.html$ /medical-equipment-rent-and-sales.html [R=301,L,NC]
 
   # 5C. Legacy & Alternative Pages
-  RewriteRule ^about-ashok-healthcare-bangalore\.html$ /about.html [R=301,L,NC]
   RewriteRule ^Hospital-discharge-checklist-bangalore\.html$ /hospital-discharge-checklist-bangalore.html [R=301,L,NC]
   RewriteRule ^home-nursing-&-healthcare-services-in-bangalore\.htm$ /home-nursing-healthcare-services-bangalore.html [R=301,L,NC,NE]
 
