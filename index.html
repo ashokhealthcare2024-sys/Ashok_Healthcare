@@ -41,6 +41,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -164,6 +166,7 @@
     ]
   }
   </script>
+  <link rel="preload" as="image" href="assets/images/banners/hero_Section.webp" fetchpriority="high">
 </head>
 
 <body>
@@ -201,7 +204,7 @@
     <nav class="main-navbar">
       <div class="container-max d-flex align-items-center justify-content-between">
         <a href="index.html" class="d-flex align-items-center text-decoration-none">
-          <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+          <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img" decoding="async">
         </a>
 
                         <!-- Desktop Navigation Links -->
@@ -483,7 +486,7 @@
             <div class="hero-image-wrapper">
               <img src="assets/images/banners/hero_Section.webp" alt="Ashok Healthcare specialist team Bengaluru"
                 class="img-fluid position-relative z-10 hero-doctor-img" loading="eager" width="520" height="520"
-                fetchpriority="high">
+                fetchpriority="high" decoding="async">
 
               <!-- 1. Top-Left: Home Nursing (Desktop/Tablet) -->
               <div class="floating-badge badge-float-up d-none d-md-flex" style="top: 12%; left: -6%;"
@@ -903,7 +906,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/Elder Care Services.webp"
-                    alt="Elderly Care & Assisted Living at Home" loading="lazy">
+                    alt="Elderly Care & Assisted Living at Home" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-dark bg-opacity-75 text-white">Elderly
                     Care</span>
                 </div>
@@ -953,7 +956,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/Professional Nursing Care at Home.webp"
-                    alt="24/7 Professional Home Nursing Care" loading="lazy">
+                    alt="24/7 Professional Home Nursing Care" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-dark bg-opacity-75 text-white">Home
                     Nursing</span>
                 </div>
@@ -998,7 +1001,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/Home ICU Setup & Critical Care.webp"
-                    alt="Home ICU Setup & Critical Care" loading="lazy">
+                    alt="Home ICU Setup & Critical Care" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-dark bg-opacity-75 text-white">Home
                     ICU</span>
                 </div>
@@ -1043,7 +1046,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/Specialized Rehabilitation (Neuro & Ortho).webp"
-                    alt="Neuro & Orthopedic Rehabilitation" loading="lazy">
+                    alt="Neuro & Orthopedic Rehabilitation" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-dark bg-opacity-75 text-white">Neuro
                     Rehab</span>
                 </div>
@@ -1088,7 +1091,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/Medical Equipment Rent and Sales.webp"
-                    alt="Medical Equipment Rental & Sales (Ashok Surgical)" loading="lazy">
+                    alt="Medical Equipment Rental & Sales (Ashok Surgical)" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-dark bg-opacity-75 text-white">Ashok
                     Surgical</span>
                 </div>
@@ -1132,7 +1135,7 @@
               <div>
                 <div class="service-card-img-wrap">
                   <img src="assets/images/services_img/247 Emergency Ambulance Service.webp"
-                    alt="24/7 Emergency ALS Ambulance Service" loading="lazy">
+                    alt="24/7 Emergency ALS Ambulance Service" loading="lazy" decoding="async">
                   <span class="position-absolute bottom-0 start-0 m-3 badge bg-danger text-white">24/7 Ambulance</span>
                 </div>
                 <div class="p-4">
@@ -1488,7 +1491,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Physiotherapy at Home')">
             <div class="physio-card-bg">
               <img src="assets/images/Physiotherapy Services/Post-Surgery Joint Rehabilitation.webp"
-                alt="Post-Orthopedic Surgery Rehabilitation" loading="lazy">
+                alt="Post-Orthopedic Surgery Rehabilitation" loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Post-Surgical</span>
@@ -1518,7 +1521,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Neuro Rehabilitation')">
             <div class="physio-card-bg">
               <img src="assets/images/services_img/Specialized Rehabilitation (Neuro & Ortho).webp"
-                alt="Neurological & Stroke Recovery" loading="lazy">
+                alt="Neurological & Stroke Recovery" loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Neuro Recovery</span>
@@ -1548,7 +1551,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Elder Care Services')">
             <div class="physio-card-bg">
               <img src="assets/images/about4-e1750845791671.webp" alt="Geriatric Balance & Fall Prevention"
-                loading="lazy">
+                loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Senior Care</span>
@@ -1578,7 +1581,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Physiotherapy at Home')">
             <div class="physio-card-bg">
               <img src="assets/images/services_img/Physiotherapy at Home.webp" alt="Spine, Cervical & Knee Pain Relief"
-                loading="lazy">
+                loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Pain Relief</span>
@@ -1608,7 +1611,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Physiotherapy at Home')">
             <div class="physio-card-bg">
               <img src="assets/images/Physiotherapy Services/Sports Injury & Kinetic Conditioning.webp"
-                alt="Sports Injury &amp; Kinetic Conditioning" loading="lazy">
+                alt="Sports Injury &amp; Kinetic Conditioning" loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Sports Rehab</span>
@@ -1638,7 +1641,7 @@
           <div class="physio-service-card" onclick="openAssessmentModal('Physiotherapy at Home')">
             <div class="physio-card-bg">
               <img src="assets/images/Physiotherapy Services/Chest & Respiratory Physiotherapy.webp"
-                alt="Chest &amp; Respiratory Physiotherapy" loading="lazy">
+                alt="Chest &amp; Respiratory Physiotherapy" loading="lazy" decoding="async">
             </div>
             <div class="physio-card-gradient-overlay"></div>
             <span class="physio-category-badge">Pulmonary</span>
@@ -1715,7 +1718,7 @@
             <div class="healthcare-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <div class="equipment-img-box">
-                  <img src="assets/images/equipment/Home ICU Setup.webp" alt="Home ICU Setup" loading="lazy">
+                  <img src="assets/images/equipment/Home ICU Setup.webp" alt="Home ICU Setup" loading="lazy" decoding="async">
                   <span class="position-absolute top-0 start-0 m-2 badge bg-dark text-white text-xs">Critical
                     Care</span>
                   <span
@@ -1742,7 +1745,7 @@
             <div class="healthcare-card h-100 d-flex flex-column justify-content-between">
               <div>
                 <div class="equipment-img-box">
-                  <img src="assets/images/equipment/BiPAP  CPAP Machine.webp" alt="BiPAP Machine" loading="lazy">
+                  <img src="assets/images/equipment/BiPAP  CPAP Machine.webp" alt="BiPAP Machine" loading="lazy" decoding="async">
                   <span class="position-absolute top-0 start-0 m-2 badge bg-dark text-white text-xs">Respiratory
                     Care</span>
                   <span
@@ -1770,7 +1773,7 @@
               <div>
                 <div class="equipment-img-box">
                   <img src="assets/images/services_img/Homemedix Oxygen Concentrator.webp" alt="Oxygen Concentrator"
-                    loading="lazy">
+                    loading="lazy" decoding="async">
                   <span class="position-absolute top-0 start-0 m-2 badge bg-dark text-white text-xs">Respiratory
                     Care</span>
                   <span
@@ -1799,7 +1802,7 @@
               <div>
                 <div class="equipment-img-box">
                   <img src="assets/images/equipment/5-Function Motorized ICU Bed.webp" alt="5 Function Electric ICU Bed"
-                    loading="lazy">
+                    loading="lazy" decoding="async">
                   <span class="position-absolute top-0 start-0 m-2 badge bg-dark text-white text-xs">Hospital
                     Beds</span>
                   <span
@@ -1843,7 +1846,7 @@
               <div class="rounded-4 overflow-hidden border border-white border-opacity-25 shadow-lg position-relative">
                 <img src="assets/images/awards.webp" alt="Ashok Doddamani receiving International Excellence Award"
                   class="img-fluid w-100" style="max-height: 400px; object-fit: cover; object-position: top;"
-                  loading="lazy">
+                  loading="lazy" decoding="async">
                 <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-90 text-xs">
                   <div class="fw-bold text-warning">Certificate for International Excellence</div>
                   <div class="text-slate-300">Awarded by Global Research Foundation</div>
@@ -1872,7 +1875,7 @@
                 <div class="founder-passport-frame flex-shrink-0">
                   <img src="assets/images/PP-e1750937385480.webp"
                     alt="Ashok Doddamani - Founder &amp; CEO, Ashok Healthcare" class="founder-passport-img" width="125"
-                    height="166" loading="lazy">
+                    height="166" loading="lazy" decoding="async">
                 </div>
                 <div class="founder-profile-meta flex-grow-1 min-w-0">
                   <div class="text-info small text-uppercase tracking-wider fw-bold mb-1"
@@ -2536,7 +2539,7 @@
         <div class="col-lg-4">
           <a href="index.html" class="footer-logo-badge mb-3 d-inline-block">
             <img src="assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services"
-              style="height: 48px; filter: brightness(0) invert(1);">
+              style="height: 48px; filter: brightness(0) invert(1);" decoding="async">
           </a>
           <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
             Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp;
@@ -2765,12 +2768,12 @@
   </div>
   <div class="mobile-bottom-spacer"></div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/navigation.js"></script>
-  <script src="assets/js/modals.js"></script>
-  <script src="assets/js/components.js?v=2.3"></script>
-  <script src="assets/js/forms.js"></script>
+  <script defer src="assets/js/bootstrap.bundle.min.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/navigation.js"></script>
+  <script defer src="assets/js/modals.js"></script>
+  <script defer src="assets/js/components.js?v=2.3"></script>
+  <script defer src="assets/js/forms.js"></script>
 </body>
 
 </html>

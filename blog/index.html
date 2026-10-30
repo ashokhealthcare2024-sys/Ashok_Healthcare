@@ -21,6 +21,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet" />
@@ -87,7 +89,7 @@
     <nav class="main-navbar">
       <div class="container-max d-flex align-items-center justify-content-between">
         <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img" decoding="async">
         </a>
 
                         <!-- Desktop Navigation Links -->
@@ -264,7 +266,7 @@
   <section class="page-banner-section">
     <img src="../assets/images/banners/blog_bg.webp"
       alt="Patient Education and Clinical Guides - Healthcare Guides and Clinical Advice" class="page-banner-img"
-      width="2059" height="496" />
+      width="2059" height="496" / loading="lazy" decoding="async">
     <h1 class="visually-hidden">Healthcare Guides & Clinical Advice - Ashok Home Healthcare Blog</h1>
   </section>
 
@@ -287,7 +289,7 @@
               <div class="blog-card-img-wrap position-relative">
                 <img src="../assets/images/blog_img/Best Home Healthcare Services in Bangalore.webp"
                   alt="Best Home Healthcare Services in Bangalore" class="w-100 h-100 object-fit-cover"
-                  loading="lazy" />
+                  loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Home Healthcare
@@ -330,7 +332,7 @@
               <div class="blog-card-img-wrap position-relative">
                 <img src="../assets/images/blog_img/Home Nursing Services in Bangalore.webp"
                   alt="Home Nursing Services in Bangalore Complete Guide" class="w-100 h-100 object-fit-cover"
-                  loading="lazy" />
+                  loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Nursing Care
@@ -373,7 +375,7 @@
               <div class="blog-card-img-wrap position-relative">
                 <img
                   src="../assets/images/blog_img/BIPAP Machine in Yeshwanthpur Expert Home Healthcare for Sleep Apnea & COPD Patients.webp"
-                  alt="BIPAP Machine in Yeshwanthpur" class="w-100 h-100 object-fit-cover" loading="lazy" />
+                  alt="BIPAP Machine in Yeshwanthpur" class="w-100 h-100 object-fit-cover" loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Respiratory Care
@@ -415,7 +417,7 @@
             <div>
               <div class="blog-card-img-wrap position-relative">
                 <img src="../assets/images/blog_img/How Does Home ICU Setup Work A Complete Guide.webp"
-                  alt="How Does Home ICU Setup Work?" class="w-100 h-100 object-fit-cover" loading="lazy" />
+                  alt="How Does Home ICU Setup Work?" class="w-100 h-100 object-fit-cover" loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Home Healthcare
@@ -457,7 +459,7 @@
             <div>
               <div class="blog-card-img-wrap position-relative">
                 <img src="../assets/images/blog_img/Home Physiotherapy After Surgery.webp"
-                  alt="Home Physiotherapy After Surgery" class="w-100 h-100 object-fit-cover" loading="lazy" />
+                  alt="Home Physiotherapy After Surgery" class="w-100 h-100 object-fit-cover" loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Physiotherapy
@@ -499,7 +501,7 @@
             <div>
               <div class="blog-card-img-wrap position-relative">
                 <img src="../assets/images/blog_img/Elder Care Services What Families Should Consider.webp"
-                  alt="Elder Care Services" class="w-100 h-100 object-fit-cover" loading="lazy" />
+                  alt="Elder Care Services" class="w-100 h-100 object-fit-cover" loading="lazy" / decoding="async">
                 <span
                   class="position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill bg-white bg-opacity-95 text-xs fw-bold text-dark shadow-sm">
                   Elder Care
@@ -601,7 +603,7 @@
         <div class="col-lg-4">
           <a href="../" class="footer-logo-badge mb-3 d-inline-block">
             <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services"
-              style="height: 48px; filter: brightness(0) invert(1);">
+              style="height: 48px; filter: brightness(0) invert(1);" decoding="async">
           </a>
           <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
             Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp;
@@ -830,11 +832,11 @@
   </div>
   <div class="mobile-bottom-spacer"></div>
 
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/navigation.js"></script>
-  <script src="../assets/js/modals.js?v=2.3"></script>
-  <script src="../assets/js/forms.js"></script>
+  <script defer src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/navigation.js"></script>
+  <script defer src="../assets/js/modals.js?v=2.3"></script>
+  <script defer src="../assets/js/forms.js"></script>
 </body>
 
 </html>

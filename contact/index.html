@@ -21,6 +21,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
     rel="stylesheet" />
@@ -98,7 +100,7 @@
     <nav class="main-navbar">
       <div class="container-max d-flex align-items-center justify-content-between">
         <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img" decoding="async">
         </a>
 
                         <!-- Desktop Navigation Links -->
@@ -274,7 +276,7 @@
   <!-- ================= HEADER BANNER ================= -->
   <section class="page-banner-section">
     <img src="../assets/images/banners/Contact_bg.webp" alt="We are here 24/7 for your loved ones - Contact Ashok Healthcare"
-      class="page-banner-img" width="2304" height="464" />
+      class="page-banner-img" width="2304" height="464" / loading="lazy" decoding="async">
     <h1 class="visually-hidden">Contact Ashok Healthcare - Central Office & 24/7 Helpline</h1>
   </section>
 
@@ -553,7 +555,7 @@
         <div class="col-lg-4">
           <a href="../" class="footer-logo-badge mb-3 d-inline-block">
             <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services"
-              style="height: 48px; filter: brightness(0) invert(1);">
+              style="height: 48px; filter: brightness(0) invert(1);" decoding="async">
           </a>
           <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
             Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp;
@@ -782,11 +784,11 @@
   </div>
   <div class="mobile-bottom-spacer"></div>
 
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/navigation.js"></script>
-  <script src="../assets/js/modals.js?v=2.3"></script>
-  <script src="../assets/js/forms.js"></script>
-  <script src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script defer src="../assets/js/navigation.js"></script>
+  <script defer src="../assets/js/modals.js?v=2.3"></script>
+  <script defer src="../assets/js/forms.js"></script>
+  <script defer src="../assets/js/main.js"></script>
 </body>
 
 </html>

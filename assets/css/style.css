@@ -8,7 +8,7 @@
    - WhatsApp Support: #25D366
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap');
+/* Fonts loaded via HTML <head> with preconnect and dns-prefetch for peak mobile speed */
 @import url('components/header.css');
 @import url('components/hero.css');
 @import url('components/cards.css');
@@ -22,6 +22,33 @@
 @import url('components/accordion.css');
 @import url('components/footer.css');
 @import url('components/floating-actions.css');
+
+/* ============================================================
+   MOBILE PERFORMANCE & INSTANT TOUCH RESPONSIVENESS
+   - Eliminates 300ms mobile click delay (touch-action)
+   - Prevents orientation layout shifts
+   - Content visibility for offscreen image painting
+   ============================================================ */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+a, button, input, select, textarea, .btn, .nav-item-link {
+  touch-action: manipulation;
+}
+
+img {
+  content-visibility: auto;
+}
 
 :root {
   /* Brand Identity (Derived directly from Company Logo) */

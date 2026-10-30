@@ -133,11 +133,20 @@ Options -Indexes -MultiViews
 </IfModule>
 
 
-# 6. COMPONENT PARTIALS - PREVENT RAW FRAGMENT INDEXING
-<IfModule mod_headers.c>
-  <FilesMatch "^(care-finder|emergency-banner|floating-actions|footer|header|mobile-nav|modals|topbar)\.html$">
-    Header set X-Robots-Tag "noindex, nofollow"
-  </FilesMatch>
+# 6. MOBILE PERFORMANCE & BROTLI / DEFLATE COMPRESSION
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
 </IfModule>
 
 # 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS
@@ -199,16 +208,7 @@ Options -Indexes -MultiViews
   AddType application/xml .xml
 </IfModule>
 
-# 11. GZIP / DEFLATE COMPRESSION
-<IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
-  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
-  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
-  AddOutputFilterByType DEFLATE image/svg+xml
-  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
-</IfModule>
-
-# 12. BROWSER CACHING (mod_expires / mod_headers)
+# 11. BROWSER CACHING & INSTANT MOBILE RE-LOADS (mod_expires & mod_headers)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
@@ -216,7 +216,7 @@ Options -Indexes -MultiViews
   # HTML documents - Revalidate for instant updates
   ExpiresByType text/html "access plus 0 seconds"
 
-  # Stylesheets & Scripts
+  # Stylesheets & Scripts - 1 Year Cache
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
@@ -241,8 +241,21 @@ Options -Indexes -MultiViews
   ExpiresByType font/otf "access plus 1 year"
 </IfModule>
 
-# 13. SECURITY HEADERS
+# 12. HTTP HEADERS: AGGRESSIVE CACHING, KEEP-ALIVE & SECURITY
 <IfModule mod_headers.c>
+  # 1-Year Immutable Caching for Static Assets (Instant Mobile Repeat Visits)
+  <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # HTML Cache Control - Freshness guaranteed
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Keep-Alive for Mobile TCP connection reuse
+  Header set Connection keep-alive
+
   # Protect against MIME type sniffing
   Header set X-Content-Type-Options "nosniff"
   # Clickjacking defense

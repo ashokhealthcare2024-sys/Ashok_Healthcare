@@ -37,6 +37,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap"
     rel="stylesheet">
@@ -151,7 +153,7 @@
     <nav class="main-navbar">
       <div class="container-max d-flex align-items-center justify-content-between">
         <a href="/" class="d-flex align-items-center text-decoration-none">
-          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img">
+          <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services" class="navbar-logo-img" decoding="async">
         </a>
 
                         <!-- Desktop Navigation Links -->
@@ -329,7 +331,7 @@
     <section class="page-banner-section">
       <img src="../assets/images/banners/About_us_bg.webp"
         alt="Ashok Home Healthcare Services - Your Trusted Partner in Health and Wellness" class="page-banner-img"
-        width="1920" height="400">
+        width="1920" height="400" loading="lazy" decoding="async">
     </section>
     <!-- ========================================================
          1. HERO SECTION
@@ -366,7 +368,7 @@
           <div class="col-lg-5">
             <div class="healthcare-card position-relative overflow-hidden shadow-lg rounded-4">
               <img src="../assets/images/about4-e1750845791671.webp" alt="Healing Begins at Home - Ashok Healthcare"
-                class="w-100" style="height: 380px; object-fit: cover;" loading="lazy">
+                class="w-100" style="height: 380px; object-fit: cover;" loading="lazy" decoding="async">
               <div
                 class="position-absolute bottom-0 start-0 end-0 p-3 m-3 rounded-3 bg-white bg-opacity-95 shadow-sm border">
                 <div class="small fw-bold text-primary text-uppercase tracking-wider">✓ Established April 1, 2023
@@ -468,7 +470,7 @@
               <div class="rounded-3 overflow-hidden mb-3 shadow-xs">
                 <img src="../assets/images/PP-e1750937385480.webp"
                   alt="Ashok Doddamani - Founder and CEO, Ashok Healthcare" class="img-fluid w-100"
-                  style="object-fit: cover; max-height: 380px;">
+                  style="object-fit: cover; max-height: 380px;" loading="lazy" decoding="async">
               </div>
               <h3 class="fw-bold mb-1 font-heading" style="color: #ec1a23; font-size: 1.35rem;">Ashok Doddamani</h3>
               <div class="fw-bold text-slate-800 small mb-1">Founder and CEO, Ashok Healthcare</div>
@@ -552,7 +554,7 @@
                   <div class="col-lg-4">
                     <a href="../" class="footer-logo-badge mb-3 d-inline-block">
                       <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services"
-                        style="height: 48px; filter: brightness(0) invert(1);">
+                        style="height: 48px; filter: brightness(0) invert(1);" decoding="async">
                     </a>
                     <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
                       Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups,
@@ -1250,7 +1252,7 @@
         <div class="col-lg-4">
           <a href="../" class="footer-logo-badge mb-3 d-inline-block">
             <img src="../assets/images/ashoklogoh-tras.webp" alt="Ashok Home Healthcare Services"
-              style="height: 48px; filter: brightness(0) invert(1);">
+              style="height: 48px; filter: brightness(0) invert(1);" decoding="async">
           </a>
           <p class="small text-slate-400 mb-3" style="line-height: 1.7;">
             Ashok Home Healthcare Services provides doorstep hospital-grade nursing care, home ICU setups, neuro &amp;
@@ -1479,11 +1481,11 @@
   </div>
   <div class="mobile-bottom-spacer"></div>
 
-  <script src="../assets/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/navigation.js"></script>
-  <script src="../assets/js/modals.js?v=2.3"></script>
-  <script src="../assets/js/forms.js"></script>
+  <script defer src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/navigation.js"></script>
+  <script defer src="../assets/js/modals.js?v=2.3"></script>
+  <script defer src="../assets/js/forms.js"></script>
 </body>
 
 </html>
