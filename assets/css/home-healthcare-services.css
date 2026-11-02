@@ -1,0 +1,136 @@
+.home-healthcare-page {
+  color: var(--body-text, #1a2332);
+  background: #fff;
+}
+
+.home-healthcare-page > section:first-child {
+  background: linear-gradient(135deg, #091224 0%, #1e1b4b 48%, #0858a4 100%) !important;
+  padding-block: clamp(3rem, 7vw, 5.5rem) !important;
+}
+
+.home-healthcare-page > section:first-child h1 {
+  max-width: 900px;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.home-healthcare-page > section:first-child .lead {
+  max-width: 780px;
+  line-height: 1.65;
+}
+
+.home-healthcare-page .section-padding {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.home-healthcare-page .container-max {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+.home-healthcare-page h2 {
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.home-healthcare-page article,
+.home-healthcare-page .row > [class*="col-"] > .p-3,
+.home-healthcare-page .row > [class*="col-"] > .p-4 {
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 14px rgba(30, 27, 75, 0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home-healthcare-page article:hover,
+.home-healthcare-page .row > [class*="col-"] > .p-3:hover,
+.home-healthcare-page .row > [class*="col-"] > .p-4:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(30, 27, 75, 0.1);
+}
+
+.home-healthcare-page article h3 {
+  color: var(--brand-navy, #1e1b4b);
+}
+
+.home-healthcare-page article ul {
+  padding-left: 1.15rem;
+  line-height: 1.75;
+}
+
+.home-healthcare-page article li + li {
+  margin-top: 0.35rem;
+}
+
+.home-healthcare-page details {
+  border-radius: 0.85rem !important;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.home-healthcare-page details[open] {
+  border-color: var(--primary-300, #88c5ff) !important;
+  box-shadow: 0 6px 18px rgba(10, 110, 189, 0.08);
+}
+
+.home-healthcare-page details summary {
+  position: relative;
+  padding-right: 2rem;
+  line-height: 1.5;
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-healthcare-page details summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-healthcare-page details summary::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--primary-600, #0858a4);
+  content: "+";
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.home-healthcare-page details[open] summary::after {
+  content: "−";
+}
+
+.home-healthcare-page .table-responsive {
+  border-radius: 0.85rem;
+}
+
+.home-healthcare-page .table {
+  --bs-table-bg: #fff;
+  margin-bottom: 0;
+}
+
+.home-healthcare-page .table th {
+  color: var(--brand-navy, #1e1b4b);
+}
+
+.home-healthcare-page a:not(.btn-primary-custom):not(.btn-whatsapp-custom) {
+  text-underline-offset: 0.18em;
+}
+
+@media (max-width: 767.98px) {
+  .home-healthcare-page > section:first-child h1 {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  .home-healthcare-page .container-max {
+    width: min(100% - 1.25rem, 1200px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-healthcare-page article,
+  .home-healthcare-page .row > [class*="col-"] > .p-3,
+  .home-healthcare-page .row > [class*="col-"] > .p-4,
+  .home-healthcare-page details {
+    transition: none;
+  }
+}

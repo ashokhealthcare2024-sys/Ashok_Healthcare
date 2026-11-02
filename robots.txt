@@ -1,0 +1,15 @@
+# Ashok Home Healthcare Services - Robots Policy
+# https://ashokhealthcare.in/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow Git metadata directory
+Disallow: /.git/
+
+# Allow image crawling
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap location
+Sitemap: https://ashokhealthcare.in/sitemap.xml

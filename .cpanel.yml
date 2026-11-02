@@ -1,0 +1,70 @@
+---
+deployment:
+  tasks:
+    # ==========================================================================
+    # ASHOK HEALTHCARE - BLUEHOST CPANEL GIT DEPLOYMENT
+    # Target: $HOME/public_html/
+    # Apache / Static HTML Website
+    # ==========================================================================
+
+    # 1. SET DEPLOYMENT PATH
+    - export DEPLOYPATH=${DEPLOYPATH:-$HOME/public_html/}
+    - /bin/mkdir -p "$DEPLOYPATH"
+
+    # 2. DEPLOY ROOT HTML PAGES
+    - /bin/cp -f index.html "$DEPLOYPATH"
+    - /bin/cp -f about-us.html "$DEPLOYPATH"
+    - /bin/cp -f services.html "$DEPLOYPATH"
+    - /bin/cp -f equipment-products.html "$DEPLOYPATH"
+    - /bin/cp -f gallery.html "$DEPLOYPATH"
+    - /bin/cp -f blog.html "$DEPLOYPATH"
+    - /bin/cp -f careers.html "$DEPLOYPATH"
+    - /bin/cp -f contact.html "$DEPLOYPATH"
+
+    # 3. DEPLOY SEO LANDING PAGES
+    - /bin/cp -f bipap-cpap-machine-rental-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f home-nurse-vs-caregiver-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f home-nursing-charges-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f home-nursing-healthcare-services-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f hospital-bed-rental-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f hospital-discharge-checklist-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f nri-parents-care-monitoring-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f oxygen-concentrator-rental-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f palliative-care-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f patient-monitor-rental-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f rehabilitation-centre-in-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f suction-machine-rental-bangalore.html "$DEPLOYPATH"
+    - /bin/cp -f wheelchair-rental-bangalore.html "$DEPLOYPATH"
+
+    # 4. DEPLOY LEGAL & UTILITY PAGES
+    - /bin/cp -f privacy.html "$DEPLOYPATH"
+    - /bin/cp -f terms.html "$DEPLOYPATH"
+    - /bin/cp -f sitemap.html "$DEPLOYPATH"
+    - /bin/cp -f 404.html "$DEPLOYPATH"
+
+    # 5. DEPLOY APACHE & SEARCH ENGINE CONFIGURATIONS
+    - /bin/cp -f .htaccess "$DEPLOYPATH"
+    - /bin/cp -f robots.txt "$DEPLOYPATH"
+    - /bin/cp -f sitemap.xml "$DEPLOYPATH"
+
+    # 6. DEPLOY OPTIONAL RSS FEED
+    - /bin/cp -f rss.xml "$DEPLOYPATH" 2>/dev/null || true
+    - /bin/cp -f google365c6c761a442363.html "$DEPLOYPATH" 2>/dev/null || true
+
+    # 7. DEPLOY PAGE DIRECTORIES
+    # Existing services and blog pages are preserved.
+    - /bin/cp -R -f services "$DEPLOYPATH"
+    - /bin/cp -R -f blog "$DEPLOYPATH"
+
+    # 8. DEPLOY ASSETS
+    - /bin/cp -R -f assets "$DEPLOYPATH"
+
+    # 9. SET DIRECTORY PERMISSIONS
+    - /bin/find "$DEPLOYPATH" -type d -exec /bin/chmod 755 {} + 2>/dev/null || true
+
+    # 10. SET FILE PERMISSIONS
+    - /bin/find "$DEPLOYPATH" -type f -exec /bin/chmod 644 {} + 2>/dev/null || true
+
+    # ==========================================================================
+    # END OF DEPLOYMENT
+    # ==========================================================================
