@@ -1,144 +1,186 @@
-# ==============================================================================
-# ASHOK HEALTHCARE - APACHE / CPANEL PRODUCTION CONFIGURATION
-# Canonical HTTPS + Non-WWW + HTML-Only Page URLs + SEO-Safe 404
-# ==============================================================================
+# ============================================================================== 
+# ASHOK HOME HEALTHCARE SERVICES - APACHE / CPANEL PRODUCTION CONFIGURATION
+# ============================================================================== 
 
 # 1. CHARACTER ENCODING
 AddDefaultCharset UTF-8
 AddCharset UTF-8 .html .css .js .json .svg .xml
 
-# 2. DEFAULT DOCUMENT & CUSTOM ERROR PAGE
+# 2. DEFAULT DOCUMENT & CUSTOM ERROR PAGES
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
-# 3. PREVENT DIRECTORY BROWSING & MULTIVIEWS
+# 3. PREVENT DIRECTORY BROWSING & DISABLE MULTIVIEWS
 Options -Indexes -MultiViews
 
 # Disable spelling auto-correction
 <IfModule mod_speling.c>
-    CheckSpelling Off
+  CheckSpelling Off
 </IfModule>
 
-# 4. HTTPS, NON-WWW & CANONICAL HOMEPAGE
+# 4. HTTPS ENFORCEMENT & CANONICAL DOMAIN (NON-WWW)
 <IfModule mod_rewrite.c>
-    RewriteEngine On
+  RewriteEngine On
 
-    # 4A. Redirect WWW and HTTP to HTTPS non-WWW
-    RewriteCond %{HTTP_HOST} ^www\.ashokhealthcare\.in$ [NC,OR]
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ https://ashokhealthcare.in%{REQUEST_URI} [R=301,L,NE]
+  # 4A. Redirect www to non-www (https://ashokhealthcare.in)
+  RewriteCond %{HTTP_HOST} ^www\.ashokhealthcare\.in$ [NC]
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 
-    # 4B. Canonical homepage URL
-    RewriteRule ^$ https://ashokhealthcare.in/index.html [R=301,L]
+  # 4B. Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1 [L,R=301]
 
-    # 5. LEGACY MEDIA URL REDIRECTS
-    # Redirect old image locations only when the target structure is confirmed.
-
-    RewriteRule ^images/(.+)$ /assets/images/$1 [R=301,L,NC]
-    RewriteRule ^Gallery/(.+)$ /assets/gallery/$1 [R=301,L,NC]
-
-    # 6. ENFORCE HTML-ONLY PAGE URLS
-    # Existing page URLs must include .html.
-    # Extensionless URLs must not be internally mapped to HTML files.
-
-    RewriteCond %{REQUEST_URI} !^/$
-    RewriteCond %{REQUEST_URI} !\.[^/]+$
-    RewriteRule ^ - [R=404,L]
-
+  # 4C. The canonical homepage URL is /index.html, not the directory alias.
+  RewriteRule ^$ https://ashokhealthcare.in/index.html [L,R=301]
 </IfModule>
 
-# 7. COMPRESSION
+# 5. SEO ROUTING & LEGACY REQUEST HANDLING
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Directory-style aliases are not page URLs; pages must use their .html paths.
+  RewriteRule ^(about-us|services|equipment-products|gallery|blog|careers|contact)/?$ - [R=404,L,NC]
+
+  # 5A. Strip Unwanted Query Parameters & 301 Redirect to the Same Canonical Path
+  # Whitelists legitimate marketing analytics (utm_*, gclid, fbclid); strips all bot/spam parameters
+  RewriteCond %{QUERY_STRING} !^$
+  RewriteCond %{QUERY_STRING} !(^|&)(utm_[a-z]+|gclid|fbclid)= [NC]
+  RewriteRule ^(.*)$ https://ashokhealthcare.in/$1? [R=301,L]
+
+  # 5D. Media Relocation: 301 Redirect legacy /images/ and /Gallery/ requests to /assets/
+  RewriteRule ^images/(.+)$ /assets/images/$1 [R=301,L,NC]
+  RewriteRule ^Gallery/(.+)$ /assets/gallery/$1 [R=301,L,NC]
+  RewriteRule ^gallery_([1-3])/(.+)$ /assets/gallery/gallery_$1/$2 [R=301,L,NC]
+</IfModule>
+
+# 6. MOBILE PERFORMANCE & BROTLI / DEFLATE COMPRESSION
 <IfModule mod_brotli.c>
-    AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
-    AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript
-    AddOutputFilterByType BROTLI_COMPRESS application/json application/xml
-    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json application/xml application/rss+xml
+  AddOutputFilterByType BROTLI_COMPRESS image/svg+xml font/ttf font/otf application/vnd.ms-fontobject
 </IfModule>
 
 <IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
-    AddOutputFilterByType DEFLATE text/javascript application/javascript
-    AddOutputFilterByType DEFLATE application/json application/xml
-    AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
 </IfModule>
 
-# 8. BLOCK ACCESS TO SENSITIVE FILES
-<IfModule mod_authz_core.c>
-    <FilesMatch "^(\.env.*|\.git.*|\.cpanel\.yml|\.gitignore|README\.md)$">
-        Require all denied
-    </FilesMatch>
+# 7. AUTOMATIC WEBP NEGOTIATION & FALLBACK FOR OLD IMAGE EXTENSIONS
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 7A. If client accepts WebP and a .webp file exists on disk, serve it
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
+
+  # 7B. If legacy .png/.jpg is requested directly but only .webp is present, serve .webp
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,L]
+
+  # 7C. Directory alias fallbacks for services & equipment image folders
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/images/services_img/$1 -f
+  RewriteRule ^images/services/(.+)$ /images/services_img/$1 [L]
+
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/images/equipment_img/$1 -f
+  RewriteRule ^images/equipment/(.+)$ /images/equipment_img/$1 [L]
 </IfModule>
 
-<IfModule !mod_authz_core.c>
-    <FilesMatch "^(\.env.*|\.git.*|\.cpanel\.yml|\.gitignore|README\.md)$">
-        Order deny,allow
-        Deny from all
-    </FilesMatch>
-</IfModule>
-
-# 9. MIME TYPES
-<IfModule mod_mime.c>
-    AddType image/svg+xml .svg .svgz
-    AddType image/webp .webp
-    AddType video/mp4 .mp4
-    AddType video/webm .webm
-    AddType font/woff .woff
-    AddType font/woff2 .woff2
-    AddType application/json .json
-    AddType application/xml .xml
-</IfModule>
-
-# 10. BROWSER CACHING
-<IfModule mod_expires.c>
-    ExpiresActive On
-
-    ExpiresDefault "access plus 1 month"
-
-    # HTML documents
-    ExpiresByType text/html "access plus 0 seconds"
-
-    # CSS and JavaScript
-    ExpiresByType text/css "access plus 1 year"
-    ExpiresByType application/javascript "access plus 1 year"
-    ExpiresByType text/javascript "access plus 1 year"
-
-    # Images
-    ExpiresByType image/webp "access plus 1 year"
-    ExpiresByType image/jpeg "access plus 1 year"
-    ExpiresByType image/png "access plus 1 year"
-    ExpiresByType image/gif "access plus 1 year"
-    ExpiresByType image/svg+xml "access plus 1 year"
-    ExpiresByType image/x-icon "access plus 1 year"
-
-    # Videos
-    ExpiresByType video/mp4 "access plus 1 month"
-    ExpiresByType video/webm "access plus 1 month"
-
-    # Fonts
-    ExpiresByType font/woff "access plus 1 year"
-    ExpiresByType font/woff2 "access plus 1 year"
-</IfModule>
-
-# 11. HTTP HEADERS
 <IfModule mod_headers.c>
-
-    # Static asset caching
-    <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2|ttf|eot)$">
-        Header set Cache-Control "max-age=31536000, public"
-    </FilesMatch>
-
-    # HTML must revalidate
-    <FilesMatch "\.(html|htm)$">
-        Header set Cache-Control "max-age=0, must-revalidate"
-    </FilesMatch>
-
-    # Security headers
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set Referrer-Policy "strict-origin-when-cross-origin"
-
+  Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
-# ==============================================================================
-# END OF CONFIGURATION
-# ==============================================================================
+# 8. BLOCK ACCESS TO INTERNAL & SENSITIVE FILES
+<FilesMatch "^(\.git|\.env.*|\.cpanel\.yml|\.gitignore|README\.md)$">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+  </IfModule>
+</FilesMatch>
+
+# 9. VIDEO STREAMING & HTTP RANGE REQUESTS
+# Essential for clinical MP4/WebM video playback & seeking across Safari & Chrome
+<IfModule mod_headers.c>
+  <FilesMatch "\.(mp4|webm|mov|ogg)$">
+    Header set Accept-Ranges bytes
+  </FilesMatch>
+</IfModule>
+
+# 10. MIME TYPES FOR MODERN WEB FORMATS
+<IfModule mod_mime.c>
+  AddType image/svg+xml .svg .svgz
+  AddType image/webp .webp
+  AddType video/mp4 .mp4
+  AddType video/webm .webm
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType application/json .json
+  AddType application/xml .xml
+</IfModule>
+
+# 11. BROWSER CACHING & INSTANT MOBILE RE-LOADS (mod_expires & mod_headers)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # HTML documents - Revalidate for instant updates
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # Stylesheets & Scripts - 1 Year Cache
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Media & Images (WebP cached for 1 full year)
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Videos
+  ExpiresByType video/mp4 "access plus 1 month"
+  ExpiresByType video/webm "access plus 1 month"
+
+  # Fonts
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+</IfModule>
+
+# 12. HTTP HEADERS: AGGRESSIVE CACHING, KEEP-ALIVE & SECURITY
+<IfModule mod_headers.c>
+  # 1-Year Immutable Caching for Static Assets (Instant Mobile Repeat Visits)
+  <FilesMatch "\.(ico|pdf|jpg|jpeg|png|gif|webp|svg|js|css|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # HTML Cache Control - Freshness guaranteed
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "max-age=0, must-revalidate"
+  </FilesMatch>
+
+  # Keep-Alive for Mobile TCP connection reuse
+  Header set Connection keep-alive
+
+  # Protect against MIME type sniffing
+  Header set X-Content-Type-Options "nosniff"
+  # Clickjacking defense
+  Header set X-Frame-Options "SAMEORIGIN"
+  # Referrer policy for privacy
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
